@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>HubSheet</name>
+    <events>
+        <include>WeaponsSheet</include>
+        <event-block sid="868219545888037">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="934484484770518" type="System" />
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="924924892430098" type="Player">
+                    <param id="0" name="Instance variable">OnHub</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="682148143689353">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="795466094289484" type="Player">
+                    <param id="0" name="Object">Door1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="527531473836529" type="System">
+                    <param id="0" name="Layout">LevelSpace</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="282311754072017">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="314356669975057" type="Player">
+                    <param id="0" name="Object">Door2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="902722080448963" type="System">
+                    <param id="0" name="Layout">LevelPirates</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="467296010189339">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="540129551780338" type="Player">
+                    <param id="0" name="Object">Door3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="667512334099724" type="System">
+                    <param id="0" name="Layout">LevelVietnam</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="266616748637147">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="336666955653482" type="Player">
+                    <param id="0" name="Object">Door4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="554517224038846" type="System">
+                    <param id="0" name="Layout">LevelDesert</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

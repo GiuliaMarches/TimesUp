@@ -1,0 +1,579 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>LevelDesertSheet</name>
+    <events>
+        <variable constant="0" name="Wave" sid="133856205180384" static="0" type="number">0</variable>
+        <include>WeaponsSheet</include>
+        <event-block sid="597597306247374">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="824913686596052" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="392186966353204" type="Boomerang" />
+                <action id="-9" name="Destroy" sid="387288209179998" type="Grenade" />
+                <action id="-13" name="Set boolean" sid="924482663627234" type="Player">
+                    <param id="0" name="Instance variable">OnHub</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="999428604683209">
+            <conditions>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="504773083244675" type="Player">
+                    <param id="0" name="Instance variable">hasBow</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="770007844709049" type="ShadowSprite">
+                    <param id="0" name="Object">Player</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="385446855505430">
+            <conditions>
+                <condition id="-22" name="Else" sid="725232282316246" type="System" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="269969846788154" type="ShadowSprite">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="833529648943738" title="MUMMIES">
+            <sub-events>
+                <event-block sid="793097375380729">
+                    <conditions>
+                        <condition id="0" name="On function" sid="521425858856976" type="Function">
+                            <param id="0" name="Name">&quot;MummySpawn&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="840430755786089" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="520318608350207" type="System">
+                            <param id="0" name="Variable">Wave</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="916246545126629">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="147190821067834" type="System">
+                                    <param id="0" name="Object">Sarcophagus</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="623295046038252">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="881709415036836" type="Sarcophagus">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="241780067144240" type="Sarcophagus">
+                                            <param id="0" name="Object">Mummy</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action id="7" name="Set mirrored" sid="746007790620431" type="Mummy">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="814822185723572">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="880930726443802" type="Sarcophagus">
+                                            <param id="0" name="Instance variable">Direction</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="740558480255963" type="Sarcophagus">
+                                            <param id="0" name="Object">Mummy</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="406258109667502">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="268404303485627" type="Mummy" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="3" name="Set enabled" sid="203482497477795" type="Mummy">
+                            <param id="0" name="Set">1</param>
+                        </action>
+                        <action behavior="Pathfinding" id="0" name="Find path" sid="999966880708198" type="Mummy">
+                            <param id="0" name="X">Player.X</param>
+                            <param id="1" name="Y">Player.Y</param>
+                        </action>
+                        <action behavior="Pathfinding" id="5" name="Add obstacle" sid="877158927618001" type="Mummy">
+                            <param id="0" name="Obstacle">Altar</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="562050483239185">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="383843966486575" type="System">
+                            <param id="0" name="Interval (seconds)">0.1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="841744117619018">
+                            <conditions>
+                                <condition id="-11" name="For Each" sid="430653230347096" type="System">
+                                    <param id="0" name="Object">Mummy</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="482294545390024">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="494766691027495" type="Mummy">
+                                            <param id="0" name="Instance variable">Existing</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Pathfinding" id="0" name="Find path" sid="516199456876465" type="Mummy">
+                                            <param id="0" name="X">Player.X</param>
+                                            <param id="1" name="Y">Player.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="924667148785404">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="0" name="On path found" sid="531508123768492" type="Mummy" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="1" name="Move along path" sid="561053609100401" type="Mummy" />
+                    </actions>
+                </event-block>
+                <event-block sid="622882019895803">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="661448911014930" type="Arrow">
+                            <param id="0" name="Object">Mummy</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="304867354721590">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="907308336693586" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Flash" id="0" name="Flash" sid="815637746016933" type="Mummy">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">0.4</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="329973136146108" type="Mummy">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="612331446613402">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="990630762555786" type="Mummy">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="760883723699799" type="Mummy" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="125574967279542">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="944098328404160" type="System">
+                    <param id="0" name="Variable">Wave</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="920416968776152">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="178710887723086" type="System">
+                            <param id="0" name="First value">Mummy.Count</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="275303899506760">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="674581814823105" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="763601087924104" type="Function">
+                                    <param id="0" name="Name">&quot;MummySpawn&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="713973441201319">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="243950748204710" type="System">
+                    <param id="0" name="Variable">Wave</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">2</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="772517905742214">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="889467698354269" type="System">
+                            <param id="0" name="First value">Mummy.Count</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="860628369386755">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="878804925995217" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="970636589975805" type="System">
+                                    <param id="0" name="Variable">Wave</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="795302223474081" title="Bow Mechanics">
+            <sub-events>
+                <event-block sid="709175888268912">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="407147426662034" type="Player">
+                            <param id="0" name="Object">Bow</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="393735570449435" type="Bow">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="968520412700276" type="Bow">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="585921388079143" type="Player">
+                            <param id="0" name="Instance variable">hasBow</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="979143200329175">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="890619370373111" type="System">
+                                    <param id="0" name="Variable">Wave</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Call function" sid="186561727193947" type="Function">
+                                    <param id="0" name="Name">&quot;MummySpawn&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="785271782485051">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="130965889369469" type="Mummy">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="11" name="Set collisions enabled" sid="194257836368289" type="Player">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="388889632705188" type="Player">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="-16" name="Wait" sid="293696228308355" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="420817215430606" type="Player">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="343424278537740">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="271318378261808" type="Player">
+                            <param id="0" name="Instance variable">hasBow</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="128402307398139" type="Bow">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="155838968957858" type="Bow">
+                            <param id="0" name="Collisions">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="880541419918455" type="Player">
+                            <param id="0" name="Instance variable">hasBow</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="979782702668187" title="Boss Mechanics">
+            <sub-events>
+                <event-block sid="227300694808703">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="647249842552924" type="System">
+                            <param id="0" name="Variable">Wave</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="249698828011298">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="322389856744376" type="System">
+                                    <param id="0" name="First value">Mummy.Count</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                                <condition id="-6" name="Every X seconds" sid="338543271324888" type="System">
+                                    <param id="0" name="Interval (seconds)">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="472571905709382" type="MummyBoss">
+                                    <param id="0" name="Animation">&quot;Attack&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="617130908705371">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="964662487692980" type="MummyBoss">
+                            <param id="0" name="Animation">&quot;Attack&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="387798471171016">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="742050551662583" type="MummyBoss">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">5</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="291169926372930">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="481779340726615" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="831370828131886" type="MummyBoss">
+                                            <param id="0" name="Object">WrapBullet</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action id="-22" name="Set angle toward position" sid="869736234168587" type="WrapBullet">
+                                            <param id="0" name="X">Player.X</param>
+                                            <param id="1" name="Y">Player.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="763564492711801">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="616273632523064" type="Arrow">
+                            <param id="0" name="Object">MummyBoss</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="232826891515945" type="Arrow" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="274768340991992">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="706917000733519" type="MummyBoss">
+                                    <param id="0" name="Animation">&quot;Attack&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="959292643463608">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="466855043761776" type="MummyBoss">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">0</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="218650713749659" type="MummyBoss">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">1</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="957101843232765" type="MummyBoss">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="511444136435661" type="MummyBoss">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">7</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="960616627567935" type="MummyBoss">
+                                            <param id="0" name="Animation">&quot;Closed&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="458170153772861">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="565684261923918" type="MummyBoss">
+                                    <param id="0" name="Animation">&quot;Attack&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="904680799248296">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="480974986515222" type="MummyBoss">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">3</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="252620723365674" type="MummyBoss">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">4</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="177248714859779" type="MummyBoss">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">5</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="337703145890709" type="MummyBoss">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">6</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Flash" id="0" name="Flash" sid="296744179922998" type="MummyBoss">
+                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                            <param id="2" name="Duration">0.6</param>
+                                        </action>
+                                        <action id="-12" name="Subtract from" sid="647904707408009" type="MummyBoss">
+                                            <param id="0" name="Instance variable">Health</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="483767371226640">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="685312442218661" type="MummyBoss">
+                                    <param id="0" name="Animation">&quot;Closed&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="587617700104022" type="MummyBoss">
+                                    <param id="0" name="Animation">&quot;Closed&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="904959871714509">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="446192438643498" type="WrapBullet">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="11" name="Set collisions enabled" sid="773062056805605" type="Player">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action behavior="Flash" id="0" name="Flash" sid="314534431384338" type="Player">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="-16" name="Wait" sid="727347974297081" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="829163879794254" type="Player">
+                    <param id="0" name="Collisions">1</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="817432237971837">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="851141686505673" type="Player">
+                            <param id="0" name="Instance variable">hasBow</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="193893951595584" type="Bow">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="659898051703556" type="Bow">
+                            <param id="0" name="Collisions">1</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="757544519074058" type="Player">
+                            <param id="0" name="Instance variable">hasBow</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

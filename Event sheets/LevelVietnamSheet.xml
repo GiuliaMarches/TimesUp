@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>LevelVietnamSheet</name>
+    <events>
+        <include>WeaponsSheet</include>
+        <event-block sid="132174953152756">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="868784860939969" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="784150176347426" type="Boomerang" />
+                <action id="-9" name="Destroy" sid="364224045287690" type="Grenade" />
+                <action id="-13" name="Set boolean" sid="821162279810062" type="Player">
+                    <param id="0" name="Instance variable">OnHub</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="FireTimer" sid="819433011252952" static="0" type="number">0</variable>
+        <event-block sid="364750812778459">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="903113335458363" type="System" />
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="898101834512915" type="System">
+                    <param id="0" name="Variable">FireTimer</param>
+                    <param id="1" name="Value">dt</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="441576580982642">
+            <conditions>
+                <condition id="3" name="Is button down" sid="223429618358819" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">12</param>
+                </condition>
+                <condition id="2" name="Key is down" sid="419897409635479" type="Keyboard">
+                    <param id="0" name="Key">87 (W)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="613387961442605" type="Sprite">
+                    <param id="0" name="Control">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="940501700848776">
+            <conditions>
+                <condition id="3" name="Is button down" sid="454441124374529" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">13</param>
+                </condition>
+                <condition id="2" name="Key is down" sid="128299113744687" type="Keyboard">
+                    <param id="0" name="Key">83 (S)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="279954241888806" type="Sprite">
+                    <param id="0" name="Control">3</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="864219198511253">
+            <conditions>
+                <condition id="3" name="Is button down" sid="199221392805351" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">14</param>
+                </condition>
+                <condition id="2" name="Key is down" sid="772645559418999" type="Keyboard">
+                    <param id="0" name="Key">65 (A)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="317487525754281" type="Sprite">
+                    <param id="0" name="Control">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block any="1" sid="615336587491687">
+            <conditions>
+                <condition id="3" name="Is button down" sid="335916213436430" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">15</param>
+                </condition>
+                <condition id="2" name="Key is down" sid="405049466221379" type="Keyboard">
+                    <param id="0" name="Key">68 (D)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="8Direction" id="7" name="Simulate control" sid="841808002019020" type="Sprite">
+                    <param id="0" name="Control">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="662949155731006" title="BOW SHEET">
+            <sub-events>
+                <event-block any="1" sid="801585336540562">
+                    <conditions>
+                        <condition id="6" name="On button pressed" sid="187644624758644" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">1</param>
+                        </condition>
+                        <condition id="0" name="On key pressed" sid="260831544420357" type="Keyboard">
+                            <param id="0" name="Key">40 (Down arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="129389631083559">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="526164346067661" type="System">
+                                    <param id="0" name="Variable">FireTimer</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">0.3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="875506382372987" type="Sprite">
+                                    <param id="0" name="Object">Arrow</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="606578472262699" type="System">
+                                    <param id="0" name="Variable">FireTimer</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="600610481086792" type="Arrow">
+                                    <param id="0" name="Angle">Sprite.8Direction.MovingAngle</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="407128196575877" title="BOOMERANG SHEET">
+            <sub-events>
+                <event-block any="1" sid="286445431774241">
+                    <conditions>
+                        <condition id="6" name="On button pressed" sid="531549478196905" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">0</param>
+                        </condition>
+                        <condition id="0" name="On key pressed" sid="136616997442257" type="Keyboard">
+                            <param id="0" name="Key">37 (Left arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="547691144320497">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="600046516602727" type="Sprite">
+                                    <param id="0" name="Instance variable">BoomLaunched</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="147652187509247" type="Sprite">
+                                    <param id="0" name="Object">Boomerang</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="450309225673900" type="Sprite">
+                                    <param id="0" name="Instance variable">BoomLaunched</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="481366386974166" type="Boomerang">
+                                    <param id="0" name="Angle">Sprite.8Direction.MovingAngle</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="176895170206505">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="917039425202487" type="Sprite">
+                            <param id="0" name="Instance variable">BoomLaunched</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Add to" sid="184276596953618" type="Boomerang">
+                            <param id="0" name="Instance variable">ReturnTimer</param>
+                            <param id="1" name="Value">dt</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="558497352341776">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="116198591585118" type="Boomerang">
+                            <param id="0" name="Instance variable">ReturnTimer</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-22" name="Set angle toward position" sid="345881915062765" type="Boomerang">
+                            <param id="0" name="X">Sprite.X</param>
+                            <param id="1" name="Y">Sprite.Y</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="520478061239996">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="881836140577219" type="Boomerang">
+                                    <param id="0" name="Object">Sprite</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="331201101468193" type="Boomerang" />
+                                <action id="-13" name="Set boolean" sid="513733297344801" type="Sprite">
+                                    <param id="0" name="Instance variable">BoomLaunched</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="704520775500466" title="BOMB SHEET">
+            <sub-events>
+                <event-block any="1" sid="994533804416857">
+                    <conditions>
+                        <condition id="6" name="On button pressed" sid="975670902470155" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">2</param>
+                        </condition>
+                        <condition id="0" name="On key pressed" sid="254769741013995" type="Keyboard">
+                            <param id="0" name="Key">38 (Up arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="273228073576798">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="416733725805069" type="System">
+                                    <param id="0" name="Variable">FireTimer</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">1.5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="338958965112678" type="System">
+                                    <param id="0" name="Variable">FireTimer</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="449147581040553" type="Sprite">
+                                    <param id="0" name="Object">Grenade</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="129772109322976" type="Grenade">
+                                    <param id="0" name="Angle">Sprite.8Direction.MovingAngle</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="414147821382189" type="System">
+                                    <param id="0" name="Seconds">1</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="300158649648517" type="Grenade">
+                                    <param id="0" name="Object">Boom</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="158866002254403" type="Grenade" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="201633099991029" title="HARPOON SHEET">
+            <sub-events>
+                <event-block any="1" sid="158593286822470">
+                    <conditions>
+                        <condition id="6" name="On button pressed" sid="278973368256051" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">6</param>
+                        </condition>
+                        <condition id="0" name="On key pressed" sid="513633706051671" type="Keyboard">
+                            <param id="0" name="Key">39 (Right arrow)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="133710298532602">
+                            <conditions>
+                                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="928090088785545" type="Sprite">
+                                    <param id="0" name="Instance variable">HarpLaunched</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="929082440070027" type="Sprite">
+                                    <param id="0" name="Instance variable">HarpLaunched</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="811682843388069" type="Sprite">
+                                    <param id="0" name="Object">Harp</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="693676026572795" type="Harp">
+                                    <param id="0" name="Angle">Sprite.8Direction.MovingAngle</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="930573610272564">
+            <conditions>
+                <condition behavior="Bullet" id="1" name="Compare distance travelled" sid="117684419120378" type="Harp">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="Distance">300</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="508947691417439" type="Harp">
+                    <param id="0" name="Object">HarpCord</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">1</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="578971458003967" type="HarpCord">
+                    <param id="0" name="X">Harp.X</param>
+                    <param id="1" name="Y">Harp.Y</param>
+                </action>
+                <action id="-29" name="Move to object" sid="998748252941608" type="HarpCord">
+                    <param id="0" name="Where">1</param>
+                    <param id="1" name="Object">Harp</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="852909910063835">
+            <conditions>
+                <condition behavior="Bullet" id="1" name="Compare distance travelled" sid="800903767899277" type="Harp">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Distance">300</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="0" name="Set speed" sid="926863254521508" type="Harp">
+                    <param id="0" name="Speed">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="347398369338268">
+            <conditions>
+                <condition behavior="Bullet" id="0" name="Compare speed" sid="501440212995965" type="Harp">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Speed">0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="914397853908858">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="491846086564548" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="988679071769041" type="System">
+                            <param id="0" name="Seconds">3</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="846734220278722" type="Harp" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="156653992000956">
+            <conditions>
+                <condition id="-19" name="On destroyed" sid="226500928307083" type="Harp" />
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="496075288474810" type="Sprite">
+                    <param id="0" name="Instance variable">HarpLaunched</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="619478813637497" type="HarpCord" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>LevelPiratesSheet</name>
+    <events>
+        <include>WeaponsSheet</include>
+        <variable constant="0" name="CannonCount" sid="739423800417666" static="0" type="number">0</variable>
+        <event-block sid="211084994124066">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="289508431743777" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="997864472304327" type="Boomerang" />
+                <action id="-9" name="Destroy" sid="808592908826288" type="Grenade" />
+                <action id="-13" name="Set boolean" sid="633724094606669" type="Player">
+                    <param id="0" name="Instance variable">OnHub</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="615517147578950" title="Boat Behavior">
+            <sub-events>
+                <event-block sid="121585246438905">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="698883492023588" type="Player">
+                            <param id="0" name="Instance variable">hasShield</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="161126824637685">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="599935993658565" type="System">
+                                    <param id="0" name="Variable">CannonCount</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">48</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-1" name="Set X" sid="107956838323139" type="Cannon">
+                                    <param id="0" name="X">Self.X - 2</param>
+                                </action>
+                                <action id="-1" name="Set X" sid="174645122241851" type="Captain">
+                                    <param id="0" name="X">Self.X - 3</param>
+                                </action>
+                                <action id="-10" name="Add to" sid="479916760726689" type="System">
+                                    <param id="0" name="Variable">CannonCount</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="407896832176043">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="543812218409355" type="System">
+                            <param id="0" name="Variable">CannonCount</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">48</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="620105268590498">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="477209574248106" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Sine" id="0" name="Set active" sid="583511154747330" type="Captain">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="457537387798601">
+            <conditions>
+                <condition behavior="Sine" id="0" name="Is active" sid="366375208126604" type="Captain" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="444768698085613">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="867637118668069" type="Captain">
+                            <param id="0" name="Object">Cannon</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="861153297807998" type="System">
+                            <param id="0" name="Interval (seconds)">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="407081129876995" type="Cannon">
+                            <param id="0" name="Object">CannonBall</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-22" name="Set angle toward position" sid="714519007937756" type="CannonBall">
+                            <param id="0" name="X">Player.X</param>
+                            <param id="1" name="Y">Player.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="901292379616474" title="Shield Mechanics">
+            <sub-events>
+                <event-block sid="110311729132088">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="595261672463863" type="Player">
+                            <param id="0" name="Object">ShieldWep</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="545466759185779" type="ShieldWep">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="235328258452856" type="ShieldWep">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="855727163281095" type="Player">
+                            <param id="0" name="Instance variable">hasShield</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="444124144017330">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="890770346771409" type="CannonBall">
+                            <param id="0" name="Object">Shield</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="4" name="Bounce off object" sid="363058382200210" type="CannonBall">
+                            <param id="0" name="Object">Shield</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="943092797507087" title="Combat">
+            <sub-events>
+                <event-block sid="114811126265369">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="289593640608737" type="CannonBall">
+                            <param id="0" name="Object">Boat</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="824125562484038" type="Boat">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="580118463131636" type="CannonBall">
+                            <param id="0" name="Object">Boom</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="530591276817679" type="CannonBall" />
+                    </actions>
+                </event-block>
+                <event-block sid="104771859521584">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="176731951633714" type="Boat">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">18</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="301544144771674">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="162371546308800" type="Cannon">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="687652395240621" type="Cannon" />
+                                <action id="0" name="Spawn another object" sid="796100039038521" type="Cannon">
+                                    <param id="0" name="Object">Boom</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="446733101665613">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="680137919076977" type="Boat">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">9</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="661341551765169">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="277918193140112" type="Cannon">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="457703276348868" type="Cannon" />
+                                <action id="0" name="Spawn another object" sid="382851234102099" type="Cannon">
+                                    <param id="0" name="Object">Boom</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="634624873616249">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="356976824090679" type="Boat">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="905434923775545">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="693235452863305" type="Cannon">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="407478048783119" type="Cannon" />
+                                <action id="0" name="Spawn another object" sid="279011077761762" type="Cannon">
+                                    <param id="0" name="Object">Boom</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="856668476636097">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="823052744506659" type="CannonBall">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="235144286320277" type="CannonBall" />
+                        <action id="0" name="Spawn another object" sid="557540644589193" type="Player">
+                            <param id="0" name="Object">Boom</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="754927648601758">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="573914750237354" type="Player">
+                                    <param id="0" name="Instance variable">hasShield</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="618841346758967" type="ShieldWep">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="565565007163565" type="ShieldWep">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="908677912060933" type="Player">
+                                    <param id="0" name="Instance variable">hasShield</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
