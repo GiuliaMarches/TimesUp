@@ -24,7 +24,12 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-9" name="Destroy" sid="315591579142447" type="BoomerangWep" />
+                <action id="11" name="Set collisions enabled" sid="895358784674314" type="BoomerangWep">
+                    <param id="0" name="Collisions">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="315591579142447" type="BoomerangWep">
+                    <param id="0" name="Visibility">0</param>
+                </action>
                 <action id="-13" name="Set boolean" sid="866434934937013" type="Player">
                     <param id="0" name="Instance variable">hasBoomerang</param>
                     <param id="1" name="Value">1</param>
@@ -115,7 +120,7 @@
                 <event-block sid="249141150922179">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="612115166900643" type="System">
-                            <param id="0" name="Interval (seconds)">0.7</param>
+                            <param id="0" name="Interval (seconds)">1.5</param>
                         </condition>
                     </conditions>
                     <actions />
@@ -147,17 +152,213 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="493350629384418">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="457299989864319" type="EnemyBullet">
+                            <param id="0" name="Object">Obstacle</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="154694824932096" type="EnemyBullet" />
+                    </actions>
+                </event-block>
+                <event-block sid="351192802968440">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="111542323920749" type="EnemyBullet">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="370362201828739" type="EnemyBullet" />
+                        <action id="11" name="Set collisions enabled" sid="774212217465920" type="Player">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="786520571672579" type="Player">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="707917884515407" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="995874222884924" type="Player">
+                            <param id="0" name="Collisions">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="264261351636471">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="861712358033225" type="Player">
+                                    <param id="0" name="Instance variable">hasBoomerang</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="951317199224412" type="BoomerangWep">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="714598342305479" type="BoomerangWep">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="211699537838278" type="Player">
+                                    <param id="0" name="Instance variable">hasBoomerang</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="493350629384418">
-            <conditions>
-                <condition id="0" name="On collision with another object" sid="457299989864319" type="EnemyBullet">
-                    <param id="0" name="Object">Obstacle</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="154694824932096" type="EnemyBullet" />
-            </actions>
-        </event-block>
+        <event-group description="" sid="858203103089828" title="SpaceBoss Behavior">
+            <sub-events>
+                <event-block sid="150616684014774">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="835463099561041" type="System">
+                            <param id="0" name="First value">SpaceMob.count</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="731543680223286">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="587744731268128" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="421147623469045" type="SpaceBoss">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="120263469006310" type="SpaceBoss">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="955501095366360" type="SpaceBoss">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action id="-22" name="Set angle toward position" sid="938258043255523" type="SpaceBoss">
+                                    <param id="0" name="X">Player.X</param>
+                                    <param id="1" name="Y">Player.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="269171133261041">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="624131935467322" type="System">
+                                    <param id="0" name="Interval (seconds)">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-22" name="Set angle toward position" sid="500319377773815" type="SpaceBoss">
+                                    <param id="0" name="X">Player.X</param>
+                                    <param id="1" name="Y">Player.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="316118718663945">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="256306075455976" type="Boomerang">
+                            <param id="0" name="Object">SpaceBoss</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="670469491281515" type="SpaceBoss">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="541166249273403" type="SpaceBoss">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.6</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="615765185688358">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="460812280463551" type="SpaceBoss">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="337876388355479" type="SpaceBoss">
+                            <param id="0" name="Object">Boom</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="530329197237648" type="SpaceBoss">
+                            <param id="0" name="Object">Boom</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="313837054158163" type="SpaceBoss">
+                            <param id="0" name="Object">Boom</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">2</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="405265721744147" type="SpaceBoss">
+                            <param id="0" name="Object">Boom</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">3</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="211550873304784" type="SpaceBoss">
+                            <param id="0" name="Object">Boom</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">4</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="643629616217938" type="System">
+                            <param id="0" name="Seconds">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="831406170603476" type="SpaceBoss" />
+                    </actions>
+                </event-block>
+                <event-block sid="830090439203580">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="907714311183838" type="SpaceBoss">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="11" name="Set collisions enabled" sid="747740322026085" type="Player">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="264195876598853" type="Player">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="766858536467080" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="183675999982484" type="Player">
+                            <param id="0" name="Collisions">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="290144183717258">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="697987482158941" type="Player">
+                                    <param id="0" name="Instance variable">hasBoomerang</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="939671203708466" type="BoomerangWep">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="172621582938291" type="BoomerangWep">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="801559461923580" type="Player">
+                                    <param id="0" name="Instance variable">hasBoomerang</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

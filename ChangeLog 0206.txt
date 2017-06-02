@@ -1,0 +1,17 @@
+0206
+Nuova Build Up:
+-Egitto: Fixati per buona parte i movimenti delle mummie (Nuovo algoritmo: quando si scontrano tra loro o toccano qualcosa, si muovono randomicamente per pochi secondi, poi tornano a inseguire il player)
+-Egitto: Ora è possibile battere il faraone (lampeggia velocemente e più a lungo, poi scompare)
+-Egitto: Caricate quasi tutte le tile di livello
+-Egitto: Implementato l'algoritmo di prospettiva per il PG principale. (C'è ancora molto da lavorare sulle mummie, che stanno diventando ingestibili: ignorano persino le collisioni!)
+-Vietnam: Montato il livello in generale e implementate le funzioni primarie
+-Vietnam: Caricate le sprite con tanto di animazione dei Vietcong
+-Spazio: Implementato, per ora genericamente, il boss di fine livello.
+-Spazio: Rallentato drasticamente il rateo di fuoco delle torrette
+-Spazio: Rimpicciolite momentaneamente le dimensioni degli ostacoli, per permettere al boss un po' più di libertà nei movimenti
+-Generico: Aumentata la dimensione delle esplosioni
+
+Enjoy!
+
+0206V2
+-Vietnam: Implementate le animazioni di sparo verso l'alto e verso il basso del Vietcong centrale a seconda della posizione del Player

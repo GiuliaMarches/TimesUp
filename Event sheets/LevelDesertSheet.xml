@@ -16,6 +16,10 @@
                     <param id="0" name="Instance variable">OnHub</param>
                     <param id="1" name="Value">0</param>
                 </action>
+                <action id="-9" name="Set value" sid="415064697193601" type="System">
+                    <param id="0" name="Variable">Wave</param>
+                    <param id="1" name="Value">0</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="999428604683209">
@@ -121,6 +125,18 @@
                         <action behavior="Pathfinding" id="5" name="Add obstacle" sid="877158927618001" type="Mummy">
                             <param id="0" name="Obstacle">Altar</param>
                         </action>
+                        <action behavior="Pathfinding" id="5" name="Add obstacle" sid="476219864841931" type="Mummy">
+                            <param id="0" name="Obstacle">Column</param>
+                        </action>
+                        <action behavior="Pathfinding" id="5" name="Add obstacle" sid="423242027035374" type="Mummy">
+                            <param id="0" name="Obstacle">Wall</param>
+                        </action>
+                        <action behavior="Pathfinding" disabled="1" id="5" name="Add obstacle" sid="649038240755984" type="Mummy">
+                            <param id="0" name="Obstacle">Mummy</param>
+                        </action>
+                        <action behavior="Pathfinding" id="5" name="Add obstacle" sid="352820573132445" type="Mummy">
+                            <param id="0" name="Obstacle">MummyBoss</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="562050483239185">
@@ -201,6 +217,89 @@
                     <actions>
                         <action id="-9" name="Destroy" sid="760883723699799" type="Mummy" />
                     </actions>
+                </event-block>
+                <event-block any="1" sid="979188881989070">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="107828092444412" type="Mummy">
+                            <param id="0" name="Object">Column</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="401076289760601" type="Mummy">
+                            <param id="0" name="Object">Altar</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="911624171193261" type="Mummy">
+                            <param id="0" name="Object">MummyBoss</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="157369119174936" type="Mummy">
+                            <param id="0" name="Object">Wall</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="758477348806755">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="347811063637611" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="746035013655116" type="Mummy">
+                                    <param id="0" name="Instance variable">Existing</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Pathfinding" id="0" name="Find path" sid="459826318231385" type="Mummy">
+                                    <param id="0" name="X">random(0, 1024)</param>
+                                    <param id="1" name="Y">random(0, 768)</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="791280017120721" type="System">
+                                    <param id="0" name="Seconds">4</param>
+                                </action>
+                                <action behavior="Pathfinding" id="0" name="Find path" sid="657184153714723" type="Mummy">
+                                    <param id="0" name="X">Player.X</param>
+                                    <param id="1" name="Y">Player.Y</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="744184439610798" type="Mummy">
+                                    <param id="0" name="Instance variable">Existing</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="917114365801854">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="550981414671282" type="Mummy">
+                            <param id="0" name="Object">Mummy</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="220046969661603">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="933038091115855" type="System">
+                                    <param id="0" name="Interval (seconds)">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="944888669104841" type="Mummy">
+                                    <param id="0" name="Instance variable">Existing</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Pathfinding" id="0" name="Find path" sid="565321433661719" type="Mummy">
+                                    <param id="0" name="X">random(0, 1024)</param>
+                                    <param id="1" name="Y">random(0, 768)</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="246341236714795" type="System">
+                                    <param id="0" name="Seconds">4</param>
+                                </action>
+                                <action behavior="Pathfinding" id="0" name="Find path" sid="124569214433304" type="Mummy">
+                                    <param id="0" name="X">Player.X</param>
+                                    <param id="1" name="Y">Player.Y</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="576454615978705" type="Mummy">
+                                    <param id="0" name="Instance variable">Existing</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -529,6 +628,37 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="298563649878153">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="580639353935720" type="MummyBoss">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="785206009347352">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="504702960279069" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="11" name="Set collisions enabled" sid="216278435855705" type="MummyBoss">
+                                    <param id="0" name="Collisions">0</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="338429917916553" type="MummyBoss">
+                                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                                    <param id="2" name="Duration">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="611618074473242" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="629507144109287" type="MummyBoss" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
             </sub-events>
         </event-group>
         <event-block sid="904959871714509">
@@ -575,5 +705,85 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <event-group description="" sid="963180585962204" title="Perspective">
+            <sub-events>
+                <event-block disabled="1" sid="951782949298531">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="912830336564194" type="System">
+                            <param id="0" name="Object">Column</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="319940563537952">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="869638143357336" type="Column">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Y co-ordinate">Mummy.Y</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-29" name="Move to object" sid="654824473556462" type="Column">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Object">Mummy</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="948029034305521">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="360291754298384" type="Column">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="Y co-ordinate">Mummy.Y</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-29" name="Move to object" sid="166247732621954" type="Column">
+                                    <param id="0" name="Where">1</param>
+                                    <param id="1" name="Object">Mummy</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="157241793893216">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="562133267644434" type="System">
+                            <param id="0" name="Object">Column</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="485230594780096">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="261454223132842" type="Column">
+                                    <param id="0" name="Comparison">2</param>
+                                    <param id="1" name="Y co-ordinate">Player.Y</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-29" name="Move to object" sid="803699868480370" type="Column">
+                                    <param id="0" name="Where">1</param>
+                                    <param id="1" name="Object">Player</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="138445339379843">
+                            <conditions>
+                                <condition id="-2" name="Compare Y" sid="755603256067000" type="Column">
+                                    <param id="0" name="Comparison">4</param>
+                                    <param id="1" name="Y co-ordinate">Player.Y</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-29" name="Move to object" sid="852261235939128" type="Column">
+                                    <param id="0" name="Where">0</param>
+                                    <param id="1" name="Object">Player</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

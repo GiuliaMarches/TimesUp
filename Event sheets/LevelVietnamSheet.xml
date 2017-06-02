@@ -15,7 +15,513 @@
                     <param id="0" name="Instance variable">OnHub</param>
                     <param id="1" name="Value">0</param>
                 </action>
+                <action id="2" name="Stop" sid="751314289519425" type="Vietcong" />
+                <action id="5" name="Set frame" sid="778713677509317" type="Vietcong">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="2" name="Stop" sid="268507246680141" type="Frontacong" />
+                <action id="5" name="Set frame" sid="805793459782799" type="Frontacong">
+                    <param id="0" name="Frame number">0</param>
+                </action>
             </actions>
         </event-block>
+        <event-group description="" sid="775235338968727" title="Vietcong Script">
+            <sub-events>
+                <event-block any="1" sid="617709654671638">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="255628626848768" type="Vietcong">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="549345556440884" type="Vietcong">
+                            <param id="0" name="Instance variable">ID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="172146296886241" type="Vietcong">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="210904345903717">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="509028575053396" type="Player">
+                            <param id="0" name="Object">GrenadeWep</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="11" name="Set collisions enabled" sid="421511701419254" type="GrenadeWep">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="238773787227589" type="GrenadeWep">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="901653560891475" type="Player">
+                            <param id="0" name="Instance variable">hasGrenade</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="239662852127100" type="Frontacong">
+                            <param id="0" name="Animation">&quot;Shooting&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                        <action id="5" name="Set frame" sid="281107485235952" type="Frontacong">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action disabled="1" id="3" name="Start" sid="793782584543988" type="Frontacong">
+                            <param id="0" name="From">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="324433095767265">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="831170691536603" type="Vietcong">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="265435149555977" type="System">
+                                    <param id="0" name="Seconds">1.5</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="776073218486962" type="Vietcong">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="3" name="Start" sid="164485580445962" type="Vietcong">
+                                    <param id="0" name="From">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="979398077705053">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="126300351198073" type="Vietcong">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="852066528792460" type="System">
+                                    <param id="0" name="Seconds">3</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="471864163514156" type="Vietcong">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="3" name="Start" sid="879393465036275" type="Vietcong">
+                                    <param id="0" name="From">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="504007749941746">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="690227144644823" type="Vietcong">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="661756454284350" type="System">
+                                    <param id="0" name="Seconds">4.5</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="889122088820967" type="Vietcong">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="3" name="Start" sid="736850118246057" type="Vietcong">
+                                    <param id="0" name="From">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="616037596723324">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="966918388495549" type="Vietcong">
+                                    <param id="0" name="Instance variable">ID</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="624681466765080" type="System">
+                                    <param id="0" name="Seconds">6</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="516262753194079" type="Vietcong">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="3" name="Start" sid="388703780696805" type="Vietcong">
+                                    <param id="0" name="From">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="104248061735883">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="327806707038041" type="Vietcong">
+                            <param id="0" name="Animation">&quot;Shooting&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="582528552862010">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="616883294091273" type="Vietcong">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">5</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="581290987497024" type="Vietcong">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">7</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="592453038744650">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="716154600532677" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="299082717259967" type="Vietcong">
+                                            <param id="0" name="Object">VietBullet</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action id="-22" name="Set angle toward position" sid="970321448679148" type="VietBullet">
+                                            <param id="0" name="X">Player.X</param>
+                                            <param id="1" name="Y">Player.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="969646080834405">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="384303761884776" type="Frontacong">
+                            <param id="0" name="Animation">&quot;Shooting&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="560365199857644">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="174706857708188" type="Frontacong">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">4</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="722671337295368" type="Frontacong">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">6</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="722486312894718">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="115425303180619" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="463283133863321" type="Frontacong">
+                                            <param id="0" name="Object">VietBullet</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action id="-22" name="Set angle toward position" sid="466714272063783" type="VietBullet">
+                                            <param id="0" name="X">Player.X</param>
+                                            <param id="1" name="Y">Player.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="160209582344223">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="170319617438078" type="Player">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Y co-ordinate">Frontacong.Y</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="866818497315209">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="382417435122536" type="Frontacong">
+                                    <param id="0" name="Animation">&quot;Shooting&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="301688419601795" type="Frontacong">
+                                    <param id="0" name="Animation">&quot;ShootingBack&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="358787460782347">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="823885226482506" type="Player">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">Frontacong.Y</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="880401226259213">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="405319407663703" type="Frontacong">
+                                    <param id="0" name="Animation">&quot;ShootingBack&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="219465717190992" type="Frontacong">
+                                    <param id="0" name="Animation">&quot;Shooting&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="615027786601070">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="391104100387290" type="Frontacong">
+                            <param id="0" name="Animation">&quot;ShootingBack&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" sid="999134880438710">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="455066001899332" type="Frontacong">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">4</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="627894038058709" type="Frontacong">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">6</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="966011359118230">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="290945366662431" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="850035459678273" type="Frontacong">
+                                            <param id="0" name="Object">VietBullet</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                        <action id="-22" name="Set angle toward position" sid="944797259463867" type="VietBullet">
+                                            <param id="0" name="X">Player.X</param>
+                                            <param id="1" name="Y">Player.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="472184330616485" title="Viet Shooting">
+            <sub-events>
+                <event-block sid="870263939963485">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="224279815364492" type="VietBullet">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="785615338057637" type="VietBullet" />
+                        <action id="11" name="Set collisions enabled" sid="799438894901640" type="Player">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="466438403471234" type="Player">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="313789496034640" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="721936060590256" type="Player">
+                            <param id="0" name="Collisions">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="499591844721338">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="481174500736789" type="Player">
+                                    <param id="0" name="Instance variable">hasGrenade</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="375364905140522" type="GrenadeWep">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="337835042268188" type="GrenadeWep">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="857552286587157" type="Player">
+                                    <param id="0" name="Instance variable">hasGrenade</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="717796294639826" title="Viet Death">
+            <sub-events>
+                <event-block sid="626004797817332">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="121061816290942" type="Boom">
+                            <param id="0" name="Object">Vietcong</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="284940185172044">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="160920601475806" type="Vietcong">
+                                    <param id="0" name="Animation">&quot;Shooting&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="124977040601013">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="460249986411224" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="491582498215981" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">3</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="583671542336327" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">4</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="976424756358267" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">5</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="829226242291102" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">6</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="755547586946300" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">7</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="298416162693776" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="508412293075125" type="Vietcong">
+                                            <param id="0" name="Instance variable">Health</param>
+                                            <param id="1" name="Value">5</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="759574841069420">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="255569364573611" type="Boom">
+                            <param id="0" name="Object">Frontacong</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="688683193555275">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="846390751312533" type="Frontacong">
+                                    <param id="0" name="Animation">&quot;Shooting&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="410255747692396">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="988615666476320" type="Frontacong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="835281028554789" type="Frontacong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">3</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="609868880254116" type="Frontacong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">4</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="381389135710628" type="Frontacong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">5</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="624832285535692" type="Frontacong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">6</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="938314167969429" type="Frontacong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">7</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="924002249628201" type="Frontacong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="925818915534107" type="Frontacong">
+                                            <param id="0" name="Instance variable">Health</param>
+                                            <param id="1" name="Value">5</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="362641109003231">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="458062137187280" type="Vietcong">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="920384074507905" type="Vietcong" />
+                    </actions>
+                </event-block>
+                <event-block sid="848665818344898">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="763481105089805" type="Frontacong">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="579182391777393" type="Frontacong" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
