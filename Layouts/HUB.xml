@@ -197,6 +197,10 @@
                         <hasBoomerang>false</hasBoomerang>
                         <shootDir>-1</shootDir>
                         <OnHub>false</OnHub>
+                        <HasDesertKey>false</HasDesertKey>
+                        <HasSpaceKey>false</HasSpaceKey>
+                        <HasVietnamKey>false</HasVietnamKey>
+                        <HasPiratesKey>false</HasPiratesKey>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -326,7 +330,7 @@
                         <behavior-instance type="Sine">
                             <properties>
                                 <active-on-start>Yes</active-on-start>
-                                <movement>Vertical</movement>
+                                <movement>Angle</movement>
                                 <wave>Sine</wave>
                                 <period>2</period>
                                 <period-random>0</period-random>

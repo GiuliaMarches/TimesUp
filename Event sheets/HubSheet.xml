@@ -13,6 +13,8 @@
                     <param id="0" name="Instance variable">OnHub</param>
                     <param id="1" name="Value">1</param>
                 </action>
+                <action id="-9" name="Destroy" sid="421085374587444" type="Grenade" />
+                <action id="-9" name="Destroy" sid="404593850216257" type="Boomerang" />
             </actions>
         </event-block>
         <event-block sid="682148143689353">

@@ -82,11 +82,15 @@
                         <boomLaunched>false</boomLaunched>
                         <shieldActive>false</shieldActive>
                         <hasBow>false</hasBow>
-                        <hasShield>true</hasShield>
+                        <hasShield>false</hasShield>
                         <hasGrenade>false</hasGrenade>
                         <hasBoomerang>false</hasBoomerang>
                         <shootDir>-1</shootDir>
                         <OnHub>false</OnHub>
+                        <HasDesertKey>false</HasDesertKey>
+                        <HasSpaceKey>false</HasSpaceKey>
+                        <HasVietnamKey>false</HasVietnamKey>
+                        <HasPiratesKey>false</HasPiratesKey>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -118,8 +122,8 @@
                         <x>170</x>
                         <y>147</y>
                         <z>0</z>
-                        <width>36.571430206</width>
-                        <height>23.272727966</height>
+                        <width>48</width>
+                        <height>48</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -216,7 +220,7 @@
                         <behavior-instance type="Sine">
                             <properties>
                                 <active-on-start>Yes</active-on-start>
-                                <movement>Vertical</movement>
+                                <movement>Angle</movement>
                                 <wave>Sine</wave>
                                 <period>2</period>
                                 <period-random>0</period-random>
