@@ -472,5 +472,88 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="357966212759084" title="Pirates Secondary Weapons">
+            <sub-events>
+                <event-block sid="381092159418555">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="197110148425222" type="Boom">
+                            <param id="0" name="Object">Cannon</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="449833392599605">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="876944542243874" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Flash" id="0" name="Flash" sid="507228802061720" type="Cannon">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">0.4</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="909476090523497" type="Cannon">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="395354707703670">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="125597590897482" type="Arrow">
+                            <param id="0" name="Object">Cannon</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="559044166730093">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="469204185856152" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Flash" id="0" name="Flash" sid="535420575313675" type="Cannon">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">0.4</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="125784678771806" type="Cannon">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="685989360727861" type="Arrow" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="416434157373365">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="951376302891004" type="Boomerang">
+                            <param id="0" name="Object">Cannon</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="607740607846586">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="517077166832299" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Flash" id="0" name="Flash" sid="625970802433224" type="Cannon">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">0.4</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="741051325272861" type="Cannon">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

@@ -1075,5 +1075,554 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="460218719882331" title="Vietnam Secondary Weapons">
+            <sub-events>
+                <event-block sid="444412592586207">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="343134745328436" type="Arrow">
+                            <param id="0" name="Object">VietBoss</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="748020331975977" type="VietBoss">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="857749601223362" type="Arrow" />
+                    </actions>
+                </event-block>
+                <event-block sid="546010079379619">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="320432667898442" type="Shield">
+                            <param id="0" name="Object">VietBoss</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="687140577755659" type="VietBoss">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="903582993410787">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="134667043884990" type="Boomerang">
+                            <param id="0" name="Object">VietBoss</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="528406606627398" type="VietBoss">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="709554384117725">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="718262860497827" type="Boomerang">
+                            <param id="0" name="Object">Frontacong</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="960884157206090">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="789411913897721" type="Vietcong">
+                                    <param id="0" name="Animation">&quot;Shooting&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="495034879531690">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="985782802345853" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="394406315289371" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">3</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="711830024274580" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">4</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="519584670465975" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">5</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="389946302938337" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">6</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="587858796390949" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">7</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="669109852235235" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="683605279847137" type="Frontacong">
+                                            <param id="0" name="Instance variable">Health</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="263141762629926">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="846220500569690" type="Shield">
+                            <param id="0" name="Object">Frontacong</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="371160014062253">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="639394658002386" type="Vietcong">
+                                    <param id="0" name="Animation">&quot;Shooting&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="547033652375563">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="965816010270809" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="360928095880393" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">3</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="278248762071800" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">4</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="927990883276779" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">5</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="770365011408724" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">6</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="766526503447980" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">7</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="392951964311304" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="162839150149838" type="Frontacong">
+                                            <param id="0" name="Instance variable">Health</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="722452664149688">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="124569597874552" type="Arrow">
+                            <param id="0" name="Object">Frontacong</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="438429658755662">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="816124053077316" type="Vietcong">
+                                    <param id="0" name="Animation">&quot;Shooting&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="525600840245611">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="325111927360463" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="753697985905168" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">3</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="987678530562678" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">4</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="269962256926671" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">5</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="273470093099308" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">6</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="799101760252031" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">7</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="931388561818498" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="465883144699754" type="Frontacong">
+                                            <param id="0" name="Instance variable">Health</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="478043057096958" type="Arrow" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="533635457064230">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="493621737835280" type="Boomerang">
+                            <param id="0" name="Object">Vietcong</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="779727155762362">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="698512906860995" type="Vietcong">
+                                    <param id="0" name="Animation">&quot;Shooting&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="160415047024460">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="816632088344664" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="625378998688903" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">3</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="541546741262907" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">4</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="504660820240488" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">5</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="310746410821279" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">6</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="496058838697090" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">7</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="901597669151588" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="901784753689503" type="Vietcong">
+                                            <param id="0" name="Instance variable">Health</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="683168978262763">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="358878372639422" type="Shield">
+                            <param id="0" name="Object">Vietcong</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="810648611378941">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="687775983153705" type="Vietcong">
+                                    <param id="0" name="Animation">&quot;Shooting&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="755569228394556">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="456875030607100" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="419772264704880" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">3</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="867291234443448" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">4</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="160449770922276" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">5</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="853704571189142" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">6</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="967263021662494" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">7</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="221882676922838" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="403344933316798" type="Vietcong">
+                                            <param id="0" name="Instance variable">Health</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="188516556809964">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="516570867060882" type="Arrow">
+                            <param id="0" name="Object">Vietcong</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="343551019079614">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="190466015078064" type="Vietcong">
+                                    <param id="0" name="Animation">&quot;Shooting&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="392279287332447">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="118658985541095" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="159315290464971" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">3</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="750435358989982" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">4</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="990498417977293" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">5</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="409986091509469" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">6</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="979629244294551" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">7</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="385975331698836" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="980863999321278" type="Vietcong">
+                                            <param id="0" name="Instance variable">Health</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="699155079874012" type="Arrow" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="806027452112117">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="959103710939267" type="VietBullet">
+                            <param id="0" name="Object">Shield</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="4" name="Bounce off object" sid="119757224779894" type="VietBullet">
+                            <param id="0" name="Object">Shield</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="239502450562989" type="VietBullet">
+                            <param id="0" name="Instance variable">launched</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="672901548494745">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="143609265252479" type="VietBullet">
+                    <param id="0" name="Instance variable">launched</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="981895059649309">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="392186298782133" type="VietBullet">
+                            <param id="0" name="Object">VietBoss</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="775752936619682" type="VietBoss">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="181943632171257">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="681963476493722" type="VietBullet">
+                            <param id="0" name="Object">Frontacong</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="873267954363025">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="384118163054648" type="Vietcong">
+                                    <param id="0" name="Animation">&quot;Shooting&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="653240630867184">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="190288888015244" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="700186758814189" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">3</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="895670477424040" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">4</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="829833261619029" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">5</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="805387836832439" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">6</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="692600881496976" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">7</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="989829716663714" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="735754468200613" type="Vietcong">
+                                            <param id="0" name="Instance variable">Health</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="216249112648455">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="112001562458431" type="VietBullet">
+                            <param id="0" name="Object">Vietcong</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="894460374082658">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="723103969767622" type="Vietcong">
+                                    <param id="0" name="Animation">&quot;Shooting&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="314967862953421">
+                                    <conditions>
+                                        <condition id="3" name="Compare frame" sid="955544278261041" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">2</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="393363173329413" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">3</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="721277519938466" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">4</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="760549703783962" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">5</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="665765914244140" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">6</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="448962451355833" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">7</param>
+                                        </condition>
+                                        <condition id="3" name="Compare frame" sid="649457390686758" type="Vietcong">
+                                            <param id="0" name="Comparison">0</param>
+                                            <param id="1" name="Number">8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-12" name="Subtract from" sid="413376666150040" type="Vietcong">
+                                            <param id="0" name="Instance variable">Health</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
     </events>
 </c2eventsheet>

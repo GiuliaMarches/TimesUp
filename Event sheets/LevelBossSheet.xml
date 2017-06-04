@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>LevelBossSheet</name>
+    <events>
+        <include>WeaponsSheet</include>
+        <event-block sid="683234832407586">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="325585439823507" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="677128389009622" type="Boomerang" />
+                <action id="-9" name="Destroy" sid="955475897099346" type="Grenade" />
+                <action id="-13" name="Set boolean" sid="321713848101718" type="Player">
+                    <param id="0" name="Instance variable">OnHub</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action disabled="1" id="-8" name="Set angle" sid="666225668537717" type="Flubber">
+                    <param id="0" name="Angle">random(0, 360)</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="808748835281440" type="Flubber">
+                    <param id="0" name="Angle">random(0, 359)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="786802882758918" title="Flubber">
+            <sub-events>
+                <event-block sid="541677773118235">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="770719335358007" type="Flubber">
+                            <param id="0" name="Object">Wall</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="4" name="Bounce off object" sid="519056955677775" type="Flubber">
+                            <param id="0" name="Object">Wall</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="110918150669241">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="486791764020627" type="Arrow">
+                            <param id="0" name="Object">Flubber</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="350645055045363" type="Boomerang">
+                            <param id="0" name="Object">Flubber</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="161014327620109" type="Shield">
+                            <param id="0" name="Object">Flubber</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="446899863278975" type="Boom">
+                            <param id="0" name="Object">Flubber</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="259938436016209" type="Flubber">
+                            <param id="0" name="Object">FlubberTwo</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="302642660269090" type="Flubber">
+                            <param id="0" name="Object">FlubberTwo</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="628856378801542" type="Flubber" />
+                        <action id="-9" name="Destroy" sid="812189484793725" type="Arrow" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="662580928743969" title="FlubberTwo">
+            <sub-events>
+                <event-block sid="490342406460278">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="664670644453435" type="FlubberTwo" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="698384125995998" type="FlubberTwo">
+                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                            <param id="2" name="Duration">0.2</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="749083613275256" type="FlubberTwo">
+                            <param id="0" name="Angle">random(0, 359)</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="633854551563895" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="462041703776974" type="FlubberTwo">
+                            <param id="0" name="Collisions">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="754237263222916">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="784093927302018" type="FlubberTwo">
+                            <param id="0" name="Object">Wall</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="4" name="Bounce off object" sid="656894198348119" type="FlubberTwo">
+                            <param id="0" name="Object">Wall</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="644729143418676">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="861689360818451" type="Arrow">
+                            <param id="0" name="Object">FlubberTwo</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="971345701956078" type="Boomerang">
+                            <param id="0" name="Object">FlubberTwo</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="415120790115314" type="Shield">
+                            <param id="0" name="Object">FlubberTwo</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="291004099078558" type="Boom">
+                            <param id="0" name="Object">FlubberTwo</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="265058559738342" type="FlubberTwo">
+                            <param id="0" name="Object">FlubberThree</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="987970220474841" type="FlubberTwo">
+                            <param id="0" name="Object">FlubberThree</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="531483381699599" type="FlubberTwo">
+                            <param id="0" name="Object">FlubberThree</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="303940431265267" type="FlubberTwo" />
+                        <action id="-9" name="Destroy" sid="667335240482361" type="Arrow" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="591105258459565" title="FlubberThree">
+            <sub-events>
+                <event-block sid="553507158251863">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="346839399555227" type="FlubberThree" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="937624252806302" type="FlubberThree">
+                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                            <param id="2" name="Duration">0.2</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="432517855379219" type="FlubberThree">
+                            <param id="0" name="Angle">random(0, 359)</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="602958650698002" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="556957550600926" type="FlubberThree">
+                            <param id="0" name="Collisions">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="946438937769625">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="213769248381361" type="FlubberThree">
+                            <param id="0" name="Object">Wall</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="4" name="Bounce off object" sid="464296303120357" type="FlubberThree">
+                            <param id="0" name="Object">Wall</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="654179425936301">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="729892138783923" type="Arrow">
+                            <param id="0" name="Object">FlubberThree</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="949075801795430" type="Boomerang">
+                            <param id="0" name="Object">FlubberThree</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="301191422289889" type="Shield">
+                            <param id="0" name="Object">FlubberThree</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="129960803110095" type="Boom">
+                            <param id="0" name="Object">FlubberThree</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="889540149360727" type="FlubberThree">
+                            <param id="0" name="Object">FlubberFour</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="809702995148336" type="FlubberThree">
+                            <param id="0" name="Object">FlubberFour</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="603193904810361" type="FlubberThree">
+                            <param id="0" name="Object">FlubberFour</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="929513036539668" type="FlubberThree">
+                            <param id="0" name="Object">FlubberFour</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="429234120959393" type="FlubberThree" />
+                        <action id="-9" name="Destroy" sid="558925599562970" type="Arrow" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="741576359071130" title="FlubberFour">
+            <sub-events>
+                <event-block sid="561406611153044">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="869045060076311" type="FlubberFour" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="565209426238119" type="FlubberFour">
+                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                            <param id="2" name="Duration">0.2</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="202435513152649" type="FlubberFour">
+                            <param id="0" name="Angle">random(0, 359)</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="197733983446976" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="234553301555510" type="FlubberFour">
+                            <param id="0" name="Collisions">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="639843559317512">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="215910487345826" type="FlubberFour">
+                            <param id="0" name="Object">Wall</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="4" name="Bounce off object" sid="965549552064089" type="FlubberFour">
+                            <param id="0" name="Object">Wall</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="842231119201616">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="711250853940379" type="Arrow">
+                            <param id="0" name="Object">FlubberFour</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="132141601769055" type="Boomerang">
+                            <param id="0" name="Object">FlubberFour</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="302111265219809" type="Shield">
+                            <param id="0" name="Object">FlubberFour</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="384662957377960" type="Boom">
+                            <param id="0" name="Object">FlubberFour</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="717965293305812" type="FlubberFour" />
+                        <action id="-9" name="Destroy" sid="712251024963753" type="Arrow" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

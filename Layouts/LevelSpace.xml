@@ -251,7 +251,7 @@
                     </properties>
                     <instance-variables>
                         <Shooting>false</Shooting>
-                        <Health>5</Health>
+                        <Health>4</Health>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Solid">
@@ -358,11 +358,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>985</x>
-                        <y>371</y>
+                        <x>969</x>
+                        <y>377</y>
                         <z>0</z>
-                        <width>46</width>
-                        <height>82</height>
+                        <width>64</width>
+                        <height>96</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -1062,7 +1062,7 @@
                         <collisions>Disabled</collisions>
                     </properties>
                     <instance-variables>
-                        <Health>6</Health>
+                        <Health>10</Health>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Bullet">
@@ -1099,6 +1099,9 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <launched>false</launched>
+                    </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Bullet">
                             <properties>

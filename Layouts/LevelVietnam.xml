@@ -52,6 +52,28 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="VietnamFloor" uid="177">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>510</x>
+                        <y>382</y>
+                        <z>0</z>
+                        <width>1024</width>
+                        <height>768</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
@@ -237,7 +259,7 @@
                 </instance>
                 <instance type="Wall" uid="128">
                     <properties>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
@@ -252,10 +274,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>1022</x>
-                        <y>385</y>
+                        <x>992</x>
+                        <y>388</y>
                         <z>0</z>
-                        <width>5</width>
+                        <width>56</width>
                         <height>766</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
@@ -266,7 +288,7 @@
                 </instance>
                 <instance type="Wall" uid="129">
                     <properties>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
@@ -281,10 +303,10 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>2.16885376</x>
-                        <y>380.586914063</y>
+                        <x>26</x>
+                        <y>385</y>
                         <z>0</z>
-                        <width>5</width>
+                        <width>49</width>
                         <height>762</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
@@ -295,7 +317,7 @@
                 </instance>
                 <instance type="Wall" uid="130">
                     <properties>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
@@ -310,11 +332,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>508.873260498</x>
-                        <y>2.035644531</y>
+                        <x>510.5</x>
+                        <y>65</y>
                         <z>0</z>
-                        <width>1020</width>
-                        <height>5</height>
+                        <width>1025</width>
+                        <height>132</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -324,7 +346,7 @@
                 </instance>
                 <instance type="Wall" uid="131">
                     <properties>
-                        <initial-visibility>Visible</initial-visibility>
+                        <initial-visibility>Invisible</initial-visibility>
                         <initial-animation>Default</initial-animation>
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
@@ -340,10 +362,10 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>511</x>
-                        <y>766</y>
+                        <y>734</y>
                         <z>0</z>
                         <width>1024</width>
-                        <height>5</height>
+                        <height>69</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -403,8 +425,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>105</x>
-                        <y>454</y>
+                        <x>174</x>
+                        <y>508</y>
                         <z>0</z>
                         <width>48</width>
                         <height>48</height>
@@ -432,8 +454,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>227</x>
-                        <y>191</y>
+                        <x>233</x>
+                        <y>281</y>
                         <z>0</z>
                         <width>48</width>
                         <height>48</height>
@@ -461,8 +483,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>953</x>
-                        <y>444</y>
+                        <x>836</x>
+                        <y>506</y>
                         <z>0</z>
                         <width>48</width>
                         <height>48</height>
@@ -490,8 +512,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>806</x>
-                        <y>186</y>
+                        <x>791</x>
+                        <y>276</y>
                         <z>0</z>
                         <width>48</width>
                         <height>48</height>
@@ -519,8 +541,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>839</x>
-                        <y>157</y>
+                        <x>824</x>
+                        <y>247</y>
                         <z>0</z>
                         <width>48</width>
                         <height>48</height>
@@ -548,8 +570,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>843</x>
-                        <y>214</y>
+                        <x>828</x>
+                        <y>304</y>
                         <z>0</z>
                         <width>48</width>
                         <height>48</height>
@@ -577,8 +599,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>972</x>
-                        <y>410</y>
+                        <x>855</x>
+                        <y>472</y>
                         <z>0</z>
                         <width>48</width>
                         <height>48</height>
@@ -606,8 +628,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>967</x>
-                        <y>478</y>
+                        <x>850</x>
+                        <y>540</y>
                         <z>0</z>
                         <width>48</width>
                         <height>48</height>
@@ -635,8 +657,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>117</x>
-                        <y>419</y>
+                        <x>186</x>
+                        <y>473</y>
                         <z>0</z>
                         <width>48</width>
                         <height>48</height>
@@ -664,8 +686,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>131</x>
-                        <y>477</y>
+                        <x>200</x>
+                        <y>531</y>
                         <z>0</z>
                         <width>48</width>
                         <height>48</height>
@@ -693,8 +715,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>210</x>
-                        <y>161</y>
+                        <x>216</x>
+                        <y>251</y>
                         <z>0</z>
                         <width>48</width>
                         <height>48</height>
@@ -722,8 +744,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>188</x>
-                        <y>204</y>
+                        <x>194</x>
+                        <y>294</y>
                         <z>0</z>
                         <width>48</width>
                         <height>48</height>
@@ -752,7 +774,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>514</x>
-                        <y>490</y>
+                        <y>580</y>
                         <z>0</z>
                         <width>96</width>
                         <height>96</height>
@@ -774,7 +796,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>546</x>
-                        <y>546</y>
+                        <y>636</y>
                         <z>0</z>
                         <width>24</width>
                         <height>24</height>
@@ -792,6 +814,9 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <launched>false</launched>
+                    </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Bullet">
                             <properties>
@@ -811,11 +836,11 @@
                         <x>-116</x>
                         <y>353</y>
                         <z>0</z>
-                        <width>8</width>
-                        <height>8</height>
+                        <width>20.03125</width>
+                        <height>4.421875</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotY>0.498233229</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -837,7 +862,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>544</x>
-                        <y>83</y>
+                        <y>173</y>
                         <z>0</z>
                         <width>48</width>
                         <height>48</height>
@@ -865,7 +890,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>491</x>
-                        <y>77</y>
+                        <y>167</y>
                         <z>0</z>
                         <width>48</width>
                         <height>48</height>
@@ -893,62 +918,10 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>522</x>
-                        <y>57</y>
+                        <y>147</y>
                         <z>0</z>
                         <width>48</width>
                         <height>48</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="VietBoss" uid="103">
-                    <properties>
-                        <initial-visibility>Invisible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Disabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <ID>0</ID>
-                        <Health>15</Health>
-                    </instance-variables>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>81</x>
-                        <y>109</y>
-                        <z>0</z>
-                        <width>156</width>
-                        <height>96</height>
-                        <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="VietBoss" uid="104">
-                    <properties>
-                        <initial-visibility>Invisible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Disabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <ID>1</ID>
-                        <Health>15</Health>
-                    </instance-variables>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>943</x>
-                        <y>108</y>
-                        <z>0</z>
-                        <width>156</width>
-                        <height>96</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -988,11 +961,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>35</x>
-                        <y>719</y>
+                        <x>196</x>
+                        <y>608</y>
                         <z>0</z>
-                        <width>46</width>
-                        <height>82</height>
+                        <width>64</width>
+                        <height>96</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -1048,11 +1021,85 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>40</x>
-                        <y>729</y>
+                        <x>199</x>
+                        <y>627</y>
                         <z>0</z>
                         <width>48</width>
                         <height>48</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Jungle" uid="188">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>510</x>
+                        <y>386</y>
+                        <z>0</z>
+                        <width>1024</width>
+                        <height>768</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="VietBoss" uid="103">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Disabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <ID>0</ID>
+                        <Health>15</Health>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>195</x>
+                        <y>114</y>
+                        <z>0</z>
+                        <width>156</width>
+                        <height>96</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="VietBoss" uid="104">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Disabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <ID>1</ID>
+                        <Health>15</Health>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>811</x>
+                        <y>113</y>
+                        <z>0</z>
+                        <width>156</width>
+                        <height>96</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>

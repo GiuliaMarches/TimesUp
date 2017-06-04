@@ -65,5 +65,48 @@
                 </action>
             </actions>
         </event-block>
+        <event-group description="" sid="181397904687236" title="Portal">
+            <sub-events>
+                <event-block sid="502612721170509">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="689611521914207" type="System">
+                            <param id="0" name="Variable">hasDesertKey</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="570120057783197" type="System">
+                            <param id="0" name="Variable">hasPiratesKey</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="407230165954847" type="System">
+                            <param id="0" name="Variable">hasSpaceKey</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="246599329109194" type="System">
+                            <param id="0" name="Variable">hasVietnamKey</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="910785191995699">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="393084787651343" type="Player">
+                                    <param id="0" name="Object">PortalToBoss</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="831555686069574" type="System">
+                                    <param id="0" name="Layout">LevelBoss</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

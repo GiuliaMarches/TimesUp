@@ -117,29 +117,32 @@
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
-                    <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="656742754748454" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                    <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="656742754748454" speed="20">
+                        <frame duration="1" hotspotX="0.365385" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="-0.442308" y="0.53125" />
                             <collision-poly>
                                 <point x="0" y="1" />
                                 <point x="0" y="0" />
-                                <point x="1" y="0" />
-                                <point x="1" y="1" />
+                                <point x="0.980769" y="0" />
+                                <point x="0.980769" y="1" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.492308" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="-0.153846" y="0.53125" />
                             <collision-poly>
                                 <point x="0" y="1" />
                                 <point x="0" y="0" />
-                                <point x="1" y="0" />
-                                <point x="1" y="1" />
+                                <point x="0.984615" y="0" />
+                                <point x="0.984615" y="1" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <frame duration="1" hotspotX="0.365385" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="-0.442308" y="0.53125" />
                             <collision-poly>
                                 <point x="0" y="1" />
                                 <point x="0" y="0" />
-                                <point x="1" y="0" />
-                                <point x="1" y="1" />
+                                <point x="0.980769" y="0" />
+                                <point x="0.980769" y="1" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -157,7 +160,18 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="607053491264630" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.521552" hotspotY="0.586957" original-source="C:\Users\Pellix\Desktop\Assets Riciclati\CannonBall.png">
+                            <collision-poly>
+                                <point x="0.125" y="0.186957" />
+                                <point x="0.521552" y="0.00434783" />
+                                <point x="0.900862" y="0.204348" />
+                                <point x="0.978448" y="0.586957" />
+                                <point x="0.814655" y="0.882609" />
+                                <point x="0.521552" y="0.995652" />
+                                <point x="0.211207" y="0.9" />
+                                <point x="0.0215517" y="0.586957" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -215,6 +229,9 @@
             </object-type>
             <object-type name="EnemyBullet" sid="902574671076064">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="launched" sid="896083560155601" type="boolean" />
+                </instance-variables>
                 <behaviors>
                     <behavior-type name="Bullet" sid="596038504800324">
                         <behavior id="Bullet" />
@@ -266,9 +283,58 @@
                 <instance-variables>
                     <instance-variable name="Direction" sid="109287612908310" type="number" />
                 </instance-variables>
+                <behaviors>
+                    <behavior-type name="Solid" sid="876029500310509">
+                        <behavior id="solid" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="167286773700495" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="167286773700495" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0" y="0.0625" />
+                                <point x="0.53125" y="0.0507813" />
+                                <point x="0.609375" y="0.757813" />
+                                <point x="0.328125" y="0.970703" />
+                                <point x="0" y="0.96875" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="3" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0" y="0.0625" />
+                                <point x="0.53125" y="0.0507813" />
+                                <point x="0.609375" y="0.757813" />
+                                <point x="0.328125" y="0.970703" />
+                                <point x="0" y="0.96875" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0" y="0.0625" />
+                                <point x="0.53125" y="0.0507813" />
+                                <point x="0.609375" y="0.757813" />
+                                <point x="0.328125" y="0.970703" />
+                                <point x="0" y="0.96875" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0" y="0.015625" />
+                                <point x="0.53125" y="0.00390625" />
+                                <point x="0.609375" y="0.710938" />
+                                <point x="0.328125" y="0.923828" />
+                                <point x="0" y="0.921875" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0" y="0.0625" />
+                                <point x="0.53125" y="0.0507813" />
+                                <point x="0.609375" y="0.757813" />
+                                <point x="0.328125" y="0.970703" />
+                                <point x="0" y="0.96875" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -344,6 +410,9 @@
             </object-type>
             <object-type name="VietBullet" sid="195656196115812">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="launched" sid="164532803386832" type="boolean" />
+                </instance-variables>
                 <behaviors>
                     <behavior-type name="Bullet" sid="188096405267476">
                         <behavior id="Bullet" />
@@ -354,7 +423,17 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="830810769307918" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.498233" original-source="C:\Users\march\Desktop\Vietbullet.png">
+                            <collision-poly>
+                                <point x="0.390796" y="0.00353357" />
+                                <point x="0.609204" y="0.00353357" />
+                                <point x="1" y="0" />
+                                <point x="1" y="1" />
+                                <point x="0.609984" y="0.996466" />
+                                <point x="0.390016" y="0.996466" />
+                                <point x="0.000780031" y="0.498233" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -382,7 +461,8 @@
             <object-type name="Tardis" sid="519461104048630">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="801815034217786" speed="5">
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="801815034217786" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
@@ -655,6 +735,22 @@
             <object-type name="BoatTile" sid="427530509424140">
                 <plugin id="TiledBg" />
                 <texture original-source="C:\Users\march\Desktop\Boardtile2.png" />
+            </object-type>
+            <object-type name="VietnamFloor" sid="309704104512036">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="780218716385932" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\terreno II.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Jungle" sid="626861560156101">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="740004908777673" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\anello_foresta.png" />
+                    </animation>
+                </animation-folder>
             </object-type>
         </object-folder>
         <object-folder name="Characters">
@@ -1632,6 +1728,122 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="Flubber" sid="308363127242639">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="BoundToLayout" sid="303153380313950">
+                        <behavior id="bound" />
+                    </behavior-type>
+                    <behavior-type name="Bullet" sid="761159936695984">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                    <behavior-type name="Flash" sid="326086327935432">
+                        <behavior id="Flash" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="11" loop="1" name="Flubber" pingpong="0" repeatcount="1" repeatto="0" sid="819292759234308" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\1.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\2.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\3.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\4.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\5.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\6.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\7.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\8.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\9.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\10.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\11.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="FlubberFour" sid="181498446466229">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="253641666356413">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                    <behavior-type name="DestroyOutsideLayout" sid="527577634204704">
+                        <behavior id="destroy" />
+                    </behavior-type>
+                    <behavior-type name="Flash" sid="801018462522952">
+                        <behavior id="Flash" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="11" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="156308075288715" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\1.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\2.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\3.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\4.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\5.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\6.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\7.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\8.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\9.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\10.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\11.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="FlubberThree" sid="168354723256534">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="DestroyOutsideLayout" sid="646639719333135">
+                        <behavior id="destroy" />
+                    </behavior-type>
+                    <behavior-type name="Bullet" sid="643449911784707">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                    <behavior-type name="Flash" sid="217125902492779">
+                        <behavior id="Flash" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="11" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="882073754203815" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\1.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\2.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\3.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\4.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\5.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\6.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\7.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\8.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\9.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\10.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\11.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="FlubberTwo" sid="750541141394475">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="DestroyOutsideLayout" sid="536219857825371">
+                        <behavior id="destroy" />
+                    </behavior-type>
+                    <behavior-type name="Bullet" sid="195211669725496">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                    <behavior-type name="Flash" sid="848009163015779">
+                        <behavior id="Flash" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="11" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="581544354581589" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\1.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\2.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\3.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\4.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\5.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\6.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\7.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\8.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\9.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\10.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\11.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-type name="Gamepad" sid="197410226324150">
             <plugin id="gamepad" />
@@ -1647,6 +1859,7 @@
     <layout-folder>
         <layout>LayoutProva.xml</layout>
         <layout>HUB.xml</layout>
+        <layout>LevelBoss.xml</layout>
         <layout>LevelVietnam.xml</layout>
         <layout>LevelPirates.xml</layout>
         <layout>LevelSpace.xml</layout>
@@ -1659,6 +1872,7 @@
         <event-sheet>LevelSpaceSheet.xml</event-sheet>
         <event-sheet>LevelVietnamSheet.xml</event-sheet>
         <event-sheet>LevelPiratesSheet.xml</event-sheet>
+        <event-sheet>LevelBossSheet.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Gamepad" uid="2">

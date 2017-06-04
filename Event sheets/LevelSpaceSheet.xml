@@ -140,7 +140,7 @@
                         </action>
                         <action id="-12" name="Subtract from" sid="636143837855470" type="SpaceMob">
                             <param id="0" name="Instance variable">Health</param>
-                            <param id="1" name="Value">1</param>
+                            <param id="1" name="Value">2</param>
                         </action>
                     </actions>
                 </event-block>
@@ -388,7 +388,7 @@
                     <actions>
                         <action id="-12" name="Subtract from" sid="670469491281515" type="SpaceBoss">
                             <param id="0" name="Instance variable">Health</param>
-                            <param id="1" name="Value">1</param>
+                            <param id="1" name="Value">2</param>
                         </action>
                         <action behavior="Flash" id="0" name="Flash" sid="541166249273403" type="SpaceBoss">
                             <param id="0" name="&apos;On&apos; time">0.1</param>
@@ -621,6 +621,220 @@
                             <param id="0" name="Layout">HUB</param>
                         </action>
                     </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="273408350345550" title="Space Secondary Weapons">
+            <sub-events>
+                <event-block sid="255693898720560">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="287709866014406" type="Arrow">
+                            <param id="0" name="Object">SpaceBoss</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="279148142780679">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="993674295039367" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Flash" id="0" name="Flash" sid="725857184270337" type="SpaceBoss">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">0.4</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="418575856458359" type="SpaceBoss">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="516720989312906" type="Arrow" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="734375410212756">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="540450376691852" type="Boom">
+                            <param id="0" name="Object">SpaceBoss</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="896242412727291">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="827192448638872" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Flash" id="0" name="Flash" sid="493896178949375" type="SpaceBoss">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">0.4</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="938838531350132" type="SpaceBoss">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="785545298248365">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="968359980468906" type="Shield">
+                            <param id="0" name="Object">SpaceBoss</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="167225052670396">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="640760209775702" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Flash" id="0" name="Flash" sid="428699225696153" type="SpaceBoss">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">0.4</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="105634131762375" type="SpaceBoss">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="206567276097319">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="656433806865529" type="Arrow">
+                            <param id="0" name="Object">SpaceMob</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="289431142200973">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="577298638577004" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Flash" id="0" name="Flash" sid="855433267999170" type="SpaceMob">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">0.4</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="458680224071648" type="SpaceMob">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="779006909281678" type="Arrow" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="310124772417759">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="910934575395677" type="Boom">
+                            <param id="0" name="Object">SpaceMob</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="781356161119834">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="125461120946198" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Flash" id="0" name="Flash" sid="799609758914646" type="SpaceMob">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">0.4</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="977843472064042" type="SpaceMob">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="217236057987286">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="835671059117397" type="Shield">
+                            <param id="0" name="Object">SpaceMob</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="305278356822294">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="968545036341569" type="System" />
+                            </conditions>
+                            <actions>
+                                <action behavior="Flash" id="0" name="Flash" sid="118521426981662" type="SpaceMob">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">0.4</param>
+                                </action>
+                                <action id="-12" name="Subtract from" sid="967956748346878" type="SpaceMob">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="753201471106313">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="978058419112559" type="EnemyBullet">
+                            <param id="0" name="Object">Shield</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="4" name="Bounce off object" sid="955764762788582" type="EnemyBullet">
+                            <param id="0" name="Object">Shield</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="475492075525566" type="EnemyBullet">
+                            <param id="0" name="Instance variable">launched</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="987345814606749">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="540995912385834" type="EnemyBullet">
+                            <param id="0" name="Object">SpaceMob</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="487108148343214">
+                            <conditions>
+                                <condition id="-8" name="Is boolean instance variable set" sid="505228946475500" type="EnemyBullet">
+                                    <param id="0" name="Instance variable">launched</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="676494661196001">
+                                    <conditions>
+                                        <condition id="-4" name="Trigger once while true" sid="161087166623198" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Flash" id="0" name="Flash" sid="465775559559987" type="SpaceMob">
+                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                            <param id="2" name="Duration">0.4</param>
+                                        </action>
+                                        <action id="-12" name="Subtract from" sid="912593545611147" type="SpaceMob">
+                                            <param id="0" name="Instance variable">Health</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
