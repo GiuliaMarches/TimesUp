@@ -39,7 +39,13 @@
                     </conditions>
                     <actions>
                         <action id="-16" name="Wait" sid="338993043401803" type="System">
-                            <param id="0" name="Seconds">1.0</param>
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="101096718527168" type="SpaceMob">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="382547797379067" type="SpaceMob">
+                            <param id="0" name="Collisions">1</param>
                         </action>
                         <action id="-13" name="Set boolean" sid="526229894073657" type="SpaceMob">
                             <param id="0" name="Instance variable">Shooting</param>
@@ -60,8 +66,14 @@
                     <param id="0" name="Variable">hasBoomerang</param>
                     <param id="1" name="Value">1</param>
                 </action>
-                <action id="-16" name="Wait" sid="299333384912027" type="System">
-                    <param id="0" name="Seconds">1.0</param>
+                <action id="-16" name="Wait" sid="955604376175875" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="-15" name="Set visible" sid="305380948242158" type="SpaceMob">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="11" name="Set collisions enabled" sid="269976183434557" type="SpaceMob">
+                    <param id="0" name="Collisions">1</param>
                 </action>
                 <action id="-13" name="Set boolean" sid="441622474648816" type="SpaceMob">
                     <param id="0" name="Instance variable">Shooting</param>
@@ -183,6 +195,22 @@
                                     <param id="1" name="Layer">1</param>
                                     <param id="2" name="Image point">0</param>
                                 </action>
+                                <action id="-16" name="Wait" sid="524220247608317" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="156129772845424" type="SpaceMob">
+                                    <param id="0" name="Object">EnemyBullet</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="499182387622257" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="572079187967059" type="SpaceMob">
+                                    <param id="0" name="Object">EnemyBullet</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
@@ -241,15 +269,18 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="-9" name="Set value" sid="211699537838278" type="System">
+                                    <param id="0" name="Variable">hasBoomerang</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="449576279563388" type="System">
+                                    <param id="0" name="Seconds">4</param>
+                                </action>
                                 <action id="-15" name="Set visible" sid="951317199224412" type="BoomerangWep">
                                     <param id="0" name="Visibility">1</param>
                                 </action>
                                 <action id="11" name="Set collisions enabled" sid="714598342305479" type="BoomerangWep">
                                     <param id="0" name="Collisions">1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="211699537838278" type="System">
-                                    <param id="0" name="Variable">hasBoomerang</param>
-                                    <param id="1" name="Value">0</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -320,7 +351,26 @@
                                                     <conditions>
                                                         <condition id="-22" name="Else" sid="508143303659765" type="System" />
                                                     </conditions>
-                                                    <actions />
+                                                    <actions>
+                                                        <action id="11" name="Set collisions enabled" sid="919094017477747" type="Player">
+                                                            <param id="0" name="Collisions">0</param>
+                                                        </action>
+                                                        <action behavior="Flash" id="0" name="Flash" sid="268198192190406" type="Player">
+                                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                                            <param id="2" name="Duration">1.0</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="652807078683409" type="System">
+                                                            <param id="0" name="Seconds">0.5</param>
+                                                        </action>
+                                                        <action id="-9" name="Destroy" sid="558615507953098" type="Player" />
+                                                        <action id="-16" name="Wait" sid="209334720154823" type="System">
+                                                            <param id="0" name="Seconds">1.0</param>
+                                                        </action>
+                                                        <action id="-2" name="Go to layout" sid="723185484022563" type="System">
+                                                            <param id="0" name="Layout">End</param>
+                                                        </action>
+                                                    </actions>
                                                 </event-block>
                                             </sub-events>
                                         </event-block>
@@ -439,6 +489,12 @@
                             <param id="1" name="Layer">1</param>
                             <param id="2" name="Image point">0</param>
                         </action>
+                        <action id="-15" name="Set visible" sid="899768463888675" type="Key">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="519548977723025" type="Key">
+                            <param id="0" name="Collisions">1</param>
+                        </action>
                         <action id="-9" name="Destroy" sid="831406170603476" type="SpaceBoss" />
                     </actions>
                 </event-block>
@@ -474,15 +530,18 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="-9" name="Set value" sid="283771860598732" type="System">
+                                    <param id="0" name="Variable">hasBoomerang</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="390533903109000" type="System">
+                                    <param id="0" name="Seconds">4</param>
+                                </action>
                                 <action id="-15" name="Set visible" sid="389844320017160" type="BoomerangWep">
                                     <param id="0" name="Visibility">1</param>
                                 </action>
                                 <action id="11" name="Set collisions enabled" sid="626825557136587" type="BoomerangWep">
                                     <param id="0" name="Collisions">1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="283771860598732" type="System">
-                                    <param id="0" name="Variable">hasBoomerang</param>
-                                    <param id="1" name="Value">0</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -553,7 +612,26 @@
                                                     <conditions>
                                                         <condition id="-22" name="Else" sid="523050581982031" type="System" />
                                                     </conditions>
-                                                    <actions />
+                                                    <actions>
+                                                        <action id="11" name="Set collisions enabled" sid="794974387245367" type="Player">
+                                                            <param id="0" name="Collisions">0</param>
+                                                        </action>
+                                                        <action behavior="Flash" id="0" name="Flash" sid="927720536576789" type="Player">
+                                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                                            <param id="2" name="Duration">1.0</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="632879006888737" type="System">
+                                                            <param id="0" name="Seconds">0.5</param>
+                                                        </action>
+                                                        <action id="-9" name="Destroy" sid="542067755195365" type="Player" />
+                                                        <action id="-16" name="Wait" sid="459987536978932" type="System">
+                                                            <param id="0" name="Seconds">1.0</param>
+                                                        </action>
+                                                        <action id="-2" name="Go to layout" sid="251714567810764" type="System">
+                                                            <param id="0" name="Layout">End</param>
+                                                        </action>
+                                                    </actions>
                                                 </event-block>
                                             </sub-events>
                                         </event-block>
@@ -574,6 +652,10 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="4" name="Set animation" sid="829116788368929" type="Key">
+                            <param id="0" name="Animation">&quot;SpaceKey&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
                         <action id="-9" name="Set value" sid="778791099245529" type="System">
                             <param id="0" name="Variable">hasSpaceKey</param>
                             <param id="1" name="Value">1</param>

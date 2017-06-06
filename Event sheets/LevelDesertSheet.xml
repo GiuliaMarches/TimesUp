@@ -12,6 +12,9 @@
             <actions>
                 <action id="-9" name="Destroy" sid="392186966353204" type="Boomerang" />
                 <action id="-9" name="Destroy" sid="387288209179998" type="Grenade" />
+                <action id="-15" name="Set visible" sid="841525360638173" type="Player">
+                    <param id="0" name="Visibility">0</param>
+                </action>
                 <action id="-13" name="Set boolean" sid="924482663627234" type="Player">
                     <param id="0" name="Instance variable">OnHub</param>
                     <param id="1" name="Value">0</param>
@@ -24,6 +27,25 @@
                     <param id="0" name="Frame number">0</param>
                 </action>
                 <action id="2" name="Stop" sid="587177174876290" type="Sarcophagus" />
+                <action id="-16" name="Set opacity" sid="674992116240858" type="Tardis">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="5" name="Set frame" sid="458968982845486" type="Tardis">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="3" name="Start" sid="727067415906722" type="Tardis">
+                    <param id="0" name="From">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="338045187687109" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="673327709852402" type="Player">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="785877179008476" type="Tardis">
+                    <param id="0" name="Instance variable">disappear</param>
+                    <param id="1" name="Value">1</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="215540299528160">
@@ -54,6 +76,18 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <event-block sid="269119363447790">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="390295819347459" type="Tardis">
+                    <param id="0" name="Instance variable">disappear</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="926004749506448" type="Tardis">
+                    <param id="0" name="Opacity">Self.Opacity - 2</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="999428604683209">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="504773083244675" type="System">
@@ -76,6 +110,20 @@
             <actions>
                 <action id="-15" name="Set visible" sid="269969846788154" type="ShadowSprite">
                     <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="467330083006009">
+            <conditions>
+                <condition id="-10" name="Compare opacity" sid="252319296662821" type="Tardis">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Opacity">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="316549304834479" type="Tardis">
+                    <param id="0" name="Instance variable">disappear</param>
+                    <param id="1" name="Value">0</param>
                 </action>
             </actions>
         </event-block>
@@ -203,6 +251,32 @@
                                         <action behavior="Pathfinding" id="0" name="Find path" sid="516199456876465" type="Mummy">
                                             <param id="0" name="X">Player.X</param>
                                             <param id="1" name="Y">Player.Y</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="872197487130442">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="915483353991975" type="Mummy">
+                                            <param id="0" name="Comparison">4</param>
+                                            <param id="1" name="X co-ordinate">Player.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="801249221566071" type="Mummy">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="307150061755431">
+                                    <conditions>
+                                        <condition id="-1" name="Compare X" sid="112244557067990" type="Mummy">
+                                            <param id="0" name="Comparison">2</param>
+                                            <param id="1" name="X co-ordinate">Player.X</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="7" name="Set mirrored" sid="178720108570272" type="Mummy">
+                                            <param id="0" name="State">0</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -503,15 +577,18 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="-9" name="Set value" sid="880541419918455" type="System">
+                            <param id="0" name="Variable">hasBow</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="986402659558838" type="System">
+                            <param id="0" name="Seconds">4</param>
+                        </action>
                         <action id="-15" name="Set visible" sid="128402307398139" type="Bow">
                             <param id="0" name="Visibility">1</param>
                         </action>
                         <action id="11" name="Set collisions enabled" sid="155838968957858" type="Bow">
                             <param id="0" name="Collisions">1</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="880541419918455" type="System">
-                            <param id="0" name="Variable">hasBow</param>
-                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -582,7 +659,26 @@
                                             <conditions>
                                                 <condition id="-22" name="Else" sid="184300589353812" type="System" />
                                             </conditions>
-                                            <actions />
+                                            <actions>
+                                                <action id="11" name="Set collisions enabled" sid="803567940103509" type="Player">
+                                                    <param id="0" name="Collisions">0</param>
+                                                </action>
+                                                <action behavior="Flash" id="0" name="Flash" sid="373339669739643" type="Player">
+                                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                                    <param id="2" name="Duration">1.0</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="808563160485418" type="System">
+                                                    <param id="0" name="Seconds">0.5</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="244602709506296" type="Player" />
+                                                <action id="-16" name="Wait" sid="296895159450900" type="System">
+                                                    <param id="0" name="Seconds">1.0</param>
+                                                </action>
+                                                <action id="-2" name="Go to layout" sid="822448796421348" type="System">
+                                                    <param id="0" name="Layout">End</param>
+                                                </action>
+                                            </actions>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -786,13 +882,23 @@
                                     <param id="1" name="&apos;Off&apos; time">0.05</param>
                                     <param id="2" name="Duration">1</param>
                                 </action>
-                                <action id="-16" name="Wait" sid="611618074473242" type="System">
-                                    <param id="0" name="Seconds">1.0</param>
-                                </action>
                                 <action id="0" name="Spawn another object" sid="606063141687932" type="MummyBoss">
                                     <param id="0" name="Object">Key</param>
                                     <param id="1" name="Layer">1</param>
                                     <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="537861738658025" type="Key">
+                                    <param id="0" name="Animation">&quot;EgyptKey&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="766409344378951" type="Key">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="598183175328948" type="Key">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="611618074473242" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
                                 </action>
                                 <action id="-9" name="Destroy" sid="629507144109287" type="MummyBoss" />
                             </actions>
@@ -847,15 +953,18 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="-9" name="Set value" sid="354260264824284" type="System">
+                            <param id="0" name="Variable">hasBow</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="149411590619444" type="System">
+                            <param id="0" name="Seconds">4</param>
+                        </action>
                         <action id="-15" name="Set visible" sid="504933016778137" type="Bow">
                             <param id="0" name="Visibility">1</param>
                         </action>
                         <action id="11" name="Set collisions enabled" sid="374290588095870" type="Bow">
                             <param id="0" name="Collisions">1</param>
-                        </action>
-                        <action id="-9" name="Set value" sid="354260264824284" type="System">
-                            <param id="0" name="Variable">hasBow</param>
-                            <param id="1" name="Value">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -926,7 +1035,26 @@
                                             <conditions>
                                                 <condition id="-22" name="Else" sid="292232066952442" type="System" />
                                             </conditions>
-                                            <actions />
+                                            <actions>
+                                                <action id="11" name="Set collisions enabled" sid="141168897798315" type="Player">
+                                                    <param id="0" name="Collisions">0</param>
+                                                </action>
+                                                <action behavior="Flash" id="0" name="Flash" sid="535487043783626" type="Player">
+                                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                                    <param id="2" name="Duration">1.0</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="777801088682167" type="System">
+                                                    <param id="0" name="Seconds">0.5</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="343564774639706" type="Player" />
+                                                <action id="-16" name="Wait" sid="303042827219805" type="System">
+                                                    <param id="0" name="Seconds">1.0</param>
+                                                </action>
+                                                <action id="-2" name="Go to layout" sid="354023097227937" type="System">
+                                                    <param id="0" name="Layout">End</param>
+                                                </action>
+                                            </actions>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -938,7 +1066,7 @@
         </event-block>
         <event-group description="" sid="963180585962204" title="Perspective">
             <sub-events>
-                <event-block disabled="1" sid="951782949298531">
+                <event-block sid="951782949298531">
                     <conditions>
                         <condition id="-11" name="For Each" sid="912830336564194" type="System">
                             <param id="0" name="Object">Column</param>

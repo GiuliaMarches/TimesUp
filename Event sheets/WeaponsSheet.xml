@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>WeaponsSheet</name>
     <events>
+        <variable constant="0" name="CountDown" sid="483734428710605" static="0" type="number">600</variable>
         <variable constant="0" name="hasPiratesKey" sid="830532580187738" static="0" type="number">0</variable>
         <variable constant="0" name="hasVietnamKey" sid="372320009654277" static="0" type="number">0</variable>
         <variable constant="0" name="hasSpaceKey" sid="177502540758417" static="0" type="number">0</variable>
@@ -13,6 +14,98 @@
         <variable constant="0" name="hasBow" sid="733673339424602" static="0" type="number">0</variable>
         <variable constant="0" name="FireTimer" sid="819433011252952" static="0" type="number">0</variable>
         <variable constant="0" name="ShieldTimer" sid="257856548885702" static="0" type="number">0</variable>
+        <event-block sid="263411520524167">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="424099392486916" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="256855604889365">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="197780401196714" type="System">
+                            <param id="0" name="Variable">hasBow</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="882200543021744" type="Player">
+                            <param id="0" name="Instance variable">lastWeapon</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="398245038243222">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="819948546990441" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="589208733789021">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="311941967612996" type="System">
+                                    <param id="0" name="Variable">hasGrenade</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="200761995113589" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="249635776250284">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="247726744218720" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="935096442952423">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="365347175608148" type="System">
+                                            <param id="0" name="Variable">hasShield</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="776205786946102" type="Player">
+                                            <param id="0" name="Instance variable">lastWeapon</param>
+                                            <param id="1" name="Value">4</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="788944296716732">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="605551802914107" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="610047454152922">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="739211487569793" type="System">
+                                                    <param id="0" name="Variable">hasBoomerang</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="780821334182176" type="Player">
+                                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
         <event-block sid="364750812778459">
             <conditions>
                 <condition id="-1" name="Every tick" sid="903113335458363" type="System" />
@@ -138,6 +231,10 @@
                                                     <param id="1" name="Layer">1</param>
                                                     <param id="2" name="Image point">0</param>
                                                 </action>
+                                                <action id="-10" name="Set value" sid="847157842238538" type="Player">
+                                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                                    <param id="1" name="Value">3</param>
+                                                </action>
                                                 <action id="-9" name="Set value" sid="606578472262699" type="System">
                                                     <param id="0" name="Variable">FireTimer</param>
                                                     <param id="1" name="Value">0</param>
@@ -228,6 +325,10 @@
                                                     <param id="0" name="Object">Boomerang</param>
                                                     <param id="1" name="Layer">1</param>
                                                     <param id="2" name="Image point">0</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="279806551003062" type="Player">
+                                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                                    <param id="1" name="Value">1</param>
                                                 </action>
                                                 <action id="-13" name="Set boolean" sid="450309225673900" type="Player">
                                                     <param id="0" name="Instance variable">boomLaunched</param>
@@ -357,6 +458,10 @@
                                                     <param id="1" name="Layer">1</param>
                                                     <param id="2" name="Image point">0</param>
                                                 </action>
+                                                <action id="-10" name="Set value" sid="995162894292572" type="Player">
+                                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                                    <param id="1" name="Value">2</param>
+                                                </action>
                                                 <action behavior="Sine" id="0" name="Set active" sid="517251379455272" type="Grenade">
                                                     <param id="0" name="State">0</param>
                                                 </action>
@@ -410,7 +515,7 @@
                     <actions>
                         <action id="0" name="Spawn another object" sid="863380749061423" type="Grenade">
                             <param id="0" name="Object">Boom</param>
-                            <param id="1" name="Layer">0</param>
+                            <param id="1" name="Layer">1</param>
                             <param id="2" name="Image point">0</param>
                         </action>
                         <action id="-9" name="Destroy" sid="739383460285760" type="Grenade" />
@@ -542,6 +647,10 @@
                                                 </action>
                                                 <action behavior="Bullet" id="3" name="Set angle of motion" sid="560927255130539" type="Shield">
                                                     <param id="0" name="Angle">Player.shootDir</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="567660000287872" type="Player">
+                                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                                    <param id="1" name="Value">4</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -772,6 +881,36 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="466636508236250">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="442717909147689" type="System">
+                    <param id="0" name="Variable">hasBow</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="717223662747989" type="System">
+                    <param id="0" name="Variable">hasBoomerang</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="245207538153647" type="System">
+                    <param id="0" name="Variable">hasGrenade</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="813610715433132" type="System">
+                    <param id="0" name="Variable">hasShield</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Set value" sid="606928354237287" type="Player">
+                    <param id="0" name="Instance variable">lastWeapon</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
         <event-group description="" sid="657546731160660" title="Animations">
             <sub-events>
                 <event-block sid="636502307011040">
@@ -802,6 +941,254 @@
                             <param id="0" name="Animation">&quot;MovDefaultLeft&quot;</param>
                             <param id="1" name="From">0</param>
                         </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="255516584920610" title="CountDown Sheet">
+            <sub-events>
+                <event-block sid="920455996928640">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="176172549843168" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="737891825584887" type="System">
+                            <param id="0" name="Variable">CountDown</param>
+                            <param id="1" name="Value">dt</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="859679648769220">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="356639114096807" type="System">
+                                    <param id="0" name="First value">CountDown % 60</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="923477748607446" type="CountDown">
+                                    <param id="0" name="Text">int(CountDown / 60) &amp; &quot;:&quot; &amp; int(CountDown % 60) </param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="494128379875293">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="648695353823428" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="768645262266088" type="CountDown">
+                                    <param id="0" name="Text">int(CountDown / 60) &amp; &quot;:0&quot; &amp; int(CountDown % 60) </param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="242127289918276">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="541816212477277" type="System">
+                            <param id="0" name="Variable">CountDown</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="512749768983958" type="System">
+                            <param id="0" name="Layout">End</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="769447297902258" title="HUD">
+            <sub-events>
+                <event-block sid="826970060399082">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="151582061250091" type="Player">
+                            <param id="0" name="Object">CountDown</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="984813505627155" type="CountDown">
+                            <param id="0" name="Opacity">40</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="805112556975099">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="430226224865489" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="190854927327679" type="CountDown">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="803253891126627">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="391557135089138" type="Player">
+                            <param id="0" name="Object">WeaponsMask</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="266714156699570" type="HUDShield">
+                            <param id="0" name="Opacity">20</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="424023779786199" type="HUDGrenade">
+                            <param id="0" name="Opacity">20</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="805596751278810" type="HUDBow">
+                            <param id="0" name="Opacity">20</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="412466873131895" type="HUDBoomerang">
+                            <param id="0" name="Opacity">20</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="539322230682189">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="925290691618413" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="859262606156071" type="HUDShield">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="322913219450657" type="HUDGrenade">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="413303389114861" type="HUDBow">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="146441803061279" type="HUDBoomerang">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="244955935457592">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="158499262880771" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="254798094952326" type="HUDBoomerang">
+                            <param id="0" name="Object">WeaponsMask</param>
+                            <param id="1" name="Image point (optional)">1</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="827966858331437" type="HUDGrenade">
+                            <param id="0" name="Object">WeaponsMask</param>
+                            <param id="1" name="Image point (optional)">2</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="949135656281736" type="HUDBow">
+                            <param id="0" name="Object">WeaponsMask</param>
+                            <param id="1" name="Image point (optional)">3</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="392590868835851" type="HUDShield">
+                            <param id="0" name="Object">WeaponsMask</param>
+                            <param id="1" name="Image point (optional)">4</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="136502093979404">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="862867259090465" type="System">
+                            <param id="0" name="Variable">hasBoomerang</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="204921374025331" type="HUDBoomerang">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="2" name="Stop" sid="429810679420374" type="HUDBoomerang" />
+                    </actions>
+                </event-block>
+                <event-block sid="775594291970190">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="811729559282620" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="215659343144896" type="HUDBoomerang">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="2" name="Stop" sid="112703701977919" type="HUDBoomerang" />
+                    </actions>
+                </event-block>
+                <event-block sid="939940850495471">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="298685773632453" type="System">
+                            <param id="0" name="Variable">hasBow</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="277459950072622" type="HUDBow">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="2" name="Stop" sid="436888606066584" type="HUDBow" />
+                    </actions>
+                </event-block>
+                <event-block sid="615871070517837">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="459651951624266" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="816313883203200" type="HUDBow">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="2" name="Stop" sid="684490620654108" type="HUDBow" />
+                    </actions>
+                </event-block>
+                <event-block sid="176097718837130">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="271921189431135" type="System">
+                            <param id="0" name="Variable">hasGrenade</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="486377081850245" type="HUDGrenade">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="2" name="Stop" sid="691816223856119" type="HUDGrenade" />
+                    </actions>
+                </event-block>
+                <event-block sid="601517590266196">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="712799070586543" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="540082803929535" type="HUDGrenade">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="2" name="Stop" sid="889337053784994" type="HUDGrenade" />
+                    </actions>
+                </event-block>
+                <event-block sid="846789525005231">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="721138816007071" type="System">
+                            <param id="0" name="Variable">hasShield</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="641285896977204" type="HUDShield">
+                            <param id="0" name="Frame number">1</param>
+                        </action>
+                        <action id="2" name="Stop" sid="848970770529346" type="HUDShield" />
+                    </actions>
+                </event-block>
+                <event-block sid="848044723181857">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="499585349467760" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="154335528709108" type="HUDShield">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                        <action id="2" name="Stop" sid="364179072190279" type="HUDShield" />
                     </actions>
                 </event-block>
             </sub-events>

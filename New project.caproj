@@ -13,6 +13,7 @@
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="gamepad" version="1">Gamepad</plugin>
     </used-plugins>
@@ -68,7 +69,14 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="795495153035479" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_58\Desktop\Nuova Build\ARA.png">
+                            <collision-poly>
+                                <point x="0.09375" y="0.359375" />
+                                <point x="0.898438" y="0.359375" />
+                                <point x="0.890625" y="0.953125" />
+                                <point x="0.101563" y="0.953125" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -255,7 +263,18 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="548425379521967" speed="5">
-                        <frame duration="1" hotspotX="1" hotspotY="0" />
+                        <frame duration="1" hotspotX="1" hotspotY="0" original-source="C:\Users\dbga_58\Desktop\Nuova Build\Station Center.png">
+                            <collision-poly>
+                                <point x="0.25102" y="0.348442" />
+                                <point x="0.5" y="0.0113314" />
+                                <point x="0.75102" y="0.345609" />
+                                <point x="0.961224" y="0.498584" />
+                                <point x="0.75102" y="0.654391" />
+                                <point x="0.5" y="0.98017" />
+                                <point x="0.25102" y="0.651558" />
+                                <point x="0.044898" y="0.498584" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -376,33 +395,26 @@
                     <animation framecount="3" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="970983926680323" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                             <collision-poly>
-                                <point x="0.015625" y="0.375" />
-                                <point x="0.75" y="0.265625" />
-                                <point x="1" y="1" />
-                                <point x="0.03125" y="1" />
+                                <point x="0.015625" y="0.484375" />
+                                <point x="0.984375" y="0.484375" />
+                                <point x="0.984375" y="1" />
+                                <point x="0.015625" y="1" />
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                             <collision-poly>
-                                <point x="0.03125" y="0.3125" />
-                                <point x="0.453125" y="0.28125" />
-                                <point x="0.53125" y="0.046875" />
-                                <point x="0.921875" y="0.101563" />
-                                <point x="1" y="0.816406" />
-                                <point x="0.367188" y="0.957031" />
-                                <point x="0.00585938" y="0.783203" />
+                                <point x="0.015625" y="0.484375" />
+                                <point x="0.984375" y="0.484375" />
+                                <point x="0.984375" y="1" />
+                                <point x="0.015625" y="1" />
                             </collision-poly>
                         </frame>
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                             <collision-poly>
-                                <point x="0.015625" y="0.34375" />
-                                <point x="0.496094" y="0.351563" />
-                                <point x="0.546875" y="0.09375" />
-                                <point x="0.828125" y="0.109375" />
-                                <point x="0.984375" y="0.609375" />
-                                <point x="0.945313" y="0.892578" />
-                                <point x="0.328125" y="1" />
-                                <point x="0.0195313" y="0.8125" />
+                                <point x="0.015625" y="0.484375" />
+                                <point x="0.984375" y="0.484375" />
+                                <point x="0.984375" y="1" />
+                                <point x="0.015625" y="1" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -453,17 +465,59 @@
             <object-type name="Key" sid="320804296016775">
                 <plugin id="Sprite" />
                 <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="645001105178787" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <animation framecount="1" loop="0" name="PiratesKey" pingpong="0" repeatcount="1" repeatto="0" sid="645001105178787" speed="5">
+                        <frame duration="1" hotspotX="0.53125" hotspotY="0.5" original-source="C:\Users\dbga_58\Desktop\Assets\Key 1.png">
+                            <collision-poly>
+                                <point x="0.09375" y="0.208333" />
+                                <point x="0.53125" y="0.0208333" />
+                                <point x="0.9375" y="0.229167" />
+                                <point x="0.53125" y="0.979167" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="VietnamKey" pingpong="0" repeatcount="1" repeatto="0" sid="822643597129065" speed="5">
+                        <frame duration="1" hotspotX="0.53125" hotspotY="0.5" original-source="C:\Users\dbga_58\Desktop\Assets\Key 2.png">
+                            <collision-poly>
+                                <point x="0.09375" y="0.208333" />
+                                <point x="0.53125" y="0.0208333" />
+                                <point x="0.9375" y="0.229167" />
+                                <point x="0.53125" y="0.979167" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="SpaceKey" pingpong="0" repeatcount="1" repeatto="0" sid="756002059554104" speed="5">
+                        <frame duration="1" hotspotX="0.53125" hotspotY="0.5" original-source="C:\Users\dbga_58\Desktop\Assets\Key 3.png">
+                            <collision-poly>
+                                <point x="0.09375" y="0.208333" />
+                                <point x="0.53125" y="0.0208333" />
+                                <point x="0.9375" y="0.229167" />
+                                <point x="0.53125" y="0.979167" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                    <animation framecount="1" loop="0" name="EgyptKey" pingpong="0" repeatcount="1" repeatto="0" sid="697627920368875" speed="5">
+                        <frame duration="1" hotspotX="0.53125" hotspotY="0.5" original-source="C:\Users\dbga_58\Desktop\Assets\Key 4.png">
+                            <collision-poly>
+                                <point x="0.53125" y="0.0208333" />
+                                <point x="0.9375" y="0.229167" />
+                                <point x="0.53125" y="0.979167" />
+                                <point x="1.49012e-008" y="0.270833" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
             <object-type name="Tardis" sid="519461104048630">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="disappear" sid="152401916397854" type="boolean" />
+                </instance-variables>
                 <animation-folder>
                     <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="801815034217786" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <image-point name="Imagepoint 1" x="0.5" y="0.760417" />
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -658,7 +712,14 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="436634774946417" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_58\Desktop\Nuova Build\Onda d&apos;urto scudo.png">
+                            <collision-poly>
+                                <point x="0.5" y="0.047619" />
+                                <point x="0.830729" y="0.083333" />
+                                <point x="0.817709" y="0.953869" />
+                                <point x="0.5" y="0.97619" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -675,6 +736,86 @@
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="442273650326004" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pellix\Desktop\BuildProgetto\Animations\Grenade\Default\000.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="HUDBoomerang" sid="164202087450209">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="974286439978512" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_58\Desktop\Assets\HUD Sprites\HUD_Boomerang_Off.png">
+                            <collision-poly>
+                                <point x="0.0208333" y="0.0208333" />
+                                <point x="0.5" y="0" />
+                                <point x="0.979167" y="0.0208333" />
+                                <point x="1" y="0.5" />
+                                <point x="0.979167" y="0.979167" />
+                                <point x="0.5" y="1" />
+                                <point x="0.0208333" y="0.979167" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_58\Desktop\Assets\HUD Sprites\HUD_Boomerang.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="HUDBow" sid="383056681411143">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="822414491232937" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_58\Desktop\Assets\HUD Sprites\HUD_Bow_Off.png">
+                            <collision-poly>
+                                <point x="0.0208333" y="0.0208333" />
+                                <point x="0.5" y="0" />
+                                <point x="0.979167" y="0.0208333" />
+                                <point x="1" y="0.5" />
+                                <point x="0.979167" y="0.979167" />
+                                <point x="0.5" y="1" />
+                                <point x="0.0208333" y="0.979167" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_58\Desktop\Assets\HUD Sprites\HUD_Bow.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="HUDGrenade" sid="593379706112056">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="660421608860466" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_58\Desktop\Assets\HUD Sprites\HUD_Grenade_Off_Desaturated.png">
+                            <collision-poly>
+                                <point x="0.0208333" y="0.0208333" />
+                                <point x="0.5" y="0" />
+                                <point x="0.979167" y="0.0208333" />
+                                <point x="1" y="0.5" />
+                                <point x="0.979167" y="0.979167" />
+                                <point x="0.5" y="1" />
+                                <point x="0.0208333" y="0.979167" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_58\Desktop\Assets\HUD Sprites\HUD_Grenade_On.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="HUDShield" sid="796706343909778">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="350070421621926" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_58\Desktop\Assets\HUD Sprites\HUD_Shield_Off.png">
+                            <collision-poly>
+                                <point x="0.0208333" y="0.0208333" />
+                                <point x="0.5" y="0" />
+                                <point x="0.979167" y="0.0208333" />
+                                <point x="1" y="0.5" />
+                                <point x="0.979167" y="0.979167" />
+                                <point x="0.5" y="1" />
+                                <point x="0.0208333" y="0.979167" />
+                                <point x="0" y="0.5" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_58\Desktop\Assets\HUD Sprites\HUD_Shield.png" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -752,20 +893,40 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="BossFloor" sid="309020205664518">
+                <plugin id="TiledBg" />
+                <texture original-source="C:\Users\dbga_58\Desktop\Nuova Build\Untitled.png" />
+            </object-type>
+            <object-type name="Border" sid="203236653673430">
+                <plugin id="Sprite" />
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="874668044485453" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_58\Desktop\Nuova Build\final boss arena02.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Beach" sid="757848624128606">
+                <plugin id="TiledBg" />
+                <texture original-source="C:\Users\dbga_58\Desktop\Nuova Build\Beach.png" />
+            </object-type>
+            <object-type name="SpaceFloor" sid="607349580968644">
+                <plugin id="TiledBg" />
+                <texture original-source="C:\Users\dbga_58\Desktop\Nuova Build\SpaceFloor.png" />
+            </object-type>
         </object-folder>
         <object-folder name="Characters">
-            <object-type name="Captain" sid="845157965548012">
+            <object-type name="CannonTrigger" sid="845157965548012">
                 <plugin id="Sprite" />
                 <behaviors>
                     <behavior-type name="Sine" sid="279153167080996">
                         <behavior id="Sin" />
                     </behavior-type>
+                    <behavior-type name="Flash" sid="143080730281553">
+                        <behavior id="Flash" />
+                    </behavior-type>
                 </behaviors>
                 <animation-folder>
-                    <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="141280425802574" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="141280425802574" speed="10">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
@@ -893,16 +1054,9 @@
                 <instance-variables>
                     <instance-variable name="boomLaunched" sid="535213616175669" type="boolean" />
                     <instance-variable name="shieldActive" sid="901973568592254" type="boolean" />
-                    <instance-variable name="hasBow" sid="794942372399204" type="boolean" />
-                    <instance-variable name="hasShield" sid="769051222780941" type="boolean" />
-                    <instance-variable name="hasGrenade" sid="314243482420336" type="boolean" />
-                    <instance-variable name="hasBoomerang" sid="738367649800707" type="boolean" />
                     <instance-variable name="shootDir" sid="432663563619024" type="number" />
                     <instance-variable name="OnHub" sid="698716731867306" type="boolean" />
-                    <instance-variable name="HasDesertKey" sid="390122747508251" type="boolean" />
-                    <instance-variable name="HasSpaceKey" sid="238654818382416" type="boolean" />
-                    <instance-variable name="HasVietnamKey" sid="992029643035142" type="boolean" />
-                    <instance-variable name="HasPiratesKey" sid="219562452132839" type="boolean" />
+                    <instance-variable name="lastWeapon" sid="917689069611734" type="number" />
                 </instance-variables>
                 <behaviors>
                     <behavior-type name="8Direction" sid="482813908153746">
@@ -916,6 +1070,9 @@
                     </behavior-type>
                     <behavior-type name="Flash" sid="237378821562944">
                         <behavior id="Flash" />
+                    </behavior-type>
+                    <behavior-type name="DestroyOutsideLayout" sid="317358894566814">
+                        <behavior id="destroy" />
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
@@ -1426,7 +1583,7 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="410260529992283" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pellix\Desktop\^91E686337550809DCD59B6D090721CA04C0950471115404D82^pimgpsh_fullsize_distr.png">
+                        <frame duration="1" hotspotX="0.513514" hotspotY="0.512195" original-source="C:\Users\dbga_58\Desktop\Nuova Build\SpaceTurret.png">
                             <collision-poly>
                                 <point x="0.190476" y="0.218182" />
                                 <point x="0.5" y="0.0454545" />
@@ -1456,7 +1613,7 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="16" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="271733194905482" speed="5">
-                        <frame duration="1" hotspotX="0.506173" hotspotY="0.518072">
+                        <frame duration="1" hotspotX="0.506173" hotspotY="0.518072" original-source="C:\Users\dbga_58\Desktop\Nuova Build\Centrifugal Station 2nd generation hull.png">
                             <image-point name="Imagepoint 1" x="0" y="0.506024" />
                             <image-point name="Imagepoint 2" x="1" y="0.506024" />
                             <image-point name="Imagepoint 3" x="0.506173" y="1" />
@@ -1730,6 +1887,9 @@
             </object-type>
             <object-type name="Flubber" sid="308363127242639">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="Health" sid="929169483051737" type="number" />
+                </instance-variables>
                 <behaviors>
                     <behavior-type name="BoundToLayout" sid="303153380313950">
                         <behavior id="bound" />
@@ -1743,22 +1903,113 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="11" loop="1" name="Flubber" pingpong="0" repeatcount="1" repeatto="0" sid="819292759234308" speed="10">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\1.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\2.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\3.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\4.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\5.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\6.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\7.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\8.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\9.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\10.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\11.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\1.png">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                            <collision-poly>
+                                <point x="0.0384615" y="0.685897" />
+                                <point x="0.967949" y="0.683761" />
+                                <point x="0.967949" y="1" />
+                                <point x="0.0384615" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\2.png">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                            <collision-poly>
+                                <point x="0.112179" y="0.508549" />
+                                <point x="0.852564" y="0.508549" />
+                                <point x="0.852564" y="0.942307" />
+                                <point x="0.112179" y="0.942307" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\3.png">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                            <collision-poly>
+                                <point x="0.128205" y="0.348291" />
+                                <point x="0.586538" y="0.320513" />
+                                <point x="0.846154" y="0.773504" />
+                                <point x="0.301282" y="0.91453" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\4.png">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                            <collision-poly>
+                                <point x="0.00961538" y="0.162393" />
+                                <point x="0.682693" y="0.0811966" />
+                                <point x="0.958333" y="0.467948" />
+                                <point x="0.391026" y="0.767093" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\5.png">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                            <collision-poly>
+                                <point x="0.0769231" y="0.0619658" />
+                                <point x="0.717949" y="0.0106838" />
+                                <point x="0.929487" y="0.495726" />
+                                <point x="0.169872" y="0.448718" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\6.png">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                            <collision-poly>
+                                <point x="0.105769" y="0.0042735" />
+                                <point x="0.887821" y="0.00854701" />
+                                <point x="0.86859" y="0.491452" />
+                                <point x="0.125" y="0.482906" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\7.png">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                            <collision-poly>
+                                <point x="0.0897436" y="0.042735" />
+                                <point x="0.842949" y="0.0448718" />
+                                <point x="0.855769" y="0.457264" />
+                                <point x="0.0897436" y="0.455128" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\8.png">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                            <collision-poly>
+                                <point x="0.307692" y="0.102564" />
+                                <point x="0.801282" y="0.143162" />
+                                <point x="0.919872" y="0.621795" />
+                                <point x="0.153846" y="0.683761" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\9.png">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                            <collision-poly>
+                                <point x="0.378205" y="0.192308" />
+                                <point x="0.653846" y="0.209402" />
+                                <point x="0.839743" y="0.811965" />
+                                <point x="0.205128" y="0.752136" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\10.png">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                            <collision-poly>
+                                <point x="0.189103" y="0.517094" />
+                                <point x="0.778846" y="0.512821" />
+                                <point x="0.900641" y="0.882478" />
+                                <point x="0.0608974" y="0.884616" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\11.png">
+                            <image-point name="Imagepoint 1" x="0.5" y="1" />
+                            <collision-poly>
+                                <point x="0.0352564" y="0.777778" />
+                                <point x="0.996795" y="0.752137" />
+                                <point x="0.980769" y="0.931624" />
+                                <point x="0.025641" y="0.959402" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
             <object-type name="FlubberFour" sid="181498446466229">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="Health" sid="972680484322415" type="number" />
+                </instance-variables>
                 <behaviors>
                     <behavior-type name="Bullet" sid="253641666356413">
                         <behavior id="Bullet" />
@@ -1769,25 +2020,112 @@
                     <behavior-type name="Flash" sid="801018462522952">
                         <behavior id="Flash" />
                     </behavior-type>
+                    <behavior-type name="BoundToLayout" sid="133048159138364">
+                        <behavior id="bound" />
+                    </behavior-type>
                 </behaviors>
                 <animation-folder>
                     <animation framecount="11" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="156308075288715" speed="10">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\1.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\2.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\3.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\4.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\5.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\6.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\7.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\8.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\9.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\10.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\11.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\1.png">
+                            <collision-poly>
+                                <point x="0.0576923" y="0.688034" />
+                                <point x="0.996795" y="0.685897" />
+                                <point x="1" y="0.980769" />
+                                <point x="0.0352564" y="1" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\2.png">
+                            <collision-poly>
+                                <point x="0.214744" y="0.478633" />
+                                <point x="0.833333" y="0.57906" />
+                                <point x="0.858974" y="0.903846" />
+                                <point x="0.432692" y="0.938034" />
+                                <point x="0.0801282" y="0.766026" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\3.png">
+                            <collision-poly>
+                                <point x="0.346154" y="0.32265" />
+                                <point x="0.621795" y="0.354701" />
+                                <point x="0.846154" y="0.792735" />
+                                <point x="0.451923" y="0.867521" />
+                                <point x="0.1875" y="0.646368" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\4.png">
+                            <collision-poly>
+                                <point x="0.198718" y="0.108974" />
+                                <point x="0.810897" y="0.162393" />
+                                <point x="0.846154" y="0.478632" />
+                                <point x="0.423077" y="0.737179" />
+                                <point x="0.128205" y="0.446581" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\5.png">
+                            <collision-poly>
+                                <point x="0.157051" y="0.025641" />
+                                <point x="0.804487" y="0.0448718" />
+                                <point x="0.900641" y="0.536325" />
+                                <point x="0.0961539" y="0.423077" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\6.png">
+                            <collision-poly>
+                                <point x="0.141026" y="0.00641026" />
+                                <point x="0.833334" y="0.0128205" />
+                                <point x="0.903846" y="0.49359" />
+                                <point x="0.102564" y="0.480769" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\7.png">
+                            <collision-poly>
+                                <point x="0.134615" y="0.0576923" />
+                                <point x="0.810898" y="0.0769231" />
+                                <point x="0.884616" y="0.467949" />
+                                <point x="0.0897436" y="0.433761" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\8.png">
+                            <collision-poly>
+                                <point x="0.323718" y="0.0897436" />
+                                <point x="0.817308" y="0.181624" />
+                                <point x="0.907051" y="0.594016" />
+                                <point x="0.495192" y="0.681623" />
+                                <point x="0.147436" y="0.59829" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\9.png">
+                            <collision-poly>
+                                <point x="0.358974" y="0.194444" />
+                                <point x="0.647436" y="0.205128" />
+                                <point x="0.849359" y="0.803419" />
+                                <point x="0.185898" y="0.773504" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\10.png">
+                            <collision-poly>
+                                <point x="0.115385" y="0.5" />
+                                <point x="0.830128" y="0.51282" />
+                                <point x="0.865385" y="0.905983" />
+                                <point x="0.0929487" y="0.863248" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\11.png">
+                            <collision-poly>
+                                <point x="0.0192308" y="0.735043" />
+                                <point x="0.977564" y="0.769231" />
+                                <point x="0.990385" y="0.938034" />
+                                <point x="0.0224359" y="0.955128" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
             <object-type name="FlubberThree" sid="168354723256534">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="Health" sid="786304671131721" type="number" />
+                </instance-variables>
                 <behaviors>
                     <behavior-type name="DestroyOutsideLayout" sid="646639719333135">
                         <behavior id="destroy" />
@@ -1798,25 +2136,111 @@
                     <behavior-type name="Flash" sid="217125902492779">
                         <behavior id="Flash" />
                     </behavior-type>
+                    <behavior-type name="BoundToLayout" sid="384543062691184">
+                        <behavior id="bound" />
+                    </behavior-type>
                 </behaviors>
                 <animation-folder>
                     <animation framecount="11" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="882073754203815" speed="10">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\1.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\2.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\3.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\4.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\5.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\6.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\7.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\8.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\9.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\10.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\11.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\1.png">
+                            <collision-poly>
+                                <point x="0.0352564" y="0.668804" />
+                                <point x="0.980769" y="0.702991" />
+                                <point x="0.948718" y="0.976496" />
+                                <point x="0.0544872" y="0.987179" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\2.png">
+                            <collision-poly>
+                                <point x="0.208333" y="0.480769" />
+                                <point x="0.766026" y="0.553418" />
+                                <point x="0.916667" y="0.940171" />
+                                <point x="0.0576923" y="0.91453" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\3.png">
+                            <collision-poly>
+                                <point x="0.342949" y="0.32265" />
+                                <point x="0.61859" y="0.33547" />
+                                <point x="0.849359" y="0.799145" />
+                                <point x="0.458333" y="0.869658" />
+                                <point x="0.171474" y="0.661325" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\4.png">
+                            <collision-poly>
+                                <point x="0.189103" y="0.134615" />
+                                <point x="0.788462" y="0.136752" />
+                                <point x="0.823718" y="0.467948" />
+                                <point x="0.429487" y="0.74359" />
+                                <point x="0.125" y="0.439103" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\5.png">
+                            <collision-poly>
+                                <point x="0.134615" y="0.042735" />
+                                <point x="0.791667" y="0.0405983" />
+                                <point x="0.891026" y="0.493589" />
+                                <point x="0.099359" y="0.435897" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\6.png">
+                            <collision-poly>
+                                <point x="0.13141" y="0.0149573" />
+                                <point x="0.858974" y="0.0042735" />
+                                <point x="0.907051" y="0.489316" />
+                                <point x="0.112179" y="0.478632" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\7.png">
+                            <collision-poly>
+                                <point x="0.134615" y="0.0512821" />
+                                <point x="0.830128" y="0.0705128" />
+                                <point x="0.842949" y="0.493589" />
+                                <point x="0.0865385" y="0.397436" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\8.png">
+                            <collision-poly>
+                                <point x="0.333333" y="0.100427" />
+                                <point x="0.826923" y="0.16453" />
+                                <point x="0.907051" y="0.679487" />
+                                <point x="0.13141" y="0.626068" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\9.png">
+                            <collision-poly>
+                                <point x="0.38141" y="0.192308" />
+                                <point x="0.644231" y="0.196581" />
+                                <point x="0.782052" y="0.538461" />
+                                <point x="0.612179" y="0.815171" />
+                                <point x="0.179487" y="0.75" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\10.png">
+                            <collision-poly>
+                                <point x="0.182692" y="0.482906" />
+                                <point x="0.849359" y="0.538462" />
+                                <point x="0.88141" y="0.905983" />
+                                <point x="0.0673077" y="0.818376" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\11.png">
+                            <collision-poly>
+                                <point x="0.025641" y="0.75" />
+                                <point x="0.98718" y="0.754274" />
+                                <point x="0.990385" y="0.946581" />
+                                <point x="0.0192308" y="0.948718" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
             <object-type name="FlubberTwo" sid="750541141394475">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="Health" sid="572436997602883" type="number" />
+                </instance-variables>
                 <behaviors>
                     <behavior-type name="DestroyOutsideLayout" sid="536219857825371">
                         <behavior id="destroy" />
@@ -1827,20 +2251,125 @@
                     <behavior-type name="Flash" sid="848009163015779">
                         <behavior id="Flash" />
                     </behavior-type>
+                    <behavior-type name="BoundToLayout" sid="921064049383297">
+                        <behavior id="bound" />
+                    </behavior-type>
                 </behaviors>
                 <animation-folder>
                     <animation framecount="11" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="581544354581589" speed="10">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\1.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\2.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\3.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\4.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\5.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\6.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\7.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\8.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\9.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\10.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\11.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\1.png">
+                            <collision-poly>
+                                <point x="0.0192308" y="0.677351" />
+                                <point x="1" y="0.690171" />
+                                <point x="1" y="0.989316" />
+                                <point x="0.0192308" y="0.991453" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\2.png">
+                            <collision-poly>
+                                <point x="0.221154" y="0.489317" />
+                                <point x="0.916667" y="0.583334" />
+                                <point x="0.74359" y="0.965812" />
+                                <point x="0.0480769" y="0.886752" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\3.png">
+                            <collision-poly>
+                                <point x="0.330128" y="0.32906" />
+                                <point x="0.628205" y="0.341881" />
+                                <point x="0.865385" y="0.820513" />
+                                <point x="0.410256" y="0.863248" />
+                                <point x="0.192308" y="0.642094" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\4.png">
+                            <collision-poly>
+                                <point x="0.182692" y="0.134615" />
+                                <point x="0.858974" y="0.123932" />
+                                <point x="0.73077" y="0.679487" />
+                                <point x="0.400641" y="0.737179" />
+                                <point x="0.152244" y="0.446581" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\5.png">
+                            <collision-poly>
+                                <point x="0.153846" y="0.0405983" />
+                                <point x="0.685897" y="0.034188" />
+                                <point x="0.926282" y="0.487179" />
+                                <point x="0.0833333" y="0.50641" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\6.png">
+                            <collision-poly>
+                                <point x="0.144231" y="0.0106838" />
+                                <point x="0.842949" y="0.0149573" />
+                                <point x="0.887821" y="0.433761" />
+                                <point x="0.0897436" y="0.536325" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\7.png">
+                            <collision-poly>
+                                <point x="0.13141" y="0.0512821" />
+                                <point x="0.810897" y="0.0448718" />
+                                <point x="0.884615" y="0.480769" />
+                                <point x="0.0929487" y="0.412393" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\8.png">
+                            <collision-poly>
+                                <point x="0.333333" y="0.108974" />
+                                <point x="0.778846" y="0.138889" />
+                                <point x="0.903846" y="0.474358" />
+                                <point x="0.467949" y="0.722222" />
+                                <point x="0.166667" y="0.554487" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\9.png">
+                            <collision-poly>
+                                <point x="0.38141" y="0.192308" />
+                                <point x="0.653846" y="0.202991" />
+                                <point x="0.820513" y="0.797008" />
+                                <point x="0.179487" y="0.767094" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\10.png">
+                            <collision-poly>
+                                <point x="0.189103" y="0.5" />
+                                <point x="0.830128" y="0.549145" />
+                                <point x="0.865385" y="0.91453" />
+                                <point x="0.0769231" y="0.811965" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\march\Desktop\Palla_Frame by Frame\11.png">
+                            <collision-poly>
+                                <point x="0" y="0.754274" />
+                                <point x="0.996795" y="0.767094" />
+                                <point x="1" y="0.944444" />
+                                <point x="0.00641026" y="0.950855" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Captain" sid="266991050276114">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="Health" sid="162695087650022" type="number" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Sine" sid="348801291596063">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                    <behavior-type name="Flash" sid="382487078516889">
+                        <behavior id="Flash" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="4" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="576480137353688" speed="10">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -1854,6 +2383,51 @@
         <object-type name="Function" sid="218884732593809">
             <plugin id="Function" />
         </object-type>
+        <object-type name="CountDown" sid="689420066025647">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="WeaponsMask" sid="356881510824579">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="823037532653797" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="A Button" x="0" y="1" />
+                        <image-point name="X Button" x="1" y="0" />
+                        <image-point name="B Button" x="0.124" y="0.136" />
+                        <image-point name="LT Button" x="0.876" y="0.9" />
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Walls" sid="829127995074257">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="340276049854799" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_58\Desktop\Assets\Assets Central Hub\Central_ Hub_Muri.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="HubFloor" sid="512524114555318">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="582197935439828" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_58\Desktop\Assets\Assets Central Hub\Terreno.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="KeysMask" sid="771064744563373">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="457139898330651" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <image-point name="EgyptKey" x="0" y="0" />
+                        <image-point name="PiratesKey" x="0.824" y="0.152" />
+                        <image-point name="SpaceKey" x="1" y="1" />
+                        <image-point name="VietnamKey" x="0.148" y="0.856" />
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -1864,6 +2438,8 @@
         <layout>LevelPirates.xml</layout>
         <layout>LevelSpace.xml</layout>
         <layout>LevelDesert.xml</layout>
+        <layout>Start.xml</layout>
+        <layout>End.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>WeaponsSheet.xml</event-sheet>
@@ -1873,6 +2449,8 @@
         <event-sheet>LevelVietnamSheet.xml</event-sheet>
         <event-sheet>LevelPiratesSheet.xml</event-sheet>
         <event-sheet>LevelBossSheet.xml</event-sheet>
+        <event-sheet>StartSheet.xml</event-sheet>
+        <event-sheet>EndSheet.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Gamepad" uid="2">

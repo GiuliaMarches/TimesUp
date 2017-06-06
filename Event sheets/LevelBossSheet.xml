@@ -3,12 +3,16 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>LevelBossSheet</name>
     <events>
+        <variable constant="0" name="Weapons" sid="169473139639202" static="0" type="number">0</variable>
         <include>WeaponsSheet</include>
         <event-block sid="683234832407586">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="325585439823507" type="System" />
             </conditions>
             <actions>
+                <action id="-9" name="Destroy" sid="810344723881315" type="FlubberTwo" />
+                <action id="-9" name="Destroy" sid="527427841554003" type="FlubberThree" />
+                <action id="-9" name="Destroy" sid="252436320539708" type="FlubberFour" />
                 <action id="-9" name="Destroy" sid="677128389009622" type="Boomerang" />
                 <action id="-9" name="Destroy" sid="955475897099346" type="Grenade" />
                 <action id="-13" name="Set boolean" sid="321713848101718" type="Player">
@@ -37,34 +41,84 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block any="1" sid="110918150669241">
+                <event-block any="1" sid="287442283679033">
                     <conditions>
-                        <condition id="0" name="On collision with another object" sid="486791764020627" type="Arrow">
+                        <condition id="-7" name="Compare instance variable" sid="473468223611209" type="Flubber">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="433158431986382" type="Flubber">
+                            <param id="0" name="Object">FlubberTwo</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="958514172387219" type="Flubber">
+                            <param id="0" name="Object">FlubberTwo</param>
+                            <param id="1" name="Layer">1</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="158162173185864" type="Flubber" />
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="591947422266796">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="970557085436734" type="Arrow">
                             <param id="0" name="Object">Flubber</param>
                         </condition>
-                        <condition id="0" name="On collision with another object" sid="350645055045363" type="Boomerang">
-                            <param id="0" name="Object">Flubber</param>
-                        </condition>
-                        <condition id="0" name="On collision with another object" sid="161014327620109" type="Shield">
-                            <param id="0" name="Object">Flubber</param>
-                        </condition>
-                        <condition id="0" name="On collision with another object" sid="446899863278975" type="Boom">
+                        <condition id="0" name="On collision with another object" sid="909624063911849" type="Shield">
                             <param id="0" name="Object">Flubber</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Spawn another object" sid="259938436016209" type="Flubber">
-                            <param id="0" name="Object">FlubberTwo</param>
-                            <param id="1" name="Layer">1</param>
-                            <param id="2" name="Image point">0</param>
+                        <action id="-12" name="Subtract from" sid="737483314447200" type="Flubber">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">1</param>
                         </action>
-                        <action id="0" name="Spawn another object" sid="302642660269090" type="Flubber">
-                            <param id="0" name="Object">FlubberTwo</param>
-                            <param id="1" name="Layer">1</param>
-                            <param id="2" name="Image point">0</param>
+                        <action id="-9" name="Destroy" sid="403862662827008" type="Arrow" />
+                        <action behavior="Flash" id="0" name="Flash" sid="287260487618907" type="Flubber">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.6</param>
                         </action>
-                        <action id="-9" name="Destroy" sid="628856378801542" type="Flubber" />
-                        <action id="-9" name="Destroy" sid="812189484793725" type="Arrow" />
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="619037244479348">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="984163078116558" type="Boomerang">
+                            <param id="0" name="Object">Flubber</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="738603043056635" type="Flubber">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="911950906379586" type="Flubber">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.6</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="213556854159749">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="354421762702225" type="Boom">
+                            <param id="0" name="Object">Flubber</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="167652535329074" type="Flubber">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="932494899160337" type="Flubber">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.6</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -106,17 +160,10 @@
                 </event-block>
                 <event-block any="1" sid="644729143418676">
                     <conditions>
-                        <condition id="0" name="On collision with another object" sid="861689360818451" type="Arrow">
-                            <param id="0" name="Object">FlubberTwo</param>
-                        </condition>
-                        <condition id="0" name="On collision with another object" sid="971345701956078" type="Boomerang">
-                            <param id="0" name="Object">FlubberTwo</param>
-                        </condition>
-                        <condition id="0" name="On collision with another object" sid="415120790115314" type="Shield">
-                            <param id="0" name="Object">FlubberTwo</param>
-                        </condition>
-                        <condition id="0" name="On collision with another object" sid="291004099078558" type="Boom">
-                            <param id="0" name="Object">FlubberTwo</param>
+                        <condition id="-7" name="Compare instance variable" sid="291004099078558" type="FlubberTwo">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -136,7 +183,64 @@
                             <param id="2" name="Image point">0</param>
                         </action>
                         <action id="-9" name="Destroy" sid="303940431265267" type="FlubberTwo" />
-                        <action id="-9" name="Destroy" sid="667335240482361" type="Arrow" />
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="655931616311253">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="523633391831456" type="Arrow">
+                            <param id="0" name="Object">FlubberTwo</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="456303935500607" type="Shield">
+                            <param id="0" name="Object">FlubberTwo</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="791376959602130" type="FlubberTwo">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="181083398599040" type="Arrow" />
+                        <action behavior="Flash" id="0" name="Flash" sid="713420170810422" type="FlubberTwo">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.6</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="664456299105673">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="302786074809407" type="Boomerang">
+                            <param id="0" name="Object">FlubberTwo</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="685983988173344" type="FlubberTwo">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="124907702488043" type="FlubberTwo">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.6</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="234283687143072">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="863755605524336" type="Boom">
+                            <param id="0" name="Object">FlubberTwo</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="810449165132851" type="FlubberTwo">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="734084833281589" type="FlubberTwo">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.6</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -178,17 +282,10 @@
                 </event-block>
                 <event-block any="1" sid="654179425936301">
                     <conditions>
-                        <condition id="0" name="On collision with another object" sid="729892138783923" type="Arrow">
-                            <param id="0" name="Object">FlubberThree</param>
-                        </condition>
-                        <condition id="0" name="On collision with another object" sid="949075801795430" type="Boomerang">
-                            <param id="0" name="Object">FlubberThree</param>
-                        </condition>
-                        <condition id="0" name="On collision with another object" sid="301191422289889" type="Shield">
-                            <param id="0" name="Object">FlubberThree</param>
-                        </condition>
-                        <condition id="0" name="On collision with another object" sid="129960803110095" type="Boom">
-                            <param id="0" name="Object">FlubberThree</param>
+                        <condition id="-7" name="Compare instance variable" sid="129960803110095" type="FlubberThree">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -214,6 +311,88 @@
                         </action>
                         <action id="-9" name="Destroy" sid="429234120959393" type="FlubberThree" />
                         <action id="-9" name="Destroy" sid="558925599562970" type="Arrow" />
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="412221048120511">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="849971987796637" type="Arrow">
+                            <param id="0" name="Object">FlubberThree</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="976200900527203" type="Shield">
+                            <param id="0" name="Object">FlubberThree</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="521148131641167" type="FlubberThree">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="505107856515561" type="Arrow" />
+                        <action behavior="Flash" id="0" name="Flash" sid="688238960668249" type="FlubberThree">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.6</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="486792007011343">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="702504063721900" type="Boomerang">
+                            <param id="0" name="Object">FlubberThree</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="294826561012702" type="FlubberThree">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="771372619359047" type="FlubberThree">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.6</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="692253054072473">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="651109739882399" type="Boom">
+                            <param id="0" name="Object">FlubberThree</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="574971657551911" type="FlubberThree">
+                            <param id="0" name="Instance variable">Health</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="642599136672899" type="FlubberThree">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.6</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="513082447847375">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="237762240972601" type="FlubberThree">
+                            <param id="0" name="Object">FlubberThree</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="4" name="Bounce off object" sid="572089626500072" type="FlubberThree">
+                            <param id="0" name="Object">FlubberThree</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="936702610458578">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="623946725949115" type="FlubberThree">
+                            <param id="0" name="Object">FlubberTwo</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="4" name="Bounce off object" sid="850568600375408" type="FlubberThree">
+                            <param id="0" name="Object">FlubberTwo</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -272,6 +451,253 @@
                         <action id="-9" name="Destroy" sid="717965293305812" type="FlubberFour" />
                         <action id="-9" name="Destroy" sid="712251024963753" type="Arrow" />
                     </actions>
+                </event-block>
+                <event-block any="1" sid="775806040943646">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="464448025888046" type="FlubberFour">
+                            <param id="0" name="Object">FlubberFour</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="4" name="Bounce off object" sid="241520546923095" type="FlubberFour">
+                            <param id="0" name="Object">FlubberFour</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="314137186098412">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="244854385811448" type="FlubberFour">
+                            <param id="0" name="Object">FlubberThree</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="4" name="Bounce off object" sid="169249775432073" type="FlubberFour">
+                            <param id="0" name="Object">FlubberThree</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="903319514328872">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="199637769790774" type="FlubberFour">
+                            <param id="0" name="Object">FlubberTwo</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="4" name="Bounce off object" sid="445143145138982" type="FlubberFour">
+                            <param id="0" name="Object">FlubberTwo</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="489419105820331" title="PlayerDamage">
+            <sub-events>
+                <event-block any="1" sid="638081796688759">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="541779636548486" type="Player">
+                            <param id="0" name="Object">Flubber</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="129384840508538" type="Player">
+                            <param id="0" name="Object">FlubberTwo</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="203448045538341" type="Player">
+                            <param id="0" name="Object">FlubberThree</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="172837651935569" type="Player">
+                            <param id="0" name="Object">FlubberFour</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="11" name="Set collisions enabled" sid="350631614504252" type="Player">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="432018916940662" type="Player">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="267775481843001" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="703477642824265" type="Player">
+                            <param id="0" name="Collisions">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="567255100440977">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="609503519842144" type="System">
+                                    <param id="0" name="Variable">hasBow</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="639367278008838" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Value">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="916106051604528">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="530730266269128" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="370680069284591">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="625456849392003" type="System">
+                                            <param id="0" name="Variable">hasGrenade</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="929248462546965" type="Player">
+                                            <param id="0" name="Instance variable">lastWeapon</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="355095728763034">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="931920279645425" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="323361758411982">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="313827597958520" type="System">
+                                                    <param id="0" name="Variable">hasShield</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="801750347437379" type="Player">
+                                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                                    <param id="1" name="Value">4</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="205989388964249">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="452012089997588" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="790152008756262">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="334047031662330" type="System">
+                                                            <param id="0" name="Variable">hasBoomerang</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="303145017024043" type="Player">
+                                                            <param id="0" name="Instance variable">lastWeapon</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="638564972291179">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="697703450852648" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="943664622029425" type="System">
+                                    <param id="0" name="Variable">hasBoomerang</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="322684760086262">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="291552919586869" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="603814826624798" type="System">
+                                    <param id="0" name="Variable">hasGrenade</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="244704314480201">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="613154096753511" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="207871198302683" type="System">
+                                    <param id="0" name="Variable">hasBow</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="105771484030135">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="367073765776904" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="407610808457684" type="System">
+                                    <param id="0" name="Variable">hasShield</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="552957927196878">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="656983893791932" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="11" name="Set collisions enabled" sid="888415538323421" type="Player">
+                                    <param id="0" name="Collisions">0</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="619130335532436" type="Player">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">1.0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="119689618052814" type="System">
+                                    <param id="0" name="Seconds">0.5</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="770967064834742" type="Player" />
+                                <action id="-16" name="Wait" sid="573961999745806" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="657164171027954" type="System">
+                                    <param id="0" name="Layout">End</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>

@@ -27,6 +27,25 @@
                     <param id="0" name="Frame number">0</param>
                 </action>
                 <action id="2" name="Stop" sid="654058774796782" type="Box" />
+                <action id="-16" name="Set opacity" sid="540126619803785" type="Tardis">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="5" name="Set frame" sid="667297113626263" type="Tardis">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="3" name="Start" sid="751732706135820" type="Tardis">
+                    <param id="0" name="From">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="767643024443917" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="514532999229450" type="Player">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="489972874773383" type="Tardis">
+                    <param id="0" name="Instance variable">disappear</param>
+                    <param id="1" name="Value">1</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="217311360974236">
@@ -156,6 +175,32 @@
                     </sub-events>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="291808569633118">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="189430216862275" type="Tardis">
+                    <param id="0" name="Instance variable">disappear</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="659978460567180" type="Tardis">
+                    <param id="0" name="Opacity">Self.Opacity - 2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="699997787844309">
+            <conditions>
+                <condition id="-10" name="Compare opacity" sid="147634653430086" type="Tardis">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Opacity">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="332334955657458" type="Tardis">
+                    <param id="0" name="Instance variable">disappear</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
         </event-block>
         <event-group description="" sid="775235338968727" title="Vietcong Script">
             <sub-events>
@@ -511,15 +556,18 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="-9" name="Set value" sid="291435235755863" type="System">
+                                    <param id="0" name="Variable">hasGrenade</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="929832984067699" type="System">
+                                    <param id="0" name="Seconds">4</param>
+                                </action>
                                 <action id="-15" name="Set visible" sid="375364905140522" type="GrenadeWep">
                                     <param id="0" name="Visibility">1</param>
                                 </action>
                                 <action id="11" name="Set collisions enabled" sid="337835042268188" type="GrenadeWep">
                                     <param id="0" name="Collisions">1</param>
-                                </action>
-                                <action id="-9" name="Set value" sid="291435235755863" type="System">
-                                    <param id="0" name="Variable">hasGrenade</param>
-                                    <param id="1" name="Value">0</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -590,7 +638,26 @@
                                                     <conditions>
                                                         <condition id="-22" name="Else" sid="994510481577738" type="System" />
                                                     </conditions>
-                                                    <actions />
+                                                    <actions>
+                                                        <action id="11" name="Set collisions enabled" sid="649380545783867" type="Player">
+                                                            <param id="0" name="Collisions">0</param>
+                                                        </action>
+                                                        <action behavior="Flash" id="0" name="Flash" sid="704312401154764" type="Player">
+                                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                                            <param id="2" name="Duration">1.0</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="482505795594876" type="System">
+                                                            <param id="0" name="Seconds">0.5</param>
+                                                        </action>
+                                                        <action id="-9" name="Destroy" sid="142155077497430" type="Player" />
+                                                        <action id="-16" name="Wait" sid="785434993625042" type="System">
+                                                            <param id="0" name="Seconds">1.0</param>
+                                                        </action>
+                                                        <action id="-2" name="Go to layout" sid="302144320967011" type="System">
+                                                            <param id="0" name="Layout">End</param>
+                                                        </action>
+                                                    </actions>
                                                 </event-block>
                                             </sub-events>
                                         </event-block>
@@ -806,8 +873,9 @@
                                             <param id="1" name="Layer">1</param>
                                             <param id="2" name="Image point">1</param>
                                         </action>
-                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="527198503597534" type="VietBullet">
-                                            <param id="0" name="Angle">45</param>
+                                        <action id="-22" name="Set angle toward position" sid="499034979652007" type="VietBullet">
+                                            <param id="0" name="X">Player.X</param>
+                                            <param id="1" name="Y">Player.Y</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -890,8 +958,9 @@
                                                     <param id="1" name="Layer">1</param>
                                                     <param id="2" name="Image point">1</param>
                                                 </action>
-                                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="778575773888150" type="VietBullet">
-                                                    <param id="0" name="Angle">135</param>
+                                                <action id="-22" name="Set angle toward position" sid="778575773888150" type="VietBullet">
+                                                    <param id="0" name="X">Player.X</param>
+                                                    <param id="1" name="Y">Player.Y</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -990,12 +1059,20 @@
                             <param id="0" name="Object">VietBoss</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-12" name="Subtract from" sid="736307015963663" type="VietBoss">
-                            <param id="0" name="Instance variable">Health</param>
-                            <param id="1" name="Value">5</param>
-                        </action>
-                    </actions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="387014132826245">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="976520707580206" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Subtract from" sid="736307015963663" type="VietBoss">
+                                    <param id="0" name="Instance variable">Health</param>
+                                    <param id="1" name="Value">5</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -1037,6 +1114,10 @@
                                 </condition>
                             </conditions>
                             <actions>
+                                <action id="4" name="Set animation" sid="986262356573741" type="Key">
+                                    <param id="0" name="Animation">&quot;VietnamKey&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
                                 <action id="-15" name="Set visible" sid="312099856396329" type="Key">
                                     <param id="0" name="Visibility">1</param>
                                 </action>
@@ -1624,5 +1705,37 @@
                 </event-block>
             </sub-events>
         </event-block>
+        <event-group description="" sid="604582353673612" title="PerspectiveBox">
+            <sub-events>
+                <event-block sid="240683073876435">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="548339162779007" type="Box">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Y co-ordinate">Player.Y</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-29" name="Move to object" sid="762990218968224" type="Box">
+                            <param id="0" name="Where">1</param>
+                            <param id="1" name="Object">Player</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="583106415516894">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="558456942244360" type="Box">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Y co-ordinate">Player.Y</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-29" name="Move to object" sid="144832641842456" type="Box">
+                            <param id="0" name="Where">0</param>
+                            <param id="1" name="Object">Player</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

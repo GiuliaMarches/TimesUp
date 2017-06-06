@@ -81,16 +81,9 @@
                     <instance-variables>
                         <boomLaunched>false</boomLaunched>
                         <shieldActive>false</shieldActive>
-                        <hasBow>false</hasBow>
-                        <hasShield>false</hasShield>
-                        <hasGrenade>false</hasGrenade>
-                        <hasBoomerang>false</hasBoomerang>
                         <shootDir>-1</shootDir>
                         <OnHub>false</OnHub>
-                        <HasDesertKey>false</HasDesertKey>
-                        <HasSpaceKey>false</HasSpaceKey>
-                        <HasVietnamKey>false</HasVietnamKey>
-                        <HasPiratesKey>false</HasPiratesKey>
+                        <lastWeapon>0</lastWeapon>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -115,6 +108,7 @@
                             </properties>
                         </behavior-instance>
                         <behavior-instance type="Flash" />
+                        <behavior-instance type="DestroyOutsideLayout" />
                     </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -727,8 +721,8 @@
                         <x>-149</x>
                         <y>524</y>
                         <z>0</z>
-                        <width>37.040519714</width>
-                        <height>37.040519714</height>
+                        <width>48</width>
+                        <height>48</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
