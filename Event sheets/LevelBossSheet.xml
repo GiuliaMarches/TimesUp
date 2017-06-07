@@ -492,6 +492,735 @@
         </event-group>
         <event-group description="" sid="489419105820331" title="PlayerDamage">
             <sub-events>
+                <event-block any="1" sid="336490730007886">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="530591583507227" type="Player">
+                            <param id="0" name="Object">Flubber</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="354997862349561" type="Player">
+                            <param id="0" name="Object">FlubberTwo</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="118456259274238" type="Player">
+                            <param id="0" name="Object">FlubberThree</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="604157476454022" type="Player">
+                            <param id="0" name="Object">FlubberFour</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="11" name="Set collisions enabled" sid="472695305657811" type="Player">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="643395662427996" type="Player">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="525192498499140" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="249703718119929" type="Player">
+                            <param id="0" name="Collisions">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="271493796411613">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="269932045127111" type="System">
+                                    <param id="0" name="Variable">hasBow</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="222540293636389" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Value">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="888837423835765">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="164945763484925" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="542715984535266">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="756106581657745" type="System">
+                                            <param id="0" name="Variable">hasGrenade</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="771790167382024" type="Player">
+                                            <param id="0" name="Instance variable">lastWeapon</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="108298444184761">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="993532796335512" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="446343617570481">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="617326490476173" type="System">
+                                                    <param id="0" name="Variable">hasShield</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="270535107060220" type="Player">
+                                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                                    <param id="1" name="Value">4</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="537325786967592">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="155773031250868" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="131697476799457">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="122976654272883" type="System">
+                                                            <param id="0" name="Variable">hasBoomerang</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="917629455066731" type="Player">
+                                                            <param id="0" name="Instance variable">lastWeapon</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="471913411638843">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="709058146017467" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="714529872858640" type="System">
+                                    <param id="0" name="Variable">hasBoomerang</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="534364959926712" type="System">
+                                    <param id="0" name="Seconds">4.0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="418970188144526" type="BoomerangWep">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="648870482820495" type="BoomerangWep">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="805337516816104">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="581433503161988" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="250801450228437" type="System">
+                                    <param id="0" name="Variable">hasGrenade</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="912490916521022" type="System">
+                                    <param id="0" name="Seconds">4.0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="477488478821319" type="GrenadeWep">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="431507386084906" type="GrenadeWep">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="409087227643215">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="642322905932577" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="546164696052602" type="System">
+                                    <param id="0" name="Variable">hasBow</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="932420655685187" type="System">
+                                    <param id="0" name="Seconds">4.0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="334426291127286" type="Bow">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="513259251963587" type="Bow">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="458781257942518">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="860854062264114" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="498674890196153" type="System">
+                                    <param id="0" name="Variable">hasShield</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="542289771934912" type="System">
+                                    <param id="0" name="Seconds">4.0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="844385512228284" type="ShieldWep">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="915847546147428" type="ShieldWep">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="127905017071162">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="382451939836484" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="11" name="Set collisions enabled" sid="224595639520809" type="Player">
+                                    <param id="0" name="Collisions">0</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="137200730501679" type="Player">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">1.0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="234497308079848" type="System">
+                                    <param id="0" name="Seconds">0.5</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="213778942135716" type="Player" />
+                                <action id="-16" name="Wait" sid="902681707407734" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="915103841041897" type="System">
+                                    <param id="0" name="Layout">End</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block any="1" sid="561920134873130">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="525678588706840" type="Player">
+                            <param id="0" name="Object">Flubber</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="632059573570981" type="Player">
+                            <param id="0" name="Object">FlubberTwo</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="934741108726115" type="Player">
+                            <param id="0" name="Object">FlubberThree</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="857898480133003" type="Player">
+                            <param id="0" name="Object">FlubberFour</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="11" name="Set collisions enabled" sid="699098782709253" type="Player">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="955943856616785" type="Player">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="358011303162406" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="316560057229174" type="Player">
+                            <param id="0" name="Collisions">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="471214994351266">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="822616866933803" type="System">
+                                    <param id="0" name="Variable">hasBow</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="181850819316338" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Value">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="688304637259853">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="631705176113253" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="459357468218959">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="579852750095696" type="System">
+                                            <param id="0" name="Variable">hasGrenade</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="875209765418774" type="Player">
+                                            <param id="0" name="Instance variable">lastWeapon</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="311965292811659">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="745926686496780" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="901289947566222">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="756183615372778" type="System">
+                                                    <param id="0" name="Variable">hasShield</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="271841079991962" type="Player">
+                                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                                    <param id="1" name="Value">4</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="515197244859288">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="380043508583206" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="805583960303242">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="134213078691413" type="System">
+                                                            <param id="0" name="Variable">hasBoomerang</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="995483644966713" type="Player">
+                                                            <param id="0" name="Instance variable">lastWeapon</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="593364095238331">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="101353744428888" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="507298166333369" type="System">
+                                    <param id="0" name="Variable">hasBoomerang</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="123406863784374" type="System">
+                                    <param id="0" name="Seconds">4.0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="488661376562211" type="BoomerangWep">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="246864399116938" type="BoomerangWep">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="127083339092564">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="659163035953139" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="892591045612106" type="System">
+                                    <param id="0" name="Variable">hasGrenade</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="636240577668183" type="System">
+                                    <param id="0" name="Seconds">4.0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="102510191594206" type="GrenadeWep">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="403293287846334" type="GrenadeWep">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="536671215553151">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="661364297352980" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="455627061026567" type="System">
+                                    <param id="0" name="Variable">hasBow</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="709010174756098" type="System">
+                                    <param id="0" name="Seconds">4.0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="401382369564274" type="Bow">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="699611502008063" type="Bow">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="542297039324738">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="734195488627479" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="756217018422191" type="System">
+                                    <param id="0" name="Variable">hasShield</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="787452063714104" type="System">
+                                    <param id="0" name="Seconds">4.0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="882088669094885" type="ShieldWep">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="191162761929938" type="ShieldWep">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="377581022685685">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="827264108431424" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="11" name="Set collisions enabled" sid="582833598936921" type="Player">
+                                    <param id="0" name="Collisions">0</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="157584755150489" type="Player">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">1.0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="233399624468497" type="System">
+                                    <param id="0" name="Seconds">0.5</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="446415918838861" type="Player" />
+                                <action id="-16" name="Wait" sid="919819051159912" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="211013218695879" type="System">
+                                    <param id="0" name="Layout">End</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block any="1" sid="284560805586888">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="936114054381599" type="Player">
+                            <param id="0" name="Object">Flubber</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="616509902348305" type="Player">
+                            <param id="0" name="Object">FlubberTwo</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="232225896204159" type="Player">
+                            <param id="0" name="Object">FlubberThree</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="323890195785671" type="Player">
+                            <param id="0" name="Object">FlubberFour</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="11" name="Set collisions enabled" sid="159511404356242" type="Player">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="848052060236311" type="Player">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="403245313011830" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="231619261001012" type="Player">
+                            <param id="0" name="Collisions">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="750560314017776">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="524582167675956" type="System">
+                                    <param id="0" name="Variable">hasBow</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="639475093764003" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Value">3</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="443341547518680">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="969659830628597" type="System" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="773370888523158">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="677149085431059" type="System">
+                                            <param id="0" name="Variable">hasGrenade</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="501482218413128" type="Player">
+                                            <param id="0" name="Instance variable">lastWeapon</param>
+                                            <param id="1" name="Value">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="674012931535509">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="761978497558406" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="345932583249419">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="670875607942263" type="System">
+                                                    <param id="0" name="Variable">hasShield</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="986179072999939" type="Player">
+                                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                                    <param id="1" name="Value">4</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="816026183098260">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="939591528242267" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="779295112796990">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="967434203478638" type="System">
+                                                            <param id="0" name="Variable">hasBoomerang</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="295937248517052" type="Player">
+                                                            <param id="0" name="Instance variable">lastWeapon</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="223624418271631">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="427476993136853" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="494758084968822" type="System">
+                                    <param id="0" name="Variable">hasBoomerang</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="895144217396299" type="System">
+                                    <param id="0" name="Seconds">4.0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="873486787535913" type="BoomerangWep">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="613997150468752" type="BoomerangWep">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="886874971146784">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="942077353845952" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="119656359066197" type="System">
+                                    <param id="0" name="Variable">hasGrenade</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="554216636473564" type="System">
+                                    <param id="0" name="Seconds">4.0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="469384169391843" type="GrenadeWep">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="598298472915999" type="GrenadeWep">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="778082953297918">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="656572782585168" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="256851085276982" type="System">
+                                    <param id="0" name="Variable">hasBow</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="102147943493219" type="System">
+                                    <param id="0" name="Seconds">4.0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="606277246287854" type="Bow">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="675787282123040" type="Bow">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="366050146556170">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="568220463442746" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="746642237463700" type="System">
+                                    <param id="0" name="Variable">hasShield</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="563685061276810" type="System">
+                                    <param id="0" name="Seconds">4.0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="249150542581921" type="ShieldWep">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="659994775501816" type="ShieldWep">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="568791316767921">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="206848387519546" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="11" name="Set collisions enabled" sid="597953178712218" type="Player">
+                                    <param id="0" name="Collisions">0</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="710444956943240" type="Player">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">1.0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="394488228058484" type="System">
+                                    <param id="0" name="Seconds">0.5</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="645104947247593" type="Player" />
+                                <action id="-16" name="Wait" sid="325912476192115" type="System">
+                                    <param id="0" name="Seconds">1.0</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="470920152569278" type="System">
+                                    <param id="0" name="Layout">End</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block any="1" sid="638081796688759">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="541779636548486" type="Player">
@@ -621,6 +1350,15 @@
                                     <param id="0" name="Variable">hasBoomerang</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
+                                <action id="-16" name="Wait" sid="549995405303124" type="System">
+                                    <param id="0" name="Seconds">4.0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="698909417016237" type="BoomerangWep">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="749671411889667" type="BoomerangWep">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="322684760086262">
@@ -635,6 +1373,15 @@
                                 <action id="-9" name="Set value" sid="603814826624798" type="System">
                                     <param id="0" name="Variable">hasGrenade</param>
                                     <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="511526937524512" type="System">
+                                    <param id="0" name="Seconds">4.0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="153458638543782" type="GrenadeWep">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="904264426253409" type="GrenadeWep">
+                                    <param id="0" name="Collisions">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -651,6 +1398,15 @@
                                     <param id="0" name="Variable">hasBow</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
+                                <action id="-16" name="Wait" sid="857290122864830" type="System">
+                                    <param id="0" name="Seconds">4.0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="652611090556935" type="Bow">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="925268806547220" type="Bow">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="105771484030135">
@@ -665,6 +1421,15 @@
                                 <action id="-9" name="Set value" sid="407610808457684" type="System">
                                     <param id="0" name="Variable">hasShield</param>
                                     <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="779090698519023" type="System">
+                                    <param id="0" name="Seconds">4.0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="155997740062947" type="ShieldWep">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="771125139987725" type="ShieldWep">
+                                    <param id="0" name="Collisions">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -694,6 +1459,360 @@
                                 </action>
                                 <action id="-2" name="Go to layout" sid="657164171027954" type="System">
                                     <param id="0" name="Layout">End</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="789799312294190" title="WeaponsGrabbing">
+            <sub-events>
+                <event-block sid="582407460739656">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="359354118774013" type="Player">
+                            <param id="0" name="Object">BoomerangWep</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="564191320052294" type="BoomerangWep">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="198260558273221" type="BoomerangWep">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="605093383383720" type="System">
+                            <param id="0" name="Variable">hasBoomerang</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="172064673176295" type="Player">
+                            <param id="0" name="Instance variable">lastWeapon</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="754483346225000">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="787218683178125" type="Player">
+                            <param id="0" name="Object">GrenadeWep</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="906226597297987" type="GrenadeWep">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="136655741141153" type="GrenadeWep">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="927452300151378" type="System">
+                            <param id="0" name="Variable">hasGrenade</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="838312743285901" type="Player">
+                            <param id="0" name="Instance variable">lastWeapon</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="200036091998933">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="298729631547424" type="Player">
+                            <param id="0" name="Object">Bow</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="682365614271486" type="Bow">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="931173688304188" type="Bow">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="192282307931493" type="System">
+                            <param id="0" name="Variable">hasBow</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="592774715423152" type="Player">
+                            <param id="0" name="Instance variable">lastWeapon</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="389810272931339">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="849869373913475" type="Player">
+                            <param id="0" name="Object">ShieldWep</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="485405895160845" type="ShieldWep">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="831989888426170" type="ShieldWep">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="986586151033319" type="System">
+                            <param id="0" name="Variable">hasShield</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="400728494756316" type="Player">
+                            <param id="0" name="Instance variable">lastWeapon</param>
+                            <param id="1" name="Value">4</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="934644045798124" title="Victory">
+            <sub-events>
+                <event-block sid="550325310099450">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="245682696027340" type="System">
+                            <param id="0" name="First value">Flubber.Count</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Second value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="806989390579692">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="475906223222294" type="System">
+                                    <param id="0" name="First value">FlubberTwo.Count</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="707811917705875">
+                                    <conditions>
+                                        <condition id="-8" name="Compare two values" sid="219803987311764" type="System">
+                                            <param id="0" name="First value">FlubberThree.Count</param>
+                                            <param id="1" name="Comparison">3</param>
+                                            <param id="2" name="Second value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="554987947514650">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="771752584124312" type="System">
+                                                    <param id="0" name="First value">FlubberFour.Count</param>
+                                                    <param id="1" name="Comparison">3</param>
+                                                    <param id="2" name="Second value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="106273223264811" type="System">
+                                                    <param id="0" name="Variable">scriptCondition</param>
+                                                    <param id="1" name="Value">2</param>
+                                                </action>
+                                                <action id="-2" name="Go to layout" sid="972262913949153" type="System">
+                                                    <param id="0" name="Layout">End</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" disabled="1" sid="399888520133915" title="Perspective damage">
+            <sub-events>
+                <event-block disabled="1" sid="866241271374033">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="279556486755353" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block any="1" disabled="1" sid="296879394692240">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="358637457691594" type="Flubber">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">2</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="305788426242426" type="Flubber">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">3</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="898520164822793" type="Flubber">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">4</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="949971218345887" type="Flubber">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">5</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="105120579446007" type="Flubber">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">6</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="411477075117042" type="Flubber">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">7</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="136870592725293" type="Flubber">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">8</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="11" name="Set collisions enabled" sid="973790341062882" type="Flubber">
+                                    <param id="0" name="Collisions">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="395212311138174">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="563972430554570" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="11" name="Set collisions enabled" sid="689195666086982" type="Flubber">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" disabled="1" sid="164350561414424">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="832125367383897" type="FlubberTwo">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">2</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="231745390174574" type="FlubberTwo">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">3</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="103686693591219" type="FlubberTwo">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">4</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="123154972198488" type="FlubberTwo">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">5</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="683758699934615" type="FlubberTwo">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">6</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="496601785086014" type="FlubberTwo">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">7</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="371921538392213" type="FlubberTwo">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">8</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="11" name="Set collisions enabled" sid="516962498721549" type="FlubberTwo">
+                                    <param id="0" name="Collisions">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="747242565921198">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="309214238669561" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="11" name="Set collisions enabled" sid="701342107824196" type="FlubberTwo">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" disabled="1" sid="111954491218626">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="646360372128969" type="FlubberThree">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">2</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="382652818500602" type="FlubberThree">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">3</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="619552942566444" type="FlubberThree">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">4</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="376349301655246" type="FlubberThree">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">5</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="743376684214320" type="FlubberThree">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">6</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="602445834822965" type="FlubberThree">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">7</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="197513033717469" type="FlubberThree">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">8</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="11" name="Set collisions enabled" sid="350588362317417" type="FlubberThree">
+                                    <param id="0" name="Collisions">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="694183863260189">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="769034134698594" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="11" name="Set collisions enabled" sid="900223753606788" type="FlubberThree">
+                                    <param id="0" name="Collisions">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block any="1" disabled="1" sid="599630097331725">
+                            <conditions>
+                                <condition id="3" name="Compare frame" sid="423655933364397" type="FlubberFour">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">2</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="569874163258575" type="FlubberFour">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">3</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="154943070449167" type="FlubberFour">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">4</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="474411982966823" type="FlubberFour">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">5</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="989360785120748" type="FlubberFour">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">6</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="647673947120279" type="FlubberFour">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">7</param>
+                                </condition>
+                                <condition id="3" name="Compare frame" sid="368686212579045" type="FlubberFour">
+                                    <param id="0" name="Comparison">0</param>
+                                    <param id="1" name="Number">8</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="11" name="Set collisions enabled" sid="614753996762966" type="FlubberFour">
+                                    <param id="0" name="Collisions">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="673086765200461">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="745188358444551" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="11" name="Set collisions enabled" sid="374902756477058" type="FlubberFour">
+                                    <param id="0" name="Collisions">1</param>
                                 </action>
                             </actions>
                         </event-block>

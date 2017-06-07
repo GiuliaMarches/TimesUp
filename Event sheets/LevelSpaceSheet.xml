@@ -15,6 +15,28 @@
                     <param id="0" name="Instance variable">OnHub</param>
                     <param id="1" name="Value">0</param>
                 </action>
+                <action id="-15" name="Set visible" sid="741271939455234" type="Player">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="473479824557913" type="Tardis">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="5" name="Set frame" sid="286851894785337" type="Tardis">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="3" name="Start" sid="649510880670194" type="Tardis">
+                    <param id="0" name="From">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="220122286621787" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="512129749823747" type="Player">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="692125865825983" type="Tardis">
+                    <param id="0" name="Instance variable">disappear</param>
+                    <param id="1" name="Value">1</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="873652935488088">
@@ -95,6 +117,32 @@
                 </action>
                 <action id="-15" name="Set visible" sid="315591579142447" type="BoomerangWep">
                     <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="465991927441038">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="486237660877424" type="Tardis">
+                    <param id="0" name="Instance variable">disappear</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="771079260363735" type="Tardis">
+                    <param id="0" name="Opacity">Self.Opacity - 2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="725545732183394">
+            <conditions>
+                <condition id="-10" name="Compare opacity" sid="560044250865787" type="Tardis">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Opacity">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="762706606158335" type="Tardis">
+                    <param id="0" name="Instance variable">disappear</param>
+                    <param id="1" name="Value">0</param>
                 </action>
             </actions>
         </event-block>
@@ -681,14 +729,26 @@
                                     <param id="2" name="Second value">0</param>
                                 </condition>
                             </conditions>
-                            <actions>
-                                <action id="-15" name="Set visible" sid="254916865622690" type="Tardis">
-                                    <param id="0" name="Visibility">1</param>
-                                </action>
-                                <action id="11" name="Set collisions enabled" sid="695722537008769" type="Tardis">
-                                    <param id="0" name="Collisions">1</param>
-                                </action>
-                            </actions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="603206238840290">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="837655159904062" type="System">
+                                            <param id="0" name="Variable">hasSpaceKey</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="254916865622690" type="Tardis">
+                                            <param id="0" name="Opacity">Self.Opacity + 2</param>
+                                        </action>
+                                        <action id="11" name="Set collisions enabled" sid="695722537008769" type="Tardis">
+                                            <param id="0" name="Collisions">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                     </sub-events>
                 </event-block>

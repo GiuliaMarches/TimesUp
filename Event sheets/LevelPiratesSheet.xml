@@ -35,6 +35,28 @@
                     <param id="0" name="Frame number">0</param>
                 </action>
                 <action id="2" name="Stop" sid="578785297931146" type="Cannon" />
+                <action id="-15" name="Set visible" sid="845358283799702" type="Player">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="781352172134297" type="Tardis">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+                <action id="5" name="Set frame" sid="469967560217585" type="Tardis">
+                    <param id="0" name="Frame number">0</param>
+                </action>
+                <action id="3" name="Start" sid="556943227735650" type="Tardis">
+                    <param id="0" name="From">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="641905733428517" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="563180914288947" type="Player">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="454239275385612" type="Tardis">
+                    <param id="0" name="Instance variable">disappear</param>
+                    <param id="1" name="Value">1</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="269774965291939">
@@ -50,6 +72,32 @@
                     </actions>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block sid="343457490826345">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="704667329856507" type="Tardis">
+                    <param id="0" name="Instance variable">disappear</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Set opacity" sid="137214685805698" type="Tardis">
+                    <param id="0" name="Opacity">Self.Opacity - 2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="455664105096803">
+            <conditions>
+                <condition id="-10" name="Compare opacity" sid="293821536146252" type="Tardis">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Opacity">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="841949759280855" type="Tardis">
+                    <param id="0" name="Instance variable">disappear</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
         </event-block>
         <event-group description="" sid="615517147578950" title="Boat Behavior">
             <sub-events>
@@ -117,6 +165,10 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="-10" name="Set value" sid="447245571972193" type="CannonTrigger">
+                            <param id="0" name="Instance variable">Rhythm</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                         <action behavior="Sine" id="1" name="Set period" sid="415588100600496" type="CannonTrigger">
                             <param id="0" name="Period">4.5</param>
                         </action>
@@ -131,6 +183,10 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="-10" name="Set value" sid="590648841203668" type="CannonTrigger">
+                            <param id="0" name="Instance variable">Rhythm</param>
+                            <param id="1" name="Value">0.5</param>
+                        </action>
                         <action behavior="Sine" id="1" name="Set period" sid="890831855286293" type="CannonTrigger">
                             <param id="0" name="Period">2</param>
                         </action>
@@ -149,11 +205,17 @@
                         <condition id="1" name="Is overlapping another object" sid="867637118668069" type="CannonTrigger">
                             <param id="0" name="Object">Cannon</param>
                         </condition>
-                        <condition id="-6" name="Every X seconds" sid="861153297807998" type="System">
-                            <param id="0" name="Interval (seconds)">2</param>
-                        </condition>
+                        <condition id="-4" name="Trigger once while true" sid="861153297807998" type="System" />
                     </conditions>
                     <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="978376530036530" type="Cannon">
+                            <param id="0" name="&apos;On&apos; time">0.05</param>
+                            <param id="1" name="&apos;Off&apos; time">0.05</param>
+                            <param id="2" name="Duration">0.3</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="156729006697546" type="System">
+                            <param id="0" name="Seconds">0.4</param>
+                        </action>
                         <action id="3" name="Start" sid="257650985669357" type="Cannon">
                             <param id="0" name="From">1</param>
                         </action>
@@ -218,17 +280,6 @@
         </event-group>
         <event-group description="" sid="943092797507087" title="Combat">
             <sub-events>
-                <event-block disabled="1" sid="114811126265369">
-                    <conditions />
-                    <actions>
-                        <action id="0" name="Spawn another object" sid="580118463131636" type="CannonBall">
-                            <param id="0" name="Object">Boom</param>
-                            <param id="1" name="Layer">1</param>
-                            <param id="2" name="Image point">0</param>
-                        </action>
-                        <action id="-9" name="Destroy" sid="530591276817679" type="CannonBall" />
-                    </actions>
-                </event-block>
                 <event-block sid="354646537092202">
                     <conditions>
                         <condition id="0" name="On collision with another object" sid="346352282402381" type="CannonBall">
@@ -247,75 +298,6 @@
                         </action>
                         <action id="-9" name="Destroy" sid="764944799094775" type="CannonBall" />
                     </actions>
-                </event-block>
-                <event-block disabled="1" sid="104771859521584">
-                    <conditions />
-                    <actions />
-                    <sub-events>
-                        <event-block disabled="1" sid="301544144771674">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="162371546308800" type="Cannon">
-                                    <param id="0" name="Instance variable">ID</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">1</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Destroy" sid="687652395240621" type="Cannon" />
-                                <action id="0" name="Spawn another object" sid="796100039038521" type="Cannon">
-                                    <param id="0" name="Object">Boom</param>
-                                    <param id="1" name="Layer">1</param>
-                                    <param id="2" name="Image point">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block disabled="1" sid="446733101665613">
-                    <conditions />
-                    <actions />
-                    <sub-events>
-                        <event-block disabled="1" sid="661341551765169">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="277918193140112" type="Cannon">
-                                    <param id="0" name="Instance variable">ID</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">3</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Destroy" sid="457703276348868" type="Cannon" />
-                                <action id="0" name="Spawn another object" sid="382851234102099" type="Cannon">
-                                    <param id="0" name="Object">Boom</param>
-                                    <param id="1" name="Layer">1</param>
-                                    <param id="2" name="Image point">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
-                <event-block disabled="1" sid="634624873616249">
-                    <conditions />
-                    <actions />
-                    <sub-events>
-                        <event-block disabled="1" sid="905434923775545">
-                            <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="693235452863305" type="Cannon">
-                                    <param id="0" name="Instance variable">ID</param>
-                                    <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">2</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Destroy" sid="407478048783119" type="Cannon" />
-                                <action id="0" name="Spawn another object" sid="279011077761762" type="Cannon">
-                                    <param id="0" name="Object">Boom</param>
-                                    <param id="1" name="Layer">1</param>
-                                    <param id="2" name="Image point">0</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
                 <event-block sid="856458748589543">
                     <conditions>
@@ -491,14 +473,7 @@
                                     <param id="2" name="Second value">0</param>
                                 </condition>
                             </conditions>
-                            <actions>
-                                <action id="-15" name="Set visible" sid="967285591433972" type="Tardis">
-                                    <param id="0" name="Visibility">1</param>
-                                </action>
-                                <action id="11" name="Set collisions enabled" sid="910565997293085" type="Tardis">
-                                    <param id="0" name="Collisions">1</param>
-                                </action>
-                            </actions>
+                            <actions />
                             <sub-events>
                                 <event-block sid="884445157883757">
                                     <conditions>
@@ -513,6 +488,23 @@
                                             <param id="0" name="Visibility">1</param>
                                         </action>
                                         <action id="11" name="Set collisions enabled" sid="606028046748770" type="Key">
+                                            <param id="0" name="Collisions">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="967619618999005">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="948375139656468" type="System">
+                                            <param id="0" name="Variable">hasPiratesKey</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-16" name="Set opacity" sid="769456347171459" type="Tardis">
+                                            <param id="0" name="Opacity">Self.Opacity + 2</param>
+                                        </action>
+                                        <action id="11" name="Set collisions enabled" sid="804763045650478" type="Tardis">
                                             <param id="0" name="Collisions">1</param>
                                         </action>
                                     </actions>

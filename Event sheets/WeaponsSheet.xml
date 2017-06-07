@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>WeaponsSheet</name>
     <events>
+        <variable constant="0" name="scriptCondition" sid="737933915549705" static="0" type="number">0</variable>
         <variable constant="0" name="CountDown" sid="483734428710605" static="0" type="number">600</variable>
         <variable constant="0" name="hasPiratesKey" sid="830532580187738" static="0" type="number">0</variable>
         <variable constant="0" name="hasVietnamKey" sid="372320009654277" static="0" type="number">0</variable>
@@ -632,7 +633,7 @@
                                                 <condition id="-14" name="Compare variable" sid="416458503346491" type="System">
                                                     <param id="0" name="Variable">ShieldTimer</param>
                                                     <param id="1" name="Comparison">5</param>
-                                                    <param id="2" name="Value">2</param>
+                                                    <param id="2" name="Value">1</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -677,12 +678,9 @@
             <sub-events>
                 <event-block any="1" sid="853612612783407">
                     <conditions>
-                        <condition id="6" name="On button pressed" sid="505870899140103" type="Gamepad">
+                        <condition id="3" name="Is button down" sid="505870899140103" type="Gamepad">
                             <param id="0" name="Gamepad">0</param>
                             <param id="1" name="Button">12</param>
-                        </condition>
-                        <condition id="0" name="On key pressed" sid="603159500400036" type="Keyboard">
-                            <param id="0" name="Key">87 (W)</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -694,12 +692,9 @@
                 </event-block>
                 <event-block any="1" sid="932531520001398">
                     <conditions>
-                        <condition id="6" name="On button pressed" sid="783651594122884" type="Gamepad">
+                        <condition id="3" name="Is button down" sid="783651594122884" type="Gamepad">
                             <param id="0" name="Gamepad">0</param>
                             <param id="1" name="Button">13</param>
-                        </condition>
-                        <condition id="0" name="On key pressed" sid="659419306203233" type="Keyboard">
-                            <param id="0" name="Key">83 (S)</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -711,12 +706,9 @@
                 </event-block>
                 <event-block any="1" sid="720646808585568">
                     <conditions>
-                        <condition id="6" name="On button pressed" sid="268077699120357" type="Gamepad">
+                        <condition id="3" name="Is button down" sid="268077699120357" type="Gamepad">
                             <param id="0" name="Gamepad">0</param>
                             <param id="1" name="Button">15</param>
-                        </condition>
-                        <condition id="0" name="On key pressed" sid="526478878882146" type="Keyboard">
-                            <param id="0" name="Key">68 (D)</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -728,12 +720,9 @@
                 </event-block>
                 <event-block any="1" sid="575005592130572">
                     <conditions>
-                        <condition id="6" name="On button pressed" sid="257436434844752" type="Gamepad">
+                        <condition id="3" name="Is button down" sid="257436434844752" type="Gamepad">
                             <param id="0" name="Gamepad">0</param>
                             <param id="1" name="Button">14</param>
-                        </condition>
-                        <condition id="0" name="On key pressed" sid="908942102716598" type="Keyboard">
-                            <param id="0" name="Key">65 (A)</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -812,6 +801,58 @@
                         <action id="-10" name="Set value" sid="680244291450480" type="Player">
                             <param id="0" name="Instance variable">shootDir</param>
                             <param id="1" name="Value">225</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="439801439687349">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="424978109968468" type="Keyboard">
+                            <param id="0" name="Key">87 (W)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="366583353786479" type="Player">
+                            <param id="0" name="Instance variable">shootDir</param>
+                            <param id="1" name="Value">270</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="782932699904912">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="373055954958818" type="Keyboard">
+                            <param id="0" name="Key">68 (D)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="957481512546614" type="Player">
+                            <param id="0" name="Instance variable">shootDir</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="964847553534046">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="821573476445333" type="Keyboard">
+                            <param id="0" name="Key">65 (A)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="632122834111150" type="Player">
+                            <param id="0" name="Instance variable">shootDir</param>
+                            <param id="1" name="Value">180</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="778072429948665">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="454231401637564" type="Keyboard">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="251327650924396" type="Player">
+                            <param id="0" name="Instance variable">shootDir</param>
+                            <param id="1" name="Value">90</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1000,27 +1041,28 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="769447297902258" title="HUD">
+        <event-group description="" sid="769447297902258" title="HUDWeapons">
             <sub-events>
-                <event-block sid="826970060399082">
+                <event-block sid="244955935457592">
                     <conditions>
-                        <condition id="1" name="Is overlapping another object" sid="151582061250091" type="Player">
-                            <param id="0" name="Object">CountDown</param>
-                        </condition>
+                        <condition id="-1" name="Every tick" sid="158499262880771" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-16" name="Set opacity" sid="984813505627155" type="CountDown">
-                            <param id="0" name="Opacity">40</param>
+                        <action id="-4" name="Set position to another object" sid="254798094952326" type="HUDBoomerang">
+                            <param id="0" name="Object">WeaponsMask</param>
+                            <param id="1" name="Image point (optional)">1</param>
                         </action>
-                    </actions>
-                </event-block>
-                <event-block sid="805112556975099">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="430226224865489" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="-16" name="Set opacity" sid="190854927327679" type="CountDown">
-                            <param id="0" name="Opacity">100</param>
+                        <action id="-4" name="Set position to another object" sid="827966858331437" type="HUDGrenade">
+                            <param id="0" name="Object">WeaponsMask</param>
+                            <param id="1" name="Image point (optional)">2</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="949135656281736" type="HUDBow">
+                            <param id="0" name="Object">WeaponsMask</param>
+                            <param id="1" name="Image point (optional)">3</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="392590868835851" type="HUDShield">
+                            <param id="0" name="Object">WeaponsMask</param>
+                            <param id="1" name="Image point (optional)">4</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1063,132 +1105,334 @@
                             <param id="0" name="Opacity">100</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="136502093979404">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="862867259090465" type="System">
+                                    <param id="0" name="Variable">hasBoomerang</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="204921374025331" type="HUDBoomerang">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="2" name="Stop" sid="429810679420374" type="HUDBoomerang" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="775594291970190">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="811729559282620" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="215659343144896" type="HUDBoomerang">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="514039695709880" type="HUDBoomerang">
+                                    <param id="0" name="Opacity">60</param>
+                                </action>
+                                <action id="2" name="Stop" sid="112703701977919" type="HUDBoomerang" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="939940850495471">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="298685773632453" type="System">
+                                    <param id="0" name="Variable">hasBow</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="277459950072622" type="HUDBow">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="2" name="Stop" sid="436888606066584" type="HUDBow" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="615871070517837">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="459651951624266" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="816313883203200" type="HUDBow">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="709733673547350" type="HUDBow">
+                                    <param id="0" name="Opacity">60</param>
+                                </action>
+                                <action id="2" name="Stop" sid="684490620654108" type="HUDBow" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="176097718837130">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="271921189431135" type="System">
+                                    <param id="0" name="Variable">hasGrenade</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="486377081850245" type="HUDGrenade">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="2" name="Stop" sid="691816223856119" type="HUDGrenade" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="601517590266196">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="712799070586543" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="540082803929535" type="HUDGrenade">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="748217549745669" type="HUDGrenade">
+                                    <param id="0" name="Opacity">60</param>
+                                </action>
+                                <action id="2" name="Stop" sid="889337053784994" type="HUDGrenade" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="846789525005231">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="721138816007071" type="System">
+                                    <param id="0" name="Variable">hasShield</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="641285896977204" type="HUDShield">
+                                    <param id="0" name="Frame number">1</param>
+                                </action>
+                                <action id="2" name="Stop" sid="848970770529346" type="HUDShield" />
+                            </actions>
+                        </event-block>
+                        <event-block sid="848044723181857">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="499585349467760" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="5" name="Set frame" sid="154335528709108" type="HUDShield">
+                                    <param id="0" name="Frame number">0</param>
+                                </action>
+                                <action id="-16" name="Set opacity" sid="334623298553353" type="HUDShield">
+                                    <param id="0" name="Opacity">60</param>
+                                </action>
+                                <action id="2" name="Stop" sid="364179072190279" type="HUDShield" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
-                <event-block sid="244955935457592">
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="964232563410106" title="HUDKeys">
+            <sub-events>
+                <event-block sid="530086633743364">
                     <conditions>
-                        <condition id="-1" name="Every tick" sid="158499262880771" type="System" />
+                        <condition id="-1" name="Every tick" sid="857169485376065" type="System" />
                     </conditions>
                     <actions>
-                        <action id="-4" name="Set position to another object" sid="254798094952326" type="HUDBoomerang">
-                            <param id="0" name="Object">WeaponsMask</param>
+                        <action id="-4" name="Set position to another object" sid="918875705623328" type="HUDVietnamKey">
+                            <param id="0" name="Object">KeysMask</param>
                             <param id="1" name="Image point (optional)">1</param>
                         </action>
-                        <action id="-4" name="Set position to another object" sid="827966858331437" type="HUDGrenade">
-                            <param id="0" name="Object">WeaponsMask</param>
+                        <action id="-4" name="Set position to another object" sid="408754717986390" type="HUDEgyptKey">
+                            <param id="0" name="Object">KeysMask</param>
                             <param id="1" name="Image point (optional)">2</param>
                         </action>
-                        <action id="-4" name="Set position to another object" sid="949135656281736" type="HUDBow">
-                            <param id="0" name="Object">WeaponsMask</param>
+                        <action id="-4" name="Set position to another object" sid="599529482409841" type="HUDSpaceKey">
+                            <param id="0" name="Object">KeysMask</param>
                             <param id="1" name="Image point (optional)">3</param>
                         </action>
-                        <action id="-4" name="Set position to another object" sid="392590868835851" type="HUDShield">
-                            <param id="0" name="Object">WeaponsMask</param>
+                        <action id="-4" name="Set position to another object" sid="474868715423237" type="HUDPiratesKey">
+                            <param id="0" name="Object">KeysMask</param>
                             <param id="1" name="Image point (optional)">4</param>
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="136502093979404">
+                <event-block sid="178574842393274">
                     <conditions>
-                        <condition id="-14" name="Compare variable" sid="862867259090465" type="System">
-                            <param id="0" name="Variable">hasBoomerang</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
+                        <condition id="1" name="Is overlapping another object" sid="152198199657541" type="Player">
+                            <param id="0" name="Object">KeysMask</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="5" name="Set frame" sid="204921374025331" type="HUDBoomerang">
-                            <param id="0" name="Frame number">1</param>
+                        <action id="-16" name="Set opacity" sid="208463978358405" type="HUDPiratesKey">
+                            <param id="0" name="Opacity">10</param>
                         </action>
-                        <action id="2" name="Stop" sid="429810679420374" type="HUDBoomerang" />
+                        <action id="-16" name="Set opacity" sid="728524043769166" type="HUDVietnamKey">
+                            <param id="0" name="Opacity">10</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="731346858593778" type="HUDEgyptKey">
+                            <param id="0" name="Opacity">10</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="148181969994071" type="HUDSpaceKey">
+                            <param id="0" name="Opacity">10</param>
+                        </action>
                     </actions>
                 </event-block>
-                <event-block sid="775594291970190">
+                <event-block sid="619219796980515">
                     <conditions>
-                        <condition id="-22" name="Else" sid="811729559282620" type="System" />
+                        <condition id="-22" name="Else" sid="897390453860915" type="System" />
                     </conditions>
                     <actions>
-                        <action id="5" name="Set frame" sid="215659343144896" type="HUDBoomerang">
-                            <param id="0" name="Frame number">0</param>
+                        <action id="-16" name="Set opacity" sid="978041176286265" type="HUDPiratesKey">
+                            <param id="0" name="Opacity">100</param>
                         </action>
-                        <action id="2" name="Stop" sid="112703701977919" type="HUDBoomerang" />
+                        <action id="-16" name="Set opacity" sid="951193308301018" type="HUDVietnamKey">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="325105658243300" type="HUDEgyptKey">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="647637935589654" type="HUDSpaceKey">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="638098549028224">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="889289624193365" type="System">
+                                    <param id="0" name="Variable">hasSpaceKey</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="504339204271682" type="HUDSpaceKey">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="801687515351705">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="549930926322548" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="832019112430278" type="HUDSpaceKey">
+                                    <param id="0" name="Opacity">50</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="185266224369996">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="579130985786835" type="System">
+                                    <param id="0" name="Variable">hasDesertKey</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="750781148928569" type="HUDEgyptKey">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="725857975063812">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="760255044514142" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="841476301012957" type="HUDEgyptKey">
+                                    <param id="0" name="Opacity">50</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="644692593220516">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="638680050484390" type="System">
+                                    <param id="0" name="Variable">hasVietnamKey</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="178498488894434" type="HUDVietnamKey">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="228916845611214">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="440556691071524" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="526495812931261" type="HUDVietnamKey">
+                                    <param id="0" name="Opacity">50</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="147981673800033">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="310142532059368" type="System">
+                                    <param id="0" name="Variable">hasPiratesKey</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="423957239027334" type="HUDPiratesKey">
+                                    <param id="0" name="Opacity">100</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="802883587222338">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="305380880958048" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Set opacity" sid="180546649488116" type="HUDPiratesKey">
+                                    <param id="0" name="Opacity">50</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
-                <event-block sid="939940850495471">
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="974468706067127" title="HUDCountdown">
+            <sub-events>
+                <event-block sid="826970060399082">
                     <conditions>
-                        <condition id="-14" name="Compare variable" sid="298685773632453" type="System">
-                            <param id="0" name="Variable">hasBow</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
+                        <condition id="1" name="Is overlapping another object" sid="151582061250091" type="Player">
+                            <param id="0" name="Object">CountDown</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="5" name="Set frame" sid="277459950072622" type="HUDBow">
-                            <param id="0" name="Frame number">1</param>
+                        <action id="-16" name="Set opacity" sid="984813505627155" type="CountDown">
+                            <param id="0" name="Opacity">40</param>
                         </action>
-                        <action id="2" name="Stop" sid="436888606066584" type="HUDBow" />
                     </actions>
                 </event-block>
-                <event-block sid="615871070517837">
+                <event-block sid="805112556975099">
                     <conditions>
-                        <condition id="-22" name="Else" sid="459651951624266" type="System" />
+                        <condition id="-22" name="Else" sid="430226224865489" type="System" />
                     </conditions>
                     <actions>
-                        <action id="5" name="Set frame" sid="816313883203200" type="HUDBow">
-                            <param id="0" name="Frame number">0</param>
+                        <action id="-16" name="Set opacity" sid="190854927327679" type="CountDown">
+                            <param id="0" name="Opacity">100</param>
                         </action>
-                        <action id="2" name="Stop" sid="684490620654108" type="HUDBow" />
                     </actions>
                 </event-block>
-                <event-block sid="176097718837130">
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="967800230076717" title="EnterScript">
+            <sub-events>
+                <event-block sid="988255884799868">
                     <conditions>
-                        <condition id="-14" name="Compare variable" sid="271921189431135" type="System">
-                            <param id="0" name="Variable">hasGrenade</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
+                        <condition id="-2" name="On start of layout" sid="922719616313692" type="System" />
                     </conditions>
                     <actions>
-                        <action id="5" name="Set frame" sid="486377081850245" type="HUDGrenade">
-                            <param id="0" name="Frame number">1</param>
+                        <action behavior="8Direction" id="8" name="Set enabled" sid="544545254779611" type="Player">
+                            <param id="0" name="State">0</param>
                         </action>
-                        <action id="2" name="Stop" sid="691816223856119" type="HUDGrenade" />
-                    </actions>
-                </event-block>
-                <event-block sid="601517590266196">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="712799070586543" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="5" name="Set frame" sid="540082803929535" type="HUDGrenade">
-                            <param id="0" name="Frame number">0</param>
+                        <action id="-16" name="Wait" sid="166013155011331" type="System">
+                            <param id="0" name="Seconds">1.0</param>
                         </action>
-                        <action id="2" name="Stop" sid="889337053784994" type="HUDGrenade" />
-                    </actions>
-                </event-block>
-                <event-block sid="846789525005231">
-                    <conditions>
-                        <condition id="-14" name="Compare variable" sid="721138816007071" type="System">
-                            <param id="0" name="Variable">hasShield</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="5" name="Set frame" sid="641285896977204" type="HUDShield">
-                            <param id="0" name="Frame number">1</param>
+                        <action behavior="8Direction" id="8" name="Set enabled" sid="211566149737220" type="Player">
+                            <param id="0" name="State">1</param>
                         </action>
-                        <action id="2" name="Stop" sid="848970770529346" type="HUDShield" />
-                    </actions>
-                </event-block>
-                <event-block sid="848044723181857">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="499585349467760" type="System" />
-                    </conditions>
-                    <actions>
-                        <action id="5" name="Set frame" sid="154335528709108" type="HUDShield">
-                            <param id="0" name="Frame number">0</param>
-                        </action>
-                        <action id="2" name="Stop" sid="364179072190279" type="HUDShield" />
                     </actions>
                 </event-block>
             </sub-events>

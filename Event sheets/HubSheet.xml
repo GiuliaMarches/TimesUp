@@ -15,6 +15,10 @@
                 </action>
                 <action id="-9" name="Destroy" sid="421085374587444" type="Grenade" />
                 <action id="-9" name="Destroy" sid="404593850216257" type="Boomerang" />
+                <action id="-9" name="Set value" sid="257705178964033" type="System">
+                    <param id="0" name="Variable">scriptCondition</param>
+                    <param id="1" name="Value">1</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="682148143689353">
@@ -100,7 +104,7 @@
                             </conditions>
                             <actions>
                                 <action id="-2" name="Go to layout" sid="831555686069574" type="System">
-                                    <param id="0" name="Layout">LevelBoss</param>
+                                    <param id="0" name="Layout">ScriptBoss</param>
                                 </action>
                             </actions>
                         </event-block>
