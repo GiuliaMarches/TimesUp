@@ -493,7 +493,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <Health>5</Health>
+                        <Health>4</Health>
                         <Jumping>false</Jumping>
                     </instance-variables>
                     <behavior-instances>
@@ -537,7 +537,7 @@
                         <collisions>Disabled</collisions>
                     </properties>
                     <instance-variables>
-                        <Health>4</Health>
+                        <Health>3</Health>
                         <Jumping>false</Jumping>
                     </instance-variables>
                     <behavior-instances>
@@ -693,8 +693,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>953</x>
-                        <y>696</y>
+                        <x>954</x>
+                        <y>698</y>
                         <z>0</z>
                         <width>70</width>
                         <height>70</height>
@@ -831,7 +831,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>65</x>
-                        <y>696</y>
+                        <y>698</y>
                         <z>0</z>
                         <width>70</width>
                         <height>70</height>

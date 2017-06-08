@@ -7,7 +7,16 @@
             <conditions>
                 <condition id="-2" name="On start of layout" sid="886808735527181" type="System" />
             </conditions>
-            <actions />
+            <actions>
+                <action id="5" name="Set web font" sid="350994864369091" type="GameOverText">
+                    <param id="0" name="Family name">&quot;monkey_island_1990_refinedRg&quot;</param>
+                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                </action>
+                <action id="5" name="Set web font" sid="237498603669482" type="PressStart">
+                    <param id="0" name="Family name">&quot;monkey_island_1990_refinedRg&quot;</param>
+                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                </action>
+            </actions>
             <sub-events>
                 <event-block sid="353968214556415">
                     <conditions>
@@ -21,9 +30,34 @@
                         <action id="0" name="Set text" sid="677739005902988" type="GameOverText">
                             <param id="0" name="Text">&quot;YOU WON!&quot;</param>
                         </action>
+                        <action id="5" name="Set web font" sid="862431261209397" type="GameOverText">
+                            <param id="0" name="Family name">&quot;monkey_island_1990_refinedRg&quot;</param>
+                            <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                        </action>
+                        <action id="5" name="Set web font" sid="437230736242503" type="PressStart">
+                            <param id="0" name="Family name">&quot;monkey_island_1990_refinedRg&quot;</param>
+                            <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
+        </event-block>
+        <event-block any="1" sid="483145229899178">
+            <conditions>
+                <condition id="6" name="On button pressed" sid="862190490087636" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                    <param id="1" name="Button">9</param>
+                </condition>
+                <condition id="0" name="On key pressed" sid="296880643999740" type="Keyboard">
+                    <param id="0" name="Key">13 (Return)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-21" name="Reset global variables" sid="523929419272379" type="System" />
+                <action id="-2" name="Go to layout" sid="438073091985951" type="System">
+                    <param id="0" name="Layout">Start</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>

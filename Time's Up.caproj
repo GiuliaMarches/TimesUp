@@ -267,13 +267,9 @@
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="548425379521967" speed="5">
                         <frame duration="1" hotspotX="1" hotspotY="0" original-source="C:\Users\dbga_58\Desktop\Nuova Build\Station Center.png">
                             <collision-poly>
-                                <point x="0.25102" y="0.348442" />
                                 <point x="0.5" y="0.0113314" />
-                                <point x="0.75102" y="0.345609" />
                                 <point x="0.961224" y="0.498584" />
-                                <point x="0.75102" y="0.654391" />
                                 <point x="0.5" y="0.98017" />
-                                <point x="0.25102" y="0.651558" />
                                 <point x="0.044898" y="0.498584" />
                             </collision-poly>
                         </frame>
@@ -282,9 +278,17 @@
             </object-type>
             <object-type name="PortalToBoss" sid="452741607641010">
                 <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="Active" sid="763515884193386" type="boolean" />
+                </instance-variables>
+                <behaviors>
+                    <behavior-type name="Sine" sid="519007910732564">
+                        <behavior id="Sin" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="958905550786271" speed="5">
-                        <frame duration="1" hotspotX="0.510638" hotspotY="0.510638" original-source="C:\Users\Pellix\Desktop\Assets\new_bullet.png">
+                        <frame duration="1" hotspotX="0.510638" hotspotY="1" original-source="C:\Users\Pellix\Desktop\Assets\new_bullet.png">
                             <collision-poly>
                                 <point x="0.148936" y="0.148936" />
                                 <point x="0.489362" y="0" />
@@ -775,33 +779,39 @@
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
-                    <animation framecount="8" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="582016081963718" speed="20">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pellix\Desktop\Just in Time\boomerang\bullet006.0000.png">
+                    <animation framecount="4" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="582016081963718" speed="13">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pellix\Desktop\Build0806\Animations\BoomerangWep\Default\000.png">
                             <collision-poly>
-                                <point x="0.208333" y="0.208333" />
+                                <point x="0.166666" y="0.416666" />
                                 <point x="0.5" y="0.0833333" />
-                                <point x="0.791667" y="0.208333" />
                                 <point x="0.916667" y="0.5" />
-                                <point x="0.5" y="0.3125" />
-                                <point x="0.0833333" y="0.5" />
+                                <point x="0.604167" y="0.854167" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pellix\Desktop\Just in Time\boomerang\bullet006.0001.png">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
                             <collision-poly>
-                                <point x="0.171875" y="0.246094" />
-                                <point x="0.473958" y="0.0820312" />
-                                <point x="0.786458" y="0.184896" />
-                                <point x="0.367188" y="0.375" />
-                                <point x="0.178385" y="0.770833" />
-                                <point x="0.0716146" y="0.505208" />
+                                <point x="0.583334" y="0.166666" />
+                                <point x="0.916667" y="0.5" />
+                                <point x="0.5" y="0.916667" />
+                                <point x="0.145833" y="0.604167" />
                             </collision-poly>
                         </frame>
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pellix\Desktop\Just in Time\boomerang\bullet006.0002.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pellix\Desktop\Just in Time\boomerang\bullet006.0003.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pellix\Desktop\Just in Time\boomerang\bullet006.0004.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pellix\Desktop\Just in Time\boomerang\bullet006.0005.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pellix\Desktop\Just in Time\boomerang\bullet006.0006.png" />
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pellix\Desktop\Just in Time\boomerang\bullet006.0007.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.833334" y="0.583334" />
+                                <point x="0.5" y="0.916667" />
+                                <point x="0.083333" y="0.5" />
+                                <point x="0.395833" y="0.145833" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.416666" y="0.833334" />
+                                <point x="0.0833333" y="0.5" />
+                                <point x="0.5" y="0.083333" />
+                                <point x="0.854167" y="0.395833" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
@@ -811,14 +821,10 @@
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="792374561762086" speed="5">
                         <frame duration="1" hotspotX="0.520833" hotspotY="0.5" original-source="C:\Users\dbga_58\Desktop\4 Boomerang.png">
                             <collision-poly>
-                                <point x="0.799999" y="0.733333" />
-                                <point x="0.52" y="0.8" />
-                                <point x="0.240001" y="0.733333" />
-                                <point x="1" y="0.5" />
-                                <point x="1" y="0.966667" />
-                                <point x="0.52" y="1" />
-                                <point x="0" y="0.966667" />
-                                <point x="0" y="0.5" />
+                                <point x="0.249166" y="0.133333" />
+                                <point x="0.698334" y="0.233333" />
+                                <point x="0.791667" y="0.833333" />
+                                <point x="0.270833" y="0.8125" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -862,13 +868,37 @@
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="292362446739494" speed="5">
+                    <animation framecount="4" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="292362446739494" speed="10">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_58\Desktop\2 Grenade.png">
                             <collision-poly>
                                 <point x="0.405274" y="0.29725" />
                                 <point x="0.872572" y="0.157369" />
                                 <point x="0.605768" y="0.641134" />
                                 <point x="0.157679" y="0.796181" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.70275" y="0.405274" />
+                                <point x="0.842631" y="0.872572" />
+                                <point x="0.358866" y="0.605768" />
+                                <point x="0.203819" y="0.157679" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.594726" y="0.70275" />
+                                <point x="0.127428" y="0.842631" />
+                                <point x="0.394232" y="0.358866" />
+                                <point x="0.842321" y="0.203819" />
+                            </collision-poly>
+                        </frame>
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                            <collision-poly>
+                                <point x="0.29725" y="0.594726" />
+                                <point x="0.157369" y="0.127428" />
+                                <point x="0.641134" y="0.394232" />
+                                <point x="0.796181" y="0.842321" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -888,10 +918,12 @@
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="436634774946417" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\dbga_58\Desktop\Nuova Build\Onda d&apos;urto scudo.png">
                             <collision-poly>
-                                <point x="0.5" y="0.047619" />
-                                <point x="0.830729" y="0.083333" />
-                                <point x="0.817709" y="0.953869" />
-                                <point x="0.5" y="0.97619" />
+                                <point x="0.559896" y="0.047619" />
+                                <point x="0.695312" y="0.0505949" />
+                                <point x="0.798177" y="0.0930056" />
+                                <point x="0.804688" y="0.936012" />
+                                <point x="0.695313" y="0.970982" />
+                                <point x="0.559896" y="0.97619" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -1868,6 +1900,9 @@
                     <behavior-type name="Flash" sid="506244543967461">
                         <behavior id="Flash" />
                     </behavior-type>
+                    <behavior-type name="Fade" sid="994324370675031">
+                        <behavior id="Fade" />
+                    </behavior-type>
                 </behaviors>
                 <animation-folder>
                     <animation framecount="16" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="271733194905482" speed="5">
@@ -2114,6 +2149,11 @@
                     <instance-variable name="ID" sid="677565971637201" type="number" />
                     <instance-variable name="Health" sid="122291677777410" type="number" />
                 </instance-variables>
+                <behaviors>
+                    <behavior-type name="Flash" sid="944829031143012">
+                        <behavior id="Flash" />
+                    </behavior-type>
+                </behaviors>
                 <animation-folder>
                     <animation framecount="7" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="601523211236256" speed="6">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pellix\Desktop\Assets\Vietcong\Animazioni Torretta\Turret. Layers.png">
@@ -2659,6 +2699,17 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="PressStart" sid="886237018802518">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="HUDMask" sid="517156238019223">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="329514922809606" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -2704,6 +2755,12 @@
             <file name="icon-128.png" />
             <file name="icon-256.png" />
             <file name="loading-logo.png" />
+        </file-folder>
+        <file-folder name="CSS">
+            <file name="MonkeyIsland-1990-refined.ttf" />
+            <file name="MonkeyIsland-1990-refined.woff" />
+            <file name="MonkeyIsland-1990-refined.woff2" />
+            <file name="stylesheet.css" />
         </file-folder>
     </files-folder>
 </c2project>

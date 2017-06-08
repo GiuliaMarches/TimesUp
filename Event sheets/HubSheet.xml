@@ -94,7 +94,11 @@
                             <param id="2" name="Value">1</param>
                         </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="278834746385656" type="PortalToBoss">
+                            <param id="0" name="Opacity">Self.Opacity + 3</param>
+                        </action>
+                    </actions>
                     <sub-events>
                         <event-block sid="910785191995699">
                             <conditions>
@@ -109,6 +113,32 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="869811353135617">
+                    <conditions>
+                        <condition id="-10" name="Compare opacity" sid="606157439848599" type="PortalToBoss">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Opacity">100</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="141789801252615" type="PortalToBoss">
+                            <param id="0" name="Instance variable">Active</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="824614668553027">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="368774384593945" type="PortalToBoss">
+                            <param id="0" name="Instance variable">Active</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Sine" id="0" name="Set active" sid="647218155954656" type="PortalToBoss">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>

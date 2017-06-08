@@ -561,7 +561,7 @@
                     <param id="2" name="Duration">1.0</param>
                 </action>
                 <action id="-16" name="Wait" sid="293696228308355" type="System">
-                    <param id="0" name="Seconds">0.5</param>
+                    <param id="0" name="Seconds">1</param>
                 </action>
                 <action id="11" name="Set collisions enabled" sid="420817215430606" type="Player">
                     <param id="0" name="Collisions">1</param>
@@ -937,7 +937,7 @@
                     <param id="2" name="Duration">1.0</param>
                 </action>
                 <action id="-16" name="Wait" sid="727347974297081" type="System">
-                    <param id="0" name="Seconds">0.5</param>
+                    <param id="0" name="Seconds">1</param>
                 </action>
                 <action id="11" name="Set collisions enabled" sid="829163879794254" type="Player">
                     <param id="0" name="Collisions">1</param>
@@ -1286,7 +1286,7 @@
                                 </action>
                                 <action id="-12" name="Subtract from" sid="847088877468434" type="Mummy">
                                     <param id="0" name="Instance variable">Health</param>
-                                    <param id="1" name="Value">5</param>
+                                    <param id="1" name="Value">4</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1423,7 +1423,7 @@
                                         </action>
                                         <action id="-12" name="Subtract from" sid="966236382016059" type="MummyBoss">
                                             <param id="0" name="Instance variable">Health</param>
-                                            <param id="1" name="Value">5</param>
+                                            <param id="1" name="Value">4</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1552,9 +1552,7 @@
                             <param id="0" name="Object">MummyBoss</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-9" name="Destroy" sid="681363981672109" type="Boomerang" />
-                    </actions>
+                    <actions />
                     <sub-events>
                         <event-block sid="355697349731899">
                             <conditions>

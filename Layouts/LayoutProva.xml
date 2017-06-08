@@ -135,7 +135,7 @@
                     <behavior-instances>
                         <behavior-instance type="Bullet">
                             <properties>
-                                <speed>400</speed>
+                                <speed>500</speed>
                                 <acceleration>0</acceleration>
                                 <gravity>0</gravity>
                                 <bounce-off-solids>No</bounce-off-solids>
@@ -151,8 +151,8 @@
                         <x>-119.825157166</x>
                         <y>293.567871094</y>
                         <z>0</z>
-                        <width>33.105892181</width>
-                        <height>4.108030319</height>
+                        <width>40</width>
+                        <height>7</height>
                         <depth>0</depth>
                         <hotspotX>0.496350378</hotspotX>
                         <hotspotY>0.529411793</hotspotY>
@@ -194,8 +194,8 @@
                         <x>-103.02381897</x>
                         <y>213.02381897</y>
                         <z>0</z>
-                        <width>41.952354431</width>
-                        <height>41.952354431</height>
+                        <width>64</width>
+                        <height>64</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -708,7 +708,7 @@
                     <behavior-instances>
                         <behavior-instance type="Bullet">
                             <properties>
-                                <speed>300</speed>
+                                <speed>200</speed>
                                 <acceleration>0</acceleration>
                                 <gravity>0</gravity>
                                 <bounce-off-solids>No</bounce-off-solids>

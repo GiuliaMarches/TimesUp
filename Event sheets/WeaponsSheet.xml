@@ -19,7 +19,22 @@
             <conditions>
                 <condition id="-2" name="On start of layout" sid="424099392486916" type="System" />
             </conditions>
-            <actions />
+            <actions>
+                <action id="0" name="Spawn another object" sid="112814793618418" type="WeaponsMask">
+                    <param id="0" name="Object">HUDMask</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="536544282174314" type="KeysMask">
+                    <param id="0" name="Object">HUDMask</param>
+                    <param id="1" name="Layer">1</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="5" name="Set web font" sid="175398735017234" type="CountDown">
+                    <param id="0" name="Family name">&quot;monkey_island_1990_refinedRg&quot;</param>
+                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                </action>
+            </actions>
             <sub-events>
                 <event-block sid="256855604889365">
                     <conditions>
@@ -446,7 +461,7 @@
                                                 <condition id="-14" name="Compare variable" sid="274845354311618" type="System">
                                                     <param id="0" name="Variable">FireTimer</param>
                                                     <param id="1" name="Comparison">5</param>
-                                                    <param id="2" name="Value">1.5</param>
+                                                    <param id="2" name="Value">3</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
@@ -665,11 +680,35 @@
                     <conditions>
                         <condition behavior="Bullet" id="1" name="Compare distance travelled" sid="700406059101142" type="Shield">
                             <param id="0" name="Comparison">5</param>
-                            <param id="1" name="Distance">100</param>
+                            <param id="1" name="Distance">130</param>
                         </condition>
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="257641077544903" type="Shield" />
+                    </actions>
+                </event-block>
+                <event-block sid="330288646878634">
+                    <conditions>
+                        <condition id="-21" name="Is between values" sid="988785231285742" type="System">
+                            <param id="0" name="Value">Shield.Bullet.AngleOfMotion</param>
+                            <param id="1" name="Lower bound">91</param>
+                            <param id="2" name="Upper bound">270</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="8" name="Set flipped" sid="651023677599550" type="Shield">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="240541134250825">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="953070147514212" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="8" name="Set flipped" sid="144315460492250" type="Shield">
+                            <param id="0" name="State">1</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>

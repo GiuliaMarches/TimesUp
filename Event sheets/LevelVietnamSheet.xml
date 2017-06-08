@@ -543,7 +543,7 @@
                             <param id="2" name="Duration">1.0</param>
                         </action>
                         <action id="-16" name="Wait" sid="313789496034640" type="System">
-                            <param id="0" name="Seconds">0.5</param>
+                            <param id="0" name="Seconds">1</param>
                         </action>
                         <action id="11" name="Set collisions enabled" sid="721936060590256" type="Player">
                             <param id="0" name="Collisions">1</param>
@@ -734,7 +734,7 @@
                                     <actions>
                                         <action id="-12" name="Subtract from" sid="508412293075125" type="Vietcong">
                                             <param id="0" name="Instance variable">Health</param>
-                                            <param id="1" name="Value">5</param>
+                                            <param id="1" name="Value">4</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -792,7 +792,7 @@
                                     <actions>
                                         <action id="-12" name="Subtract from" sid="925818915534107" type="Frontacong">
                                             <param id="0" name="Instance variable">Health</param>
-                                            <param id="1" name="Value">5</param>
+                                            <param id="1" name="Value">4</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1069,9 +1069,23 @@
                                 <condition id="-4" name="Trigger once while true" sid="976520707580206" type="System" />
                             </conditions>
                             <actions>
+                                <action id="11" name="Set collisions enabled" sid="206073543502588" type="VietBoss">
+                                    <param id="0" name="Collisions">0</param>
+                                </action>
                                 <action id="-12" name="Subtract from" sid="736307015963663" type="VietBoss">
                                     <param id="0" name="Instance variable">Health</param>
-                                    <param id="1" name="Value">5</param>
+                                    <param id="1" name="Value">4</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="850281555685723" type="VietBoss">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">0.6</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="647755124518895" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="985291614436794" type="VietBoss">
+                                    <param id="0" name="Collisions">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1178,11 +1192,25 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="11" name="Set collisions enabled" sid="502844143683121" type="VietBoss">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
                         <action id="-12" name="Subtract from" sid="748020331975977" type="VietBoss">
                             <param id="0" name="Instance variable">Health</param>
                             <param id="1" name="Value">1</param>
                         </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="524217069249846" type="VietBoss">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.6</param>
+                        </action>
                         <action id="-9" name="Destroy" sid="857749601223362" type="Arrow" />
+                        <action id="-16" name="Wait" sid="561724867607100" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="794009153574203" type="VietBoss">
+                            <param id="0" name="Collisions">1</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="546010079379619">
@@ -1192,9 +1220,23 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="11" name="Set collisions enabled" sid="647511242701907" type="VietBoss">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
                         <action id="-12" name="Subtract from" sid="687140577755659" type="VietBoss">
                             <param id="0" name="Instance variable">Health</param>
                             <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="707333223418036" type="VietBoss">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.6</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="385230710731020" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="473417309928245" type="VietBoss">
+                            <param id="0" name="Collisions">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1205,9 +1247,23 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="11" name="Set collisions enabled" sid="395046236575467" type="VietBoss">
+                            <param id="0" name="Collisions">0</param>
+                        </action>
                         <action id="-12" name="Subtract from" sid="528406606627398" type="VietBoss">
                             <param id="0" name="Instance variable">Health</param>
                             <param id="1" name="Value">2</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="932686574528100" type="VietBoss">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.6</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="862771111726142" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="11" name="Set collisions enabled" sid="228539880712415" type="VietBoss">
+                            <param id="0" name="Collisions">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1219,49 +1275,63 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="960884157206090">
+                        <event-block sid="494866508986897">
                             <conditions>
-                                <condition id="2" name="Is playing" sid="789411913897721" type="Vietcong">
+                                <condition id="2" name="Is playing" sid="874918713109109" type="Frontacong">
                                     <param id="0" name="Animation">&quot;Shooting&quot;</param>
                                 </condition>
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block any="1" sid="495034879531690">
+                                <event-block any="1" sid="285578949749196">
                                     <conditions>
-                                        <condition id="3" name="Compare frame" sid="985782802345853" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="515869226113208" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">2</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="394406315289371" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="895387272913049" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">3</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="711830024274580" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="691527754388554" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">4</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="519584670465975" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="820270178406337" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">5</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="389946302938337" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="950154906109618" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">6</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="587858796390949" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="216786595588900" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">7</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="669109852235235" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="723067065948741" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">8</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-12" name="Subtract from" sid="683605279847137" type="Frontacong">
+                                        <action id="11" name="Set collisions enabled" sid="998679064633245" type="Frontacong">
+                                            <param id="0" name="Collisions">0</param>
+                                        </action>
+                                        <action id="-12" name="Subtract from" sid="335376077058465" type="Frontacong">
                                             <param id="0" name="Instance variable">Health</param>
                                             <param id="1" name="Value">2</param>
+                                        </action>
+                                        <action behavior="Flash" id="0" name="Flash" sid="509323509681779" type="Frontacong">
+                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                            <param id="2" name="Duration">0.4</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="199409035366822" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="11" name="Set collisions enabled" sid="468772099518822" type="Frontacong">
+                                            <param id="0" name="Collisions">1</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1277,49 +1347,63 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="371160014062253">
+                        <event-block sid="534245182170752">
                             <conditions>
-                                <condition id="2" name="Is playing" sid="639394658002386" type="Vietcong">
+                                <condition id="2" name="Is playing" sid="164571030654506" type="Frontacong">
                                     <param id="0" name="Animation">&quot;Shooting&quot;</param>
                                 </condition>
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block any="1" sid="547033652375563">
+                                <event-block any="1" sid="447488864680263">
                                     <conditions>
-                                        <condition id="3" name="Compare frame" sid="965816010270809" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="373104604151972" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">2</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="360928095880393" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="311547142623547" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">3</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="278248762071800" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="539080107333868" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">4</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="927990883276779" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="209127149920254" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">5</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="770365011408724" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="312262486736577" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">6</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="766526503447980" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="115497969092446" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">7</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="392951964311304" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="924304272309394" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">8</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-12" name="Subtract from" sid="162839150149838" type="Frontacong">
+                                        <action id="11" name="Set collisions enabled" sid="149672590794914" type="Frontacong">
+                                            <param id="0" name="Collisions">0</param>
+                                        </action>
+                                        <action id="-12" name="Subtract from" sid="952341867488076" type="Frontacong">
                                             <param id="0" name="Instance variable">Health</param>
                                             <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action behavior="Flash" id="0" name="Flash" sid="604806691024453" type="Frontacong">
+                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                            <param id="2" name="Duration">0.4</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="858084418140474" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="11" name="Set collisions enabled" sid="646298016946991" type="Frontacong">
+                                            <param id="0" name="Collisions">1</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1335,51 +1419,65 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="438429658755662">
+                        <event-block sid="846747010828444">
                             <conditions>
-                                <condition id="2" name="Is playing" sid="816124053077316" type="Vietcong">
+                                <condition id="2" name="Is playing" sid="367495079896317" type="Frontacong">
                                     <param id="0" name="Animation">&quot;Shooting&quot;</param>
                                 </condition>
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block any="1" sid="525600840245611">
+                                <event-block any="1" sid="874560548764436">
                                     <conditions>
-                                        <condition id="3" name="Compare frame" sid="325111927360463" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="224935845861095" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">2</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="753697985905168" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="988584688923239" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">3</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="987678530562678" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="617458563464355" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">4</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="269962256926671" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="263992303315446" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">5</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="273470093099308" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="111733366457707" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">6</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="799101760252031" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="732251471993854" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">7</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="931388561818498" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="675296154775380" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">8</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-12" name="Subtract from" sid="465883144699754" type="Frontacong">
+                                        <action id="11" name="Set collisions enabled" sid="822555393551791" type="Frontacong">
+                                            <param id="0" name="Collisions">0</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="914036939551807" type="Arrow" />
+                                        <action id="-12" name="Subtract from" sid="496342032841016" type="Frontacong">
                                             <param id="0" name="Instance variable">Health</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
-                                        <action id="-9" name="Destroy" sid="478043057096958" type="Arrow" />
+                                        <action behavior="Flash" id="0" name="Flash" sid="193750953962450" type="Frontacong">
+                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                            <param id="2" name="Duration">0.4</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="308086623541044" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="11" name="Set collisions enabled" sid="963097636908152" type="Frontacong">
+                                            <param id="0" name="Collisions">1</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
@@ -1434,9 +1532,23 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="11" name="Set collisions enabled" sid="590037127660113" type="Vietcong">
+                                            <param id="0" name="Collisions">0</param>
+                                        </action>
                                         <action id="-12" name="Subtract from" sid="901784753689503" type="Vietcong">
                                             <param id="0" name="Instance variable">Health</param>
                                             <param id="1" name="Value">2</param>
+                                        </action>
+                                        <action behavior="Flash" id="0" name="Flash" sid="152334470299257" type="Vietcong">
+                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                            <param id="2" name="Duration">0.4</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="561072735278967" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="11" name="Set collisions enabled" sid="834868913449471" type="Vietcong">
+                                            <param id="0" name="Collisions">1</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1492,9 +1604,23 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="11" name="Set collisions enabled" sid="107327536952113" type="Vietcong">
+                                            <param id="0" name="Collisions">0</param>
+                                        </action>
                                         <action id="-12" name="Subtract from" sid="403344933316798" type="Vietcong">
                                             <param id="0" name="Instance variable">Health</param>
                                             <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action behavior="Flash" id="0" name="Flash" sid="797758926516127" type="Vietcong">
+                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                            <param id="2" name="Duration">0.4</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="969772329025980" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="11" name="Set collisions enabled" sid="786054718380880" type="Vietcong">
+                                            <param id="0" name="Collisions">1</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1550,11 +1676,25 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="11" name="Set collisions enabled" sid="702756023305506" type="Vietcong">
+                                            <param id="0" name="Collisions">0</param>
+                                        </action>
                                         <action id="-12" name="Subtract from" sid="980863999321278" type="Vietcong">
                                             <param id="0" name="Instance variable">Health</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
+                                        <action behavior="Flash" id="0" name="Flash" sid="410702799416690" type="Vietcong">
+                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                            <param id="2" name="Duration">0.4</param>
+                                        </action>
                                         <action id="-9" name="Destroy" sid="699155079874012" type="Arrow" />
+                                        <action id="-16" name="Wait" sid="540705239485890" type="System">
+                                            <param id="0" name="Seconds">0.1</param>
+                                        </action>
+                                        <action id="11" name="Set collisions enabled" sid="991591507104763" type="Vietcong">
+                                            <param id="0" name="Collisions">1</param>
+                                        </action>
                                     </actions>
                                 </event-block>
                             </sub-events>
@@ -1594,9 +1734,15 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="-9" name="Destroy" sid="227008799709578" type="VietBullet" />
                         <action id="-12" name="Subtract from" sid="775752936619682" type="VietBoss">
                             <param id="0" name="Instance variable">Health</param>
                             <param id="1" name="Value">1</param>
+                        </action>
+                        <action behavior="Flash" id="0" name="Flash" sid="683352282743338" type="VietBoss">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">0.6</param>
                         </action>
                     </actions>
                 </event-block>
@@ -1608,49 +1754,55 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="873267954363025">
+                        <event-block sid="606117368292416">
                             <conditions>
-                                <condition id="2" name="Is playing" sid="384118163054648" type="Vietcong">
+                                <condition id="2" name="Is playing" sid="539744570669846" type="Frontacong">
                                     <param id="0" name="Animation">&quot;Shooting&quot;</param>
                                 </condition>
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block any="1" sid="653240630867184">
+                                <event-block any="1" sid="243889188825512">
                                     <conditions>
-                                        <condition id="3" name="Compare frame" sid="190288888015244" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="224851407726760" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">2</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="700186758814189" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="511195889931585" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">3</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="895670477424040" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="932709915199698" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">4</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="829833261619029" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="795700000699167" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">5</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="805387836832439" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="497856751066636" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">6</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="692600881496976" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="629258203437661" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">7</param>
                                         </condition>
-                                        <condition id="3" name="Compare frame" sid="989829716663714" type="Vietcong">
+                                        <condition id="3" name="Compare frame" sid="682434387469004" type="Frontacong">
                                             <param id="0" name="Comparison">0</param>
                                             <param id="1" name="Number">8</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-12" name="Subtract from" sid="735754468200613" type="Vietcong">
+                                        <action id="-9" name="Destroy" sid="833597993080674" type="VietBullet" />
+                                        <action id="-12" name="Subtract from" sid="252523255663681" type="Frontacong">
                                             <param id="0" name="Instance variable">Health</param>
                                             <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action behavior="Flash" id="0" name="Flash" sid="193306669564648" type="Frontacong">
+                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                            <param id="2" name="Duration">0.4</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -1706,9 +1858,15 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="-9" name="Destroy" sid="192189200556356" type="VietBullet" />
                                         <action id="-12" name="Subtract from" sid="413376666150040" type="Vietcong">
                                             <param id="0" name="Instance variable">Health</param>
                                             <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action behavior="Flash" id="0" name="Flash" sid="397230984659620" type="Vietcong">
+                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                            <param id="2" name="Duration">0.4</param>
                                         </action>
                                     </actions>
                                 </event-block>

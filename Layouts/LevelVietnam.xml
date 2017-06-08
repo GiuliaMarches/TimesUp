@@ -442,7 +442,7 @@
                     </properties>
                     <instance-variables>
                         <ID>1</ID>
-                        <Health>5</Health>
+                        <Health>4</Health>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -471,7 +471,7 @@
                     </properties>
                     <instance-variables>
                         <ID>0</ID>
-                        <Health>5</Health>
+                        <Health>4</Health>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -500,7 +500,7 @@
                     </properties>
                     <instance-variables>
                         <ID>2</ID>
-                        <Health>5</Health>
+                        <Health>4</Health>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -529,7 +529,7 @@
                     </properties>
                     <instance-variables>
                         <ID>3</ID>
-                        <Health>5</Health>
+                        <Health>4</Health>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -558,7 +558,7 @@
                     </properties>
                     <instance-variables>
                         <ID>3</ID>
-                        <Health>5</Health>
+                        <Health>4</Health>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -587,7 +587,7 @@
                     </properties>
                     <instance-variables>
                         <ID>3</ID>
-                        <Health>5</Health>
+                        <Health>4</Health>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -616,7 +616,7 @@
                     </properties>
                     <instance-variables>
                         <ID>2</ID>
-                        <Health>5</Health>
+                        <Health>4</Health>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -645,7 +645,7 @@
                     </properties>
                     <instance-variables>
                         <ID>2</ID>
-                        <Health>5</Health>
+                        <Health>4</Health>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -674,7 +674,7 @@
                     </properties>
                     <instance-variables>
                         <ID>1</ID>
-                        <Health>5</Health>
+                        <Health>4</Health>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -703,7 +703,7 @@
                     </properties>
                     <instance-variables>
                         <ID>1</ID>
-                        <Health>5</Health>
+                        <Health>4</Health>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -732,7 +732,7 @@
                     </properties>
                     <instance-variables>
                         <ID>0</ID>
-                        <Health>5</Health>
+                        <Health>4</Health>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -761,7 +761,7 @@
                     </properties>
                     <instance-variables>
                         <ID>0</ID>
-                        <Health>5</Health>
+                        <Health>4</Health>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -878,7 +878,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <Health>5</Health>
+                        <Health>4</Health>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -906,7 +906,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <Health>5</Health>
+                        <Health>4</Health>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -934,7 +934,7 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <Health>5</Health>
+                        <Health>4</Health>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Flash" />
@@ -1088,6 +1088,9 @@
                         <ID>0</ID>
                         <Health>15</Health>
                     </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -1114,6 +1117,9 @@
                         <ID>1</ID>
                         <Health>15</Health>
                     </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -1158,8 +1164,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>953</x>
-                        <y>696</y>
+                        <x>954</x>
+                        <y>698</y>
                         <z>0</z>
                         <width>70</width>
                         <height>70</height>
@@ -1296,7 +1302,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>65</x>
-                        <y>696</y>
+                        <y>698</y>
                         <z>0</z>
                         <width>70</width>
                         <height>70</height>
