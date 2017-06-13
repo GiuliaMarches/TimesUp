@@ -22,12 +22,12 @@
             <actions>
                 <action id="0" name="Spawn another object" sid="112814793618418" type="WeaponsMask">
                     <param id="0" name="Object">HUDMask</param>
-                    <param id="1" name="Layer">1</param>
+                    <param id="1" name="Layer">2</param>
                     <param id="2" name="Image point">0</param>
                 </action>
                 <action id="0" name="Spawn another object" sid="536544282174314" type="KeysMask">
                     <param id="0" name="Object">HUDMask</param>
-                    <param id="1" name="Layer">1</param>
+                    <param id="1" name="Layer">2</param>
                     <param id="2" name="Image point">0</param>
                 </action>
                 <action id="5" name="Set web font" sid="175398735017234" type="CountDown">
@@ -242,6 +242,12 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
+                                                <action id="0" name="Play" sid="683435137831016" type="Audio">
+                                                    <param id="0" name="Audio file">arco e freccia</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;Arco&quot;</param>
+                                                </action>
                                                 <action id="0" name="Spawn another object" sid="875506382372987" type="Player">
                                                     <param id="0" name="Object">Arrow</param>
                                                     <param id="1" name="Layer">1</param>
@@ -265,6 +271,16 @@
                             </sub-events>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="398890039990963">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="389802469865825" type="Arrow">
+                            <param id="0" name="Object">Wall</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="850698590843905" type="Arrow" />
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
@@ -337,6 +353,12 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
+                                                <action id="0" name="Play" sid="474067121551605" type="Audio">
+                                                    <param id="0" name="Audio file">Boomerang</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;Boomerang&quot;</param>
+                                                </action>
                                                 <action id="0" name="Spawn another object" sid="147652187509247" type="Player">
                                                     <param id="0" name="Object">Boomerang</param>
                                                     <param id="1" name="Layer">1</param>
@@ -353,7 +375,38 @@
                                                 <action id="-8" name="Set angle" sid="481366386974166" type="Boomerang">
                                                     <param id="0" name="Angle">Player.ShootDir</param>
                                                 </action>
+                                                <action id="-9" name="Set value" sid="488313337436444" type="System">
+                                                    <param id="0" name="Variable">FireTimer</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
                                             </actions>
+                                        </event-block>
+                                        <event-block sid="985067806902182">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="432735085984035" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="666375215694358">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="527946071238783" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="376366837351057" type="Audio">
+                                                            <param id="0" name="Audio file">Error</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">0</param>
+                                                            <param id="1" name="Tag (optional)">&quot;Error&quot;</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="539500401419762" type="System">
+                                                            <param id="0" name="Seconds">0.2</param>
+                                                        </action>
+                                                        <action id="6" name="Stop" sid="988666576606619" type="Audio">
+                                                            <param id="0" name="Tag">&quot;Error&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -422,6 +475,18 @@
                         </event-block>
                     </sub-events>
                 </event-block>
+                <event-block sid="312990236522976">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="629306655896694" type="Boomerang">
+                            <param id="0" name="Object">Wall</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="4" name="Bounce off object" sid="566521321996529" type="Boomerang">
+                            <param id="0" name="Object">Wall</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="262714658897159" title="BOMB SHEET">
@@ -461,13 +526,19 @@
                                                 <condition id="-14" name="Compare variable" sid="274845354311618" type="System">
                                                     <param id="0" name="Variable">FireTimer</param>
                                                     <param id="1" name="Comparison">5</param>
-                                                    <param id="2" name="Value">3</param>
+                                                    <param id="2" name="Value">2.5</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
                                                 <action id="-9" name="Set value" sid="140108731987137" type="System">
                                                     <param id="0" name="Variable">FireTimer</param>
                                                     <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="0" name="Play" sid="995818021984596" type="Audio">
+                                                    <param id="0" name="Audio file">tiro granata</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;LancioGranata&quot;</param>
                                                 </action>
                                                 <action id="0" name="Spawn another object" sid="709446935065280" type="Player">
                                                     <param id="0" name="Object">Grenade</param>
@@ -494,6 +565,33 @@
                                                 </action>
                                                 <action id="-9" name="Destroy" sid="761757749641207" type="Grenade" />
                                             </actions>
+                                        </event-block>
+                                        <event-block sid="235240671187773">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="605789225903914" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="243530898027178">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="234016076268461" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="295690829547976" type="Audio">
+                                                            <param id="0" name="Audio file">Error</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">0</param>
+                                                            <param id="1" name="Tag (optional)">&quot;Error&quot;</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="674953741704216" type="System">
+                                                            <param id="0" name="Seconds">0.2</param>
+                                                        </action>
+                                                        <action id="6" name="Stop" sid="695007581142896" type="Audio">
+                                                            <param id="0" name="Tag">&quot;Error&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -527,6 +625,18 @@
                         <condition id="0" name="On collision with another object" sid="646007665875876" type="Grenade">
                             <param id="0" name="Object">Cannon</param>
                         </condition>
+                        <condition id="0" name="On collision with another object" sid="251579322386185" type="Grenade">
+                            <param id="0" name="Object">Flubber</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="787522980073451" type="Grenade">
+                            <param id="0" name="Object">FlubberTwo</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="832123104039105" type="Grenade">
+                            <param id="0" name="Object">FlubberThree</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="289029760705751" type="Grenade">
+                            <param id="0" name="Object">FlubberFour</param>
+                        </condition>
                     </conditions>
                     <actions>
                         <action id="0" name="Spawn another object" sid="863380749061423" type="Grenade">
@@ -536,6 +646,27 @@
                         </action>
                         <action id="-9" name="Destroy" sid="739383460285760" type="Grenade" />
                     </actions>
+                </event-block>
+                <event-block sid="361913844442212">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="235058021709063" type="Boom" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="382719297980111">
+                            <conditions>
+                                <condition id="-4" inverted="1" name="Is outside layout" sid="685793590955268" type="Boom" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="329592295560516" type="Audio">
+                                    <param id="0" name="Audio file">granata</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-5</param>
+                                    <param id="1" name="Tag (optional)">&quot;Granata&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
@@ -646,14 +777,20 @@
                                         <event-block sid="227705074447151">
                                             <conditions>
                                                 <condition id="-14" name="Compare variable" sid="416458503346491" type="System">
-                                                    <param id="0" name="Variable">ShieldTimer</param>
+                                                    <param id="0" name="Variable">FireTimer</param>
                                                     <param id="1" name="Comparison">5</param>
                                                     <param id="2" name="Value">1</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
+                                                <action id="0" name="Play" sid="587151630771107" type="Audio">
+                                                    <param id="0" name="Audio file">colpo scudo</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;Scudo&quot;</param>
+                                                </action>
                                                 <action id="-9" name="Set value" sid="134715864864145" type="System">
-                                                    <param id="0" name="Variable">ShieldTimer</param>
+                                                    <param id="0" name="Variable">FireTimer</param>
                                                     <param id="1" name="Value">0</param>
                                                 </action>
                                                 <action id="0" name="Spawn another object" sid="626164869234578" type="Player">
@@ -670,6 +807,33 @@
                                                 </action>
                                             </actions>
                                         </event-block>
+                                        <event-block sid="234714101002848">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="591668566371164" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="417449036176896">
+                                                    <conditions>
+                                                        <condition id="-4" name="Trigger once while true" sid="886511080800704" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="537865803626953" type="Audio">
+                                                            <param id="0" name="Audio file">Error</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">0</param>
+                                                            <param id="1" name="Tag (optional)">&quot;Error&quot;</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="384345072499174" type="System">
+                                                            <param id="0" name="Seconds">0.2</param>
+                                                        </action>
+                                                        <action id="6" name="Stop" sid="536223904971079" type="Audio">
+                                                            <param id="0" name="Tag">&quot;Error&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
                                     </sub-events>
                                 </event-block>
                             </sub-events>
@@ -680,7 +844,7 @@
                     <conditions>
                         <condition behavior="Bullet" id="1" name="Compare distance travelled" sid="700406059101142" type="Shield">
                             <param id="0" name="Comparison">5</param>
-                            <param id="1" name="Distance">130</param>
+                            <param id="1" name="Distance">160</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -993,36 +1157,986 @@
         </event-block>
         <event-group description="" sid="657546731160660" title="Animations">
             <sub-events>
-                <event-block sid="636502307011040">
-                    <conditions>
-                        <condition id="-41" name="Is between angles" sid="328090990924315" type="System">
-                            <param id="0" name="Angle">Player.8Direction.MovingAngle</param>
-                            <param id="1" name="First angle">315</param>
-                            <param id="2" name="Second angle">45</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="4" name="Set animation" sid="530404165756985" type="Player">
-                            <param id="0" name="Animation">&quot;MovDefaultRight&quot;</param>
-                            <param id="1" name="From">0</param>
-                        </action>
-                    </actions>
-                </event-block>
-                <event-block sid="173036403243735">
-                    <conditions>
-                        <condition id="-41" name="Is between angles" sid="581567157125140" type="System">
-                            <param id="0" name="Angle">Player.8Direction.MovingAngle</param>
-                            <param id="1" name="First angle">135</param>
-                            <param id="2" name="Second angle">225</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="4" name="Set animation" sid="727448867719865" type="Player">
-                            <param id="0" name="Animation">&quot;MovDefaultLeft&quot;</param>
-                            <param id="1" name="From">0</param>
-                        </action>
-                    </actions>
-                </event-block>
+                <event-group description="" sid="123249502031756" title="Default">
+                    <sub-events>
+                        <event-block sid="494390252170825">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="253789831877160" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="892048996008370">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="225569842384750" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="373901162789390" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">45</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="709295905798765" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">315</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="355686160983044">
+                                            <conditions>
+                                                <condition id="3" name="Is button down" sid="757763634683603" type="Gamepad">
+                                                    <param id="0" name="Gamepad">0</param>
+                                                    <param id="1" name="Button">15</param>
+                                                </condition>
+                                                <condition id="2" name="Key is down" sid="970828080919593" type="Keyboard">
+                                                    <param id="0" name="Key">68 (D)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="263731098131018" type="Player">
+                                                    <param id="0" name="Animation">&quot;MovDefaultRight&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="928088504515502">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="268273023791141" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="954087305071509" type="Player">
+                                                    <param id="0" name="Animation">&quot;StopDefaultRight&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="591972292402574">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="509222031008976" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">90</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="158644568370265">
+                                            <conditions>
+                                                <condition id="3" name="Is button down" sid="966465687868909" type="Gamepad">
+                                                    <param id="0" name="Gamepad">0</param>
+                                                    <param id="1" name="Button">13</param>
+                                                </condition>
+                                                <condition id="2" name="Key is down" sid="365319797396488" type="Keyboard">
+                                                    <param id="0" name="Key">83 (S)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="310872370180094" type="Player">
+                                                    <param id="0" name="Animation">&quot;MovDefaultFront&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="167064528620913">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="651669515536588" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="536482973655640" type="Player">
+                                                    <param id="0" name="Animation">&quot;StopDefaultFront&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block any="1" sid="633692651083309">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="966277245747315" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">180</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="185075789944947" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">135</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="959040442351591" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">225</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="296814428819521">
+                                            <conditions>
+                                                <condition id="3" name="Is button down" sid="974888066956702" type="Gamepad">
+                                                    <param id="0" name="Gamepad">0</param>
+                                                    <param id="1" name="Button">14</param>
+                                                </condition>
+                                                <condition id="2" name="Key is down" sid="312076937614583" type="Keyboard">
+                                                    <param id="0" name="Key">65 (A)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="923260625526819" type="Player">
+                                                    <param id="0" name="Animation">&quot;MovDefaultLeft&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="217183951228009">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="769650178314322" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="377019339263183" type="Player">
+                                                    <param id="0" name="Animation">&quot;StopDefaultLeft&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="237308829101169">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="606140757971898" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">270</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="252353711878749">
+                                            <conditions>
+                                                <condition id="3" name="Is button down" sid="755937481121495" type="Gamepad">
+                                                    <param id="0" name="Gamepad">0</param>
+                                                    <param id="1" name="Button">12</param>
+                                                </condition>
+                                                <condition id="2" name="Key is down" sid="721118670264566" type="Keyboard">
+                                                    <param id="0" name="Key">87 (W)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="715002010074894" type="Player">
+                                                    <param id="0" name="Animation">&quot;MovDefaultBack&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="356085364535550">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="369362212905929" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="169593662582051" type="Player">
+                                                    <param id="0" name="Animation">&quot;StopDefaultBack&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="297195428760752" title="Boomerang">
+                    <sub-events>
+                        <event-block sid="463117038019958">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="925310958549516" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="379302761170714">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="813007304161173" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="519568470002517" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">45</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="740309453091359" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">315</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="349418904965424">
+                                            <conditions>
+                                                <condition id="3" name="Is button down" sid="279631267383276" type="Gamepad">
+                                                    <param id="0" name="Gamepad">0</param>
+                                                    <param id="1" name="Button">15</param>
+                                                </condition>
+                                                <condition id="2" name="Key is down" sid="664299056167591" type="Keyboard">
+                                                    <param id="0" name="Key">68 (D)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="834674303310162" type="Player">
+                                                    <param id="0" name="Animation">&quot;MovBoomRight&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="602216881000585">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="813563551747695" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="202394773949310" type="Player">
+                                                    <param id="0" name="Animation">&quot;StopBoomRight&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="347974404567412">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="842718920811377" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">90</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="221148587074831">
+                                            <conditions>
+                                                <condition id="3" name="Is button down" sid="428453982456388" type="Gamepad">
+                                                    <param id="0" name="Gamepad">0</param>
+                                                    <param id="1" name="Button">13</param>
+                                                </condition>
+                                                <condition id="2" name="Key is down" sid="125835794474525" type="Keyboard">
+                                                    <param id="0" name="Key">83 (S)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="772960092022481" type="Player">
+                                                    <param id="0" name="Animation">&quot;MovBoomFront&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="269748086329880">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="249187457285438" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="560693148991660" type="Player">
+                                                    <param id="0" name="Animation">&quot;StopBoomFront&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block any="1" sid="458221312770556">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="715865410067032" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">180</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="918281072692473" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">135</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="689326541435631" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">225</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="623529316182011">
+                                            <conditions>
+                                                <condition id="3" name="Is button down" sid="195889117060967" type="Gamepad">
+                                                    <param id="0" name="Gamepad">0</param>
+                                                    <param id="1" name="Button">14</param>
+                                                </condition>
+                                                <condition id="2" name="Key is down" sid="964018313564056" type="Keyboard">
+                                                    <param id="0" name="Key">65 (A)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="890326593908973" type="Player">
+                                                    <param id="0" name="Animation">&quot;MovBoomLeft&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="280030018614694">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="804646880268185" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="683834971513106" type="Player">
+                                                    <param id="0" name="Animation">&quot;StopBoomLeft&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="802849380217836">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="767151849529022" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">270</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="278644832888934">
+                                            <conditions>
+                                                <condition id="3" name="Is button down" sid="804702994288308" type="Gamepad">
+                                                    <param id="0" name="Gamepad">0</param>
+                                                    <param id="1" name="Button">12</param>
+                                                </condition>
+                                                <condition id="2" name="Key is down" sid="383042983700569" type="Keyboard">
+                                                    <param id="0" name="Key">87 (W)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="483101969783229" type="Player">
+                                                    <param id="0" name="Animation">&quot;MovBoomBack&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="381313516536374">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="332856613797324" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="751477381941499" type="Player">
+                                                    <param id="0" name="Animation">&quot;StopBoomBack&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="433803497729872" title="Grenade">
+                    <sub-events>
+                        <event-block sid="621995839233970">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="610196048925601" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">2</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="589036625257431">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="816123964669557" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="340127395553170" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">45</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="454375748025281" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">315</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="967910571831081">
+                                            <conditions>
+                                                <condition id="3" name="Is button down" sid="962333501142629" type="Gamepad">
+                                                    <param id="0" name="Gamepad">0</param>
+                                                    <param id="1" name="Button">15</param>
+                                                </condition>
+                                                <condition id="2" name="Key is down" sid="337132870319222" type="Keyboard">
+                                                    <param id="0" name="Key">68 (D)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="276680066958711" type="Player">
+                                                    <param id="0" name="Animation">&quot;MovGrenadeRight&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="152733555612437">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="744501622671383" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="796444430407882" type="Player">
+                                                    <param id="0" name="Animation">&quot;StopGrenadeRight&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="373379833246533">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="391014155549834" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">90</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="466921982136507">
+                                            <conditions>
+                                                <condition id="3" name="Is button down" sid="211851776774961" type="Gamepad">
+                                                    <param id="0" name="Gamepad">0</param>
+                                                    <param id="1" name="Button">13</param>
+                                                </condition>
+                                                <condition id="2" name="Key is down" sid="506345552168657" type="Keyboard">
+                                                    <param id="0" name="Key">83 (S)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="380513170106849" type="Player">
+                                                    <param id="0" name="Animation">&quot;MovGrenadeFront&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="547682307386529">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="833809307682824" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="653858176491542" type="Player">
+                                                    <param id="0" name="Animation">&quot;StopGrenadeFront&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block any="1" sid="530410153104736">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="356727291392686" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">180</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="881679751552755" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">135</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="609580403128753" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">225</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="647286176109228">
+                                            <conditions>
+                                                <condition id="3" name="Is button down" sid="370387627896710" type="Gamepad">
+                                                    <param id="0" name="Gamepad">0</param>
+                                                    <param id="1" name="Button">14</param>
+                                                </condition>
+                                                <condition id="2" name="Key is down" sid="797282387220623" type="Keyboard">
+                                                    <param id="0" name="Key">65 (A)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="806611624329365" type="Player">
+                                                    <param id="0" name="Animation">&quot;MovGrenadeLeft&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="164428825767891">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="900414119140943" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="470876729264460" type="Player">
+                                                    <param id="0" name="Animation">&quot;StopGrenadeLeft&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="183623897965756">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="508496619589833" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">270</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="247413922211924">
+                                            <conditions>
+                                                <condition id="3" name="Is button down" sid="609145510271979" type="Gamepad">
+                                                    <param id="0" name="Gamepad">0</param>
+                                                    <param id="1" name="Button">12</param>
+                                                </condition>
+                                                <condition id="2" name="Key is down" sid="430470156965052" type="Keyboard">
+                                                    <param id="0" name="Key">87 (W)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="992047982317062" type="Player">
+                                                    <param id="0" name="Animation">&quot;MovGrenadeBack&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="119017440508166">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="341315859389759" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="373730828077314" type="Player">
+                                                    <param id="0" name="Animation">&quot;StopGrenadeBack&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="504212714350807" title="Bow">
+                    <sub-events>
+                        <event-block sid="252870267366586">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="822472050716690" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="441035058248330">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="551885967305311" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="518804306250431" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">45</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="465683063589287" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">315</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="242889848618439">
+                                            <conditions>
+                                                <condition id="3" name="Is button down" sid="586797774545565" type="Gamepad">
+                                                    <param id="0" name="Gamepad">0</param>
+                                                    <param id="1" name="Button">15</param>
+                                                </condition>
+                                                <condition id="2" name="Key is down" sid="177946364852938" type="Keyboard">
+                                                    <param id="0" name="Key">68 (D)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="105797374335992" type="Player">
+                                                    <param id="0" name="Animation">&quot;MovBowRight&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="126168854460605">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="774548149953130" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="838082597473844" type="Player">
+                                                    <param id="0" name="Animation">&quot;StopBowRight&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="727041747107746">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="187184683921820" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">90</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="523186968905682">
+                                            <conditions>
+                                                <condition id="3" name="Is button down" sid="802036227879121" type="Gamepad">
+                                                    <param id="0" name="Gamepad">0</param>
+                                                    <param id="1" name="Button">13</param>
+                                                </condition>
+                                                <condition id="2" name="Key is down" sid="910523104547996" type="Keyboard">
+                                                    <param id="0" name="Key">83 (S)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="293346183092897" type="Player">
+                                                    <param id="0" name="Animation">&quot;MovBowFront&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="379693122534730">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="128208673613360" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="387032841221446" type="Player">
+                                                    <param id="0" name="Animation">&quot;StopBowFront&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block any="1" sid="592722561407293">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="153330895708443" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">180</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="450327404492458" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">135</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="166267126935730" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">225</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="881901773305999">
+                                            <conditions>
+                                                <condition id="3" name="Is button down" sid="584461848832322" type="Gamepad">
+                                                    <param id="0" name="Gamepad">0</param>
+                                                    <param id="1" name="Button">14</param>
+                                                </condition>
+                                                <condition id="2" name="Key is down" sid="237043843534211" type="Keyboard">
+                                                    <param id="0" name="Key">65 (A)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="150119346960743" type="Player">
+                                                    <param id="0" name="Animation">&quot;MovBowLeft&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="470448950257258">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="949308615351842" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="834277395722144" type="Player">
+                                                    <param id="0" name="Animation">&quot;StopBowLeft&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="912438655527360">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="397021266180246" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">270</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="535800025452323">
+                                            <conditions>
+                                                <condition id="3" name="Is button down" sid="558755467024152" type="Gamepad">
+                                                    <param id="0" name="Gamepad">0</param>
+                                                    <param id="1" name="Button">12</param>
+                                                </condition>
+                                                <condition id="2" name="Key is down" sid="104670478828336" type="Keyboard">
+                                                    <param id="0" name="Key">87 (W)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="858868502607451" type="Player">
+                                                    <param id="0" name="Animation">&quot;MovBowBack&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="416434569888542">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="801625499066757" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="886778292787760" type="Player">
+                                                    <param id="0" name="Animation">&quot;StopBowBack&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="867876335370951" title="Shield">
+                    <sub-events>
+                        <event-block sid="256821806262081">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="798293322522437" type="Player">
+                                    <param id="0" name="Instance variable">lastWeapon</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">4</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block any="1" sid="595680460188578">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="468302777306492" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="719996448520222" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">315</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="765399804199995" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">45</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="614848544305586">
+                                            <conditions>
+                                                <condition id="3" name="Is button down" sid="203657946297357" type="Gamepad">
+                                                    <param id="0" name="Gamepad">0</param>
+                                                    <param id="1" name="Button">15</param>
+                                                </condition>
+                                                <condition id="2" name="Key is down" sid="334459494980029" type="Keyboard">
+                                                    <param id="0" name="Key">68 (D)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="680938812489936" type="Player">
+                                                    <param id="0" name="Animation">&quot;MovShieldRight&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="811323130830948">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="481465810126178" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="741544872573750" type="Player">
+                                                    <param id="0" name="Animation">&quot;StopShieldRight&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="217564934955213">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="690101909792451" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">90</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="154571279470383">
+                                            <conditions>
+                                                <condition id="3" name="Is button down" sid="432034652656421" type="Gamepad">
+                                                    <param id="0" name="Gamepad">0</param>
+                                                    <param id="1" name="Button">13</param>
+                                                </condition>
+                                                <condition id="2" name="Key is down" sid="652952728221321" type="Keyboard">
+                                                    <param id="0" name="Key">83 (S)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="606753042795260" type="Player">
+                                                    <param id="0" name="Animation">&quot;MovShieldFront&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="925155222701430">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="685485231077595" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="916005747650081" type="Player">
+                                                    <param id="0" name="Animation">&quot;StopShieldFront&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block any="1" sid="927496736883217">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="795477006513947" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">180</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="239409658970144" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">135</param>
+                                        </condition>
+                                        <condition id="-7" name="Compare instance variable" sid="658497051233104" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">225</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="660125843611285">
+                                            <conditions>
+                                                <condition id="3" name="Is button down" sid="291242221134403" type="Gamepad">
+                                                    <param id="0" name="Gamepad">0</param>
+                                                    <param id="1" name="Button">14</param>
+                                                </condition>
+                                                <condition id="2" name="Key is down" sid="342390972868905" type="Keyboard">
+                                                    <param id="0" name="Key">65 (A)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="723171738194726" type="Player">
+                                                    <param id="0" name="Animation">&quot;MovShieldLeft&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="263482104714573">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="831947066549039" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="725414606014489" type="Player">
+                                                    <param id="0" name="Animation">&quot;StopShieldLeft&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="598540810192159">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="163783656271239" type="Player">
+                                            <param id="0" name="Instance variable">shootDir</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">270</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block any="1" sid="780332342710946">
+                                            <conditions>
+                                                <condition id="3" name="Is button down" sid="526693994269099" type="Gamepad">
+                                                    <param id="0" name="Gamepad">0</param>
+                                                    <param id="1" name="Button">12</param>
+                                                </condition>
+                                                <condition id="2" name="Key is down" sid="762772122920004" type="Keyboard">
+                                                    <param id="0" name="Key">87 (W)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="995339927774487" type="Player">
+                                                    <param id="0" name="Animation">&quot;MovShieldBack&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="556141470021719">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="362100881661371" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="696622739190409" type="Player">
+                                                    <param id="0" name="Animation">&quot;StopShieldBack&quot;</param>
+                                                    <param id="1" name="From">0</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
             </sub-events>
         </event-group>
         <event-group description="" sid="255516584920610" title="CountDown Sheet">
@@ -1038,6 +2152,20 @@
                         </action>
                     </actions>
                     <sub-events>
+                        <event-block sid="218440111849069">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="902036314027672" type="System">
+                                    <param id="0" name="Variable">CountDown</param>
+                                    <param id="1" name="Comparison">3</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-15" name="Set visible" sid="834500366703890" type="CountDown">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="859679648769220">
                             <conditions>
                                 <condition id="-8" name="Compare two values" sid="356639114096807" type="System">
@@ -1078,6 +2206,42 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="313680985530393">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="502768639543601" type="System">
+                            <param id="0" name="Variable">CountDown</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">60</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="618338927169071">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="247742438511450" type="System">
+                                    <param id="0" name="First value">int(CountDown % 2)</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set font color" sid="463303411646936" type="CountDown">
+                                    <param id="0" name="Color">rgb(255, 0, 0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="149312095406858">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="699225277603921" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set font color" sid="345238816412762" type="CountDown">
+                                    <param id="0" name="Color">rgb(255, 255, 255)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="769447297902258" title="HUDWeapons">
@@ -1108,7 +2272,7 @@
                 <event-block sid="803253891126627">
                     <conditions>
                         <condition id="1" name="Is overlapping another object" sid="391557135089138" type="Player">
-                            <param id="0" name="Object">WeaponsMask</param>
+                            <param id="0" name="Object">HUDMask</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -1122,6 +2286,21 @@
                             <param id="0" name="Opacity">20</param>
                         </action>
                         <action id="-16" name="Set opacity" sid="412466873131895" type="HUDBoomerang">
+                            <param id="0" name="Opacity">20</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="102603840229515" type="HUDPiratesKey">
+                            <param id="0" name="Opacity">10</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="877144320678580" type="HUDVietnamKey">
+                            <param id="0" name="Opacity">10</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="814834346660504" type="HUDEgyptKey">
+                            <param id="0" name="Opacity">10</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="728836554259232" type="HUDSpaceKey">
+                            <param id="0" name="Opacity">10</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="511301090320200" type="HUDMask">
                             <param id="0" name="Opacity">20</param>
                         </action>
                     </actions>
@@ -1141,6 +2320,24 @@
                             <param id="0" name="Opacity">100</param>
                         </action>
                         <action id="-16" name="Set opacity" sid="146441803061279" type="HUDBoomerang">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="451649391551837" type="HUDMask">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="227657680276202" type="HUDPiratesKey">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="584283444466785" type="HUDVietnamKey">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="555789649867258" type="HUDEgyptKey">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="848076983271075" type="HUDSpaceKey">
+                            <param id="0" name="Opacity">100</param>
+                        </action>
+                        <action id="-16" name="Set opacity" sid="135658773870069" type="HUDMask">
                             <param id="0" name="Opacity">100</param>
                         </action>
                     </actions>
@@ -1293,42 +2490,16 @@
                 <event-block sid="178574842393274">
                     <conditions>
                         <condition id="1" name="Is overlapping another object" sid="152198199657541" type="Player">
-                            <param id="0" name="Object">KeysMask</param>
+                            <param id="0" name="Object">HUDMask</param>
                         </condition>
                     </conditions>
-                    <actions>
-                        <action id="-16" name="Set opacity" sid="208463978358405" type="HUDPiratesKey">
-                            <param id="0" name="Opacity">10</param>
-                        </action>
-                        <action id="-16" name="Set opacity" sid="728524043769166" type="HUDVietnamKey">
-                            <param id="0" name="Opacity">10</param>
-                        </action>
-                        <action id="-16" name="Set opacity" sid="731346858593778" type="HUDEgyptKey">
-                            <param id="0" name="Opacity">10</param>
-                        </action>
-                        <action id="-16" name="Set opacity" sid="148181969994071" type="HUDSpaceKey">
-                            <param id="0" name="Opacity">10</param>
-                        </action>
-                    </actions>
+                    <actions />
                 </event-block>
                 <event-block sid="619219796980515">
                     <conditions>
                         <condition id="-22" name="Else" sid="897390453860915" type="System" />
                     </conditions>
-                    <actions>
-                        <action id="-16" name="Set opacity" sid="978041176286265" type="HUDPiratesKey">
-                            <param id="0" name="Opacity">100</param>
-                        </action>
-                        <action id="-16" name="Set opacity" sid="951193308301018" type="HUDVietnamKey">
-                            <param id="0" name="Opacity">100</param>
-                        </action>
-                        <action id="-16" name="Set opacity" sid="325105658243300" type="HUDEgyptKey">
-                            <param id="0" name="Opacity">100</param>
-                        </action>
-                        <action id="-16" name="Set opacity" sid="647637935589654" type="HUDSpaceKey">
-                            <param id="0" name="Opacity">100</param>
-                        </action>
-                    </actions>
+                    <actions />
                     <sub-events>
                         <event-block sid="638098549028224">
                             <conditions>
@@ -1454,6 +2625,14 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="194141914011370">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="236508874225246" type="HUDMask" />
+                    </conditions>
+                    <actions>
+                        <action id="-25" name="Move to bottom" sid="519909149818268" type="HUDMask" />
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="967800230076717" title="EnterScript">
@@ -1471,6 +2650,196 @@
                         </action>
                         <action behavior="8Direction" id="8" name="Set enabled" sid="211566149737220" type="Player">
                             <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="692289013365579" title="Bullets Collisions">
+            <sub-events>
+                <event-block sid="286380799834331">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="816589927301696" type="CannonBall" />
+                    </conditions>
+                    <actions>
+                        <action id="-29" name="Move to object" sid="243819781600025" type="CannonBall">
+                            <param id="0" name="Where">1</param>
+                            <param id="1" name="Object">Player</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="560667063331538">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="282765742665938" type="VietBullet" />
+                    </conditions>
+                    <actions>
+                        <action id="-29" name="Move to object" sid="639244783804694" type="VietBullet">
+                            <param id="0" name="Where">1</param>
+                            <param id="1" name="Object">Player</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="690151251306793">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="406962976161345" type="EnemyBullet" />
+                    </conditions>
+                    <actions>
+                        <action id="-29" name="Move to object" sid="707332814500482" type="EnemyBullet">
+                            <param id="0" name="Where">1</param>
+                            <param id="1" name="Object">Player</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="140367896666812">
+                    <conditions>
+                        <condition id="-8" name="Is boolean instance variable set" sid="902283877576973" type="Player">
+                            <param id="0" name="Instance variable">hit</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="388597944631894" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="653058577749933" type="Player">
+                            <param id="0" name="Instance variable">hit</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="131414604230382" title="Sounds">
+            <sub-events>
+                <event-block any="1" sid="302318503859412">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="559283744153940" type="Boomerang">
+                            <param id="0" name="Object">Captain</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="400771406820496" type="Boomerang">
+                            <param id="0" name="Object">Flubber</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="750943982032123" type="Boomerang">
+                            <param id="0" name="Object">FlubberTwo</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="302585779322799" type="Boomerang">
+                            <param id="0" name="Object">FlubberThree</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="492712033626656" type="Boomerang">
+                            <param id="0" name="Object">FlubberFour</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="619811186476331" type="Boomerang">
+                            <param id="0" name="Object">Mummy</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="639617374194532" type="Boomerang">
+                            <param id="0" name="Object">MummyBoss</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="314070319216483" type="Boomerang">
+                            <param id="0" name="Object">SpaceBoss</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="316270538293942" type="Boomerang">
+                            <param id="0" name="Object">SpaceMob</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="153971240041552" type="Boomerang">
+                            <param id="0" name="Object">VietBoss</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="430671052364600" type="Boomerang">
+                            <param id="0" name="Object">Box</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="521356046192754" type="Boomerang">
+                            <param id="0" name="Object">Cannon</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="504681294442691" type="Boomerang">
+                            <param id="0" name="Object">Chest</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="862613817864982" type="Boomerang">
+                            <param id="0" name="Object">Column</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="361139415767687" type="Boomerang">
+                            <param id="0" name="Object">EgyptWall</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="899202286812194" type="Boomerang">
+                            <param id="0" name="Object">Obstacle</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="524862624232515" type="Boomerang">
+                            <param id="0" name="Object">Sarcophagus</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="567622039192843" type="Audio">
+                            <param id="0" name="Audio file">collisione del Boomerang laser1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;CollisioneBoom&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="437149357401545">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="291347742064831" type="Player">
+                            <param id="0" name="Object">Mummy</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="312091177266676" type="Player">
+                            <param id="0" name="Object">Flubber</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="451662878752099" type="Player">
+                            <param id="0" name="Object">FlubberTwo</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="597599432268683" type="Player">
+                            <param id="0" name="Object">FlubberThree</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="512107652755107" type="Player">
+                            <param id="0" name="Object">FlubberFour</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="244519107161460" type="Player">
+                            <param id="0" name="Object">WrapBullet</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="702318076689154" type="Player">
+                            <param id="0" name="Object">VietBullet</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="111993402408679" type="Player">
+                            <param id="0" name="Object">CannonBall</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="454686770407219" type="Player">
+                            <param id="0" name="Object">EnemyBullet</param>
+                        </condition>
+                        <condition id="0" name="On collision with another object" sid="605139304106198" type="Player">
+                            <param id="0" name="Object">SpaceBoss</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="842963194074488" type="Audio">
+                            <param id="0" name="Audio file">protagonista colpito1</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;ProtagonistaHit&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="572618582332770" title="WeaponsSounds">
+            <sub-events>
+                <event-block any="1" sid="358864119335433">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="418463673839422" type="Player">
+                            <param id="0" name="Object">BoomerangWep</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="929887328751380" type="Player">
+                            <param id="0" name="Object">Bow</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="651316442593287" type="Player">
+                            <param id="0" name="Object">GrenadeWep</param>
+                        </condition>
+                        <condition id="1" name="Is overlapping another object" sid="515772955141057" type="Player">
+                            <param id="0" name="Object">ShieldWep</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="996005977406805" type="Audio">
+                            <param id="0" name="Audio file">OOT_Get_Heart</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-7</param>
+                            <param id="1" name="Tag (optional)">&quot;OOT&quot;</param>
                         </action>
                     </actions>
                 </event-block>

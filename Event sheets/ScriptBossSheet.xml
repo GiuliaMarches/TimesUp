@@ -8,6 +8,7 @@
                 <condition id="-2" name="On start of layout" sid="745642425195366" type="System" />
             </conditions>
             <actions>
+                <action id="33" name="Stop all" sid="392797113136833" type="Audio" />
                 <action behavior="Bullet" id="5" name="Set enabled" sid="295578495551209" type="Flubber">
                     <param id="0" name="State">0</param>
                 </action>
@@ -19,18 +20,19 @@
                 <action id="-9" name="Destroy" sid="376699222604541" type="FlubberFour" />
                 <action id="-9" name="Destroy" sid="197025414311040" type="Boomerang" />
                 <action id="-9" name="Destroy" sid="354303087344792" type="Grenade" />
+                <action id="0" name="Play" sid="742710121198927" type="Audio">
+                    <param id="0" name="Audio file">Ganondorf Laugh DISSOLVENZA</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;AHAHA&quot;</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="791017906116394">
             <conditions>
                 <condition behavior="Fade" id="0" name="On fade-out finished" sid="641379731469984" type="FadeSprite" />
             </conditions>
-            <actions>
-                <action behavior="Fade" id="1" name="Start fade" sid="820274056857171" type="ScriptText" />
-                <action id="-16" name="Wait" sid="945827181513076" type="System">
-                    <param id="0" name="Seconds">5.0</param>
-                </action>
-            </actions>
+            <actions />
             <sub-events>
                 <event-block sid="920242639523572">
                     <conditions>
@@ -41,6 +43,10 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action behavior="Fade" id="1" name="Start fade" sid="820274056857171" type="ScriptText" />
+                        <action id="-16" name="Wait" sid="945827181513076" type="System">
+                            <param id="0" name="Seconds">4.0</param>
+                        </action>
                         <action id="-2" name="Go to layout" sid="270003582352842" type="System">
                             <param id="0" name="Layout">HUB</param>
                         </action>
@@ -55,7 +61,50 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action behavior="Fade" id="1" name="Start fade" sid="962974629379119" type="PreBattleScript" />
+                        <action id="-16" name="Wait" sid="788700813704570" type="System">
+                            <param id="0" name="Seconds">4.0</param>
+                        </action>
                         <action id="-2" name="Go to layout" sid="773132510378229" type="System">
+                            <param id="0" name="Layout">LevelBoss</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="274911404806673">
+            <conditions>
+                <condition id="8" name="On any button pressed" sid="850817247912631" type="Gamepad">
+                    <param id="0" name="Gamepad">0</param>
+                </condition>
+                <condition id="1" name="On any key pressed" sid="400165319896161" type="Keyboard" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="579388974622862">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="843932448864491" type="System">
+                            <param id="0" name="Variable">scriptCondition</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="476893806864517" type="System">
+                            <param id="0" name="Layout">HUB</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="136523862359783">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="630614394151867" type="System">
+                            <param id="0" name="Variable">scriptCondition</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="226902046002088" type="System">
                             <param id="0" name="Layout">LevelBoss</param>
                         </action>
                     </actions>

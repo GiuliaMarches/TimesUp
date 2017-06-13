@@ -10,8 +10,15 @@
                 <condition id="-2" name="On start of layout" sid="824913686596052" type="System" />
             </conditions>
             <actions>
+                <action id="33" name="Stop all" sid="614701427398507" type="Audio" />
                 <action id="-9" name="Destroy" sid="392186966353204" type="Boomerang" />
                 <action id="-9" name="Destroy" sid="387288209179998" type="Grenade" />
+                <action id="0" name="Play" sid="973635733552449" type="Audio">
+                    <param id="0" name="Audio file">Ancient Egyptian</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">-7</param>
+                    <param id="1" name="Tag (optional)">&quot;Egypt&quot;</param>
+                </action>
                 <action id="-15" name="Set visible" sid="841525360638173" type="Player">
                     <param id="0" name="Visibility">0</param>
                 </action>
@@ -27,6 +34,12 @@
                     <param id="0" name="Frame number">0</param>
                 </action>
                 <action id="2" name="Stop" sid="587177174876290" type="Sarcophagus" />
+                <action id="0" name="Play" sid="518135085827438" type="Audio">
+                    <param id="0" name="Audio file">porta tardis</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;PortaTardis&quot;</param>
+                </action>
                 <action id="-16" name="Set opacity" sid="674992116240858" type="Tardis">
                     <param id="0" name="Opacity">100</param>
                 </action>
@@ -87,6 +100,21 @@
                     <param id="0" name="Opacity">Self.Opacity - 2</param>
                 </action>
             </actions>
+            <sub-events>
+                <event-block sid="389715991822780">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="492467652215381" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="386680257565862" type="Audio">
+                            <param id="0" name="Audio file">scomparsa tardis2</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;ScomparsaTardis&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="999428604683209">
             <conditions>
@@ -305,6 +333,12 @@
                                 <condition id="-4" name="Trigger once while true" sid="907308336693586" type="System" />
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="170455799018869" type="Audio">
+                                    <param id="0" name="Audio file">Mummie colpite</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-12</param>
+                                    <param id="1" name="Tag (optional)">&quot;MummieHit&quot;</param>
+                                </action>
                                 <action behavior="Flash" id="0" name="Flash" sid="815637746016933" type="Mummy">
                                     <param id="0" name="&apos;On&apos; time">0.1</param>
                                     <param id="1" name="&apos;Off&apos; time">0.1</param>
@@ -329,6 +363,12 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="760883723699799" type="Mummy" />
+                        <action id="0" name="Play" sid="985300909915068" type="Audio">
+                            <param id="0" name="Audio file">morte mummia</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-5</param>
+                            <param id="1" name="Tag (optional)">&quot;MummiaDeath&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block any="1" sid="979188881989070">
@@ -545,140 +585,197 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="785271782485051">
+        <event-block sid="370664666037468">
             <conditions>
-                <condition id="0" name="On collision with another object" sid="130965889369469" type="Mummy">
-                    <param id="0" name="Object">Player</param>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="373293770091390" type="Player">
+                    <param id="0" name="Instance variable">hit</param>
                 </condition>
             </conditions>
-            <actions>
-                <action id="11" name="Set collisions enabled" sid="194257836368289" type="Player">
-                    <param id="0" name="Collisions">0</param>
-                </action>
-                <action behavior="Flash" id="0" name="Flash" sid="388889632705188" type="Player">
-                    <param id="0" name="&apos;On&apos; time">0.1</param>
-                    <param id="1" name="&apos;Off&apos; time">0.1</param>
-                    <param id="2" name="Duration">1.0</param>
-                </action>
-                <action id="-16" name="Wait" sid="293696228308355" type="System">
-                    <param id="0" name="Seconds">1</param>
-                </action>
-                <action id="11" name="Set collisions enabled" sid="420817215430606" type="Player">
-                    <param id="0" name="Collisions">1</param>
-                </action>
-            </actions>
+            <actions />
             <sub-events>
-                <event-block sid="343424278537740">
+                <event-block sid="785271782485051">
                     <conditions>
-                        <condition id="-14" name="Compare variable" sid="271318378261808" type="System">
-                            <param id="0" name="Variable">hasBow</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
+                        <condition id="0" name="On collision with another object" sid="130965889369469" type="Mummy">
+                            <param id="0" name="Object">Player</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Set value" sid="880541419918455" type="System">
-                            <param id="0" name="Variable">hasBow</param>
-                            <param id="1" name="Value">0</param>
+                        <action id="-13" name="Set boolean" sid="572894632402071" type="Player">
+                            <param id="0" name="Instance variable">hit</param>
+                            <param id="1" name="Value">1</param>
                         </action>
-                        <action id="-16" name="Wait" sid="986402659558838" type="System">
-                            <param id="0" name="Seconds">4</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="128402307398139" type="Bow">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                        <action id="11" name="Set collisions enabled" sid="155838968957858" type="Bow">
-                            <param id="0" name="Collisions">1</param>
+                        <action behavior="Flash" id="0" name="Flash" sid="388889632705188" type="Player">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
                         </action>
                     </actions>
-                </event-block>
-                <event-block sid="206272247417476">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="136707405919344" type="System" />
-                    </conditions>
-                    <actions />
                     <sub-events>
-                        <event-block sid="858719614361156">
+                        <event-block sid="343424278537740">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="734525575545217" type="System">
-                                    <param id="0" name="Variable">hasGrenade</param>
+                                <condition id="-14" name="Compare variable" sid="271318378261808" type="System">
+                                    <param id="0" name="Variable">hasBow</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">1</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-9" name="Set value" sid="836312579387858" type="System">
-                                    <param id="0" name="Variable">hasGrenade</param>
+                                <action id="-9" name="Set value" sid="880541419918455" type="System">
+                                    <param id="0" name="Variable">hasBow</param>
                                     <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="378835709096420" type="Player">
+                                    <param id="0" name="Object">DropBow</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="265617357482389" type="DropBow">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">1.0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="986402659558838" type="System">
+                                    <param id="0" name="Seconds">4</param>
+                                </action>
+                                <action id="0" name="Play" sid="753292593366933" type="Audio">
+                                    <param id="0" name="Audio file">Respawn arma</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;RespawnArma&quot;</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="128402307398139" type="Bow">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="583330871238422" type="Bow">
+                                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                                    <param id="2" name="Duration">1.0</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="155838968957858" type="Bow">
+                                    <param id="0" name="Collisions">1</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="252347472664534">
+                        <event-block sid="206272247417476">
                             <conditions>
-                                <condition id="-22" name="Else" sid="648045805206284" type="System" />
+                                <condition id="-22" name="Else" sid="136707405919344" type="System" />
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="220516302384774">
+                                <event-block sid="858719614361156">
                                     <conditions>
-                                        <condition id="-14" name="Compare variable" sid="403519267411493" type="System">
-                                            <param id="0" name="Variable">hasShield</param>
+                                        <condition id="-14" name="Compare variable" sid="734525575545217" type="System">
+                                            <param id="0" name="Variable">hasGrenade</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">1</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-9" name="Set value" sid="295078575707421" type="System">
-                                            <param id="0" name="Variable">hasShield</param>
+                                        <action id="-9" name="Set value" sid="836312579387858" type="System">
+                                            <param id="0" name="Variable">hasGrenade</param>
                                             <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="471991171981358" type="Player">
+                                            <param id="0" name="Object">DropGrenade</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action behavior="Flash" id="0" name="Flash" sid="120189697107326" type="DropGrenade">
+                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                            <param id="2" name="Duration">1.0</param>
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="269484439610942">
+                                <event-block sid="252347472664534">
                                     <conditions>
-                                        <condition id="-22" name="Else" sid="989603627210946" type="System" />
+                                        <condition id="-22" name="Else" sid="648045805206284" type="System" />
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="197079630013085">
+                                        <event-block sid="220516302384774">
                                             <conditions>
-                                                <condition id="-14" name="Compare variable" sid="370000551505174" type="System">
-                                                    <param id="0" name="Variable">hasBoomerang</param>
+                                                <condition id="-14" name="Compare variable" sid="403519267411493" type="System">
+                                                    <param id="0" name="Variable">hasShield</param>
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Value">1</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="-9" name="Set value" sid="841126726067814" type="System">
-                                                    <param id="0" name="Variable">hasBoomerang</param>
+                                                <action id="-9" name="Set value" sid="295078575707421" type="System">
+                                                    <param id="0" name="Variable">hasShield</param>
                                                     <param id="1" name="Value">0</param>
                                                 </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="500369433485538">
-                                            <conditions>
-                                                <condition id="-22" name="Else" sid="184300589353812" type="System" />
-                                            </conditions>
-                                            <actions>
-                                                <action id="11" name="Set collisions enabled" sid="803567940103509" type="Player">
-                                                    <param id="0" name="Collisions">0</param>
+                                                <action id="0" name="Spawn another object" sid="858564788141277" type="Player">
+                                                    <param id="0" name="Object">DropShield</param>
+                                                    <param id="1" name="Layer">1</param>
+                                                    <param id="2" name="Image point">0</param>
                                                 </action>
-                                                <action behavior="Flash" id="0" name="Flash" sid="373339669739643" type="Player">
+                                                <action behavior="Flash" id="0" name="Flash" sid="590510097796483" type="DropShield">
                                                     <param id="0" name="&apos;On&apos; time">0.1</param>
                                                     <param id="1" name="&apos;Off&apos; time">0.1</param>
                                                     <param id="2" name="Duration">1.0</param>
                                                 </action>
-                                                <action id="-16" name="Wait" sid="808563160485418" type="System">
-                                                    <param id="0" name="Seconds">0.5</param>
-                                                </action>
-                                                <action id="-9" name="Destroy" sid="244602709506296" type="Player" />
-                                                <action id="-16" name="Wait" sid="296895159450900" type="System">
-                                                    <param id="0" name="Seconds">1.0</param>
-                                                </action>
-                                                <action id="-2" name="Go to layout" sid="822448796421348" type="System">
-                                                    <param id="0" name="Layout">End</param>
-                                                </action>
                                             </actions>
+                                        </event-block>
+                                        <event-block sid="269484439610942">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="989603627210946" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="197079630013085">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="370000551505174" type="System">
+                                                            <param id="0" name="Variable">hasBoomerang</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="841126726067814" type="System">
+                                                            <param id="0" name="Variable">hasBoomerang</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="0" name="Spawn another object" sid="794289415146775" type="Player">
+                                                            <param id="0" name="Object">DropBoomerang</param>
+                                                            <param id="1" name="Layer">1</param>
+                                                            <param id="2" name="Image point">0</param>
+                                                        </action>
+                                                        <action behavior="Flash" id="0" name="Flash" sid="607786473008931" type="DropBoomerang">
+                                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                                            <param id="2" name="Duration">1.0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="500369433485538">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="184300589353812" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-13" name="Set boolean" sid="682666539307119" type="Player">
+                                                            <param id="0" name="Instance variable">hit</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action behavior="Flash" id="0" name="Flash" sid="373339669739643" type="Player">
+                                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                                            <param id="2" name="Duration">1.0</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="808563160485418" type="System">
+                                                            <param id="0" name="Seconds">0.5</param>
+                                                        </action>
+                                                        <action id="-9" name="Destroy" sid="244602709506296" type="Player" />
+                                                        <action id="-16" name="Wait" sid="296895159450900" type="System">
+                                                            <param id="0" name="Seconds">1.0</param>
+                                                        </action>
+                                                        <action id="-2" name="Go to layout" sid="822448796421348" type="System">
+                                                            <param id="0" name="Layout">End</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -750,6 +847,12 @@
                                         <action id="-22" name="Set angle toward position" sid="869736234168587" type="WrapBullet">
                                             <param id="0" name="X">Player.X</param>
                                             <param id="1" name="Y">Player.Y</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="734320295466653" type="Audio">
+                                            <param id="0" name="Audio file">swish-9</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;Swish&quot;</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -831,6 +934,12 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="0" name="Play" sid="546339542696872" type="Audio">
+                                            <param id="0" name="Audio file">faraone colpito</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">-8</param>
+                                            <param id="1" name="Tag (optional)">&quot;FaraoneHit&quot;</param>
+                                        </action>
                                         <action behavior="Flash" id="0" name="Flash" sid="296744179922998" type="MummyBoss">
                                             <param id="0" name="&apos;On&apos; time">0.1</param>
                                             <param id="1" name="&apos;Off&apos; time">0.1</param>
@@ -874,6 +983,12 @@
                                 <condition id="-4" name="Trigger once while true" sid="504702960279069" type="System" />
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="101680380288585" type="Audio">
+                                    <param id="0" name="Audio file">morte faraone</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">-8</param>
+                                    <param id="1" name="Tag (optional)">&quot;FaraoneDeath&quot;</param>
+                                </action>
                                 <action id="11" name="Set collisions enabled" sid="216278435855705" type="MummyBoss">
                                     <param id="0" name="Collisions">0</param>
                                 </action>
@@ -890,6 +1005,12 @@
                                 <action id="4" name="Set animation" sid="537861738658025" type="Key">
                                     <param id="0" name="Animation">&quot;EgyptKey&quot;</param>
                                     <param id="1" name="From">1</param>
+                                </action>
+                                <action id="0" name="Play" sid="780060871813118" type="Audio">
+                                    <param id="0" name="Audio file">Keys spawn</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;ChiaveSpawn&quot;</param>
                                 </action>
                                 <action id="-15" name="Set visible" sid="766409344378951" type="Key">
                                     <param id="0" name="Visibility">1</param>
@@ -921,140 +1042,197 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="904959871714509">
+        <event-block sid="334967498561272">
             <conditions>
-                <condition id="0" name="On collision with another object" sid="446192438643498" type="WrapBullet">
-                    <param id="0" name="Object">Player</param>
+                <condition id="-8" inverted="1" name="Is boolean instance variable set" sid="789313328804479" type="Player">
+                    <param id="0" name="Instance variable">hit</param>
                 </condition>
             </conditions>
-            <actions>
-                <action id="11" name="Set collisions enabled" sid="773062056805605" type="Player">
-                    <param id="0" name="Collisions">0</param>
-                </action>
-                <action behavior="Flash" id="0" name="Flash" sid="314534431384338" type="Player">
-                    <param id="0" name="&apos;On&apos; time">0.1</param>
-                    <param id="1" name="&apos;Off&apos; time">0.1</param>
-                    <param id="2" name="Duration">1.0</param>
-                </action>
-                <action id="-16" name="Wait" sid="727347974297081" type="System">
-                    <param id="0" name="Seconds">1</param>
-                </action>
-                <action id="11" name="Set collisions enabled" sid="829163879794254" type="Player">
-                    <param id="0" name="Collisions">1</param>
-                </action>
-            </actions>
+            <actions />
             <sub-events>
-                <event-block sid="403570718971993">
+                <event-block sid="904959871714509">
                     <conditions>
-                        <condition id="-14" name="Compare variable" sid="352256592832027" type="System">
-                            <param id="0" name="Variable">hasBow</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">1</param>
+                        <condition id="0" name="On collision with another object" sid="446192438643498" type="WrapBullet">
+                            <param id="0" name="Object">Player</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Set value" sid="354260264824284" type="System">
-                            <param id="0" name="Variable">hasBow</param>
-                            <param id="1" name="Value">0</param>
+                        <action id="-13" name="Set boolean" sid="773062056805605" type="Player">
+                            <param id="0" name="Instance variable">hit</param>
+                            <param id="1" name="Value">1</param>
                         </action>
-                        <action id="-16" name="Wait" sid="149411590619444" type="System">
-                            <param id="0" name="Seconds">4</param>
-                        </action>
-                        <action id="-15" name="Set visible" sid="504933016778137" type="Bow">
-                            <param id="0" name="Visibility">1</param>
-                        </action>
-                        <action id="11" name="Set collisions enabled" sid="374290588095870" type="Bow">
-                            <param id="0" name="Collisions">1</param>
+                        <action behavior="Flash" id="0" name="Flash" sid="314534431384338" type="Player">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
                         </action>
                     </actions>
-                </event-block>
-                <event-block sid="243705833855281">
-                    <conditions>
-                        <condition id="-22" name="Else" sid="471151391386367" type="System" />
-                    </conditions>
-                    <actions />
                     <sub-events>
-                        <event-block sid="987871550713846">
+                        <event-block sid="403570718971993">
                             <conditions>
-                                <condition id="-14" name="Compare variable" sid="630317503763963" type="System">
-                                    <param id="0" name="Variable">hasGrenade</param>
+                                <condition id="-14" name="Compare variable" sid="352256592832027" type="System">
+                                    <param id="0" name="Variable">hasBow</param>
                                     <param id="1" name="Comparison">0</param>
                                     <param id="2" name="Value">1</param>
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-9" name="Set value" sid="115957019094956" type="System">
-                                    <param id="0" name="Variable">hasGrenade</param>
+                                <action id="-9" name="Set value" sid="354260264824284" type="System">
+                                    <param id="0" name="Variable">hasBow</param>
                                     <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="731426453690913" type="Player">
+                                    <param id="0" name="Object">DropBow</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="741396273706404" type="DropBow">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">1.0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="149411590619444" type="System">
+                                    <param id="0" name="Seconds">4</param>
+                                </action>
+                                <action id="0" name="Play" sid="410899480804165" type="Audio">
+                                    <param id="0" name="Audio file">Respawn arma</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;RespawnArma&quot;</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="504933016778137" type="Bow">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="843372781907686" type="Bow">
+                                    <param id="0" name="&apos;On&apos; time">0.05</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.05</param>
+                                    <param id="2" name="Duration">1.0</param>
+                                </action>
+                                <action id="11" name="Set collisions enabled" sid="374290588095870" type="Bow">
+                                    <param id="0" name="Collisions">1</param>
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="244427084035055">
+                        <event-block sid="243705833855281">
                             <conditions>
-                                <condition id="-22" name="Else" sid="948096716978016" type="System" />
+                                <condition id="-22" name="Else" sid="471151391386367" type="System" />
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="528436040304010">
+                                <event-block sid="987871550713846">
                                     <conditions>
-                                        <condition id="-14" name="Compare variable" sid="967913847760001" type="System">
-                                            <param id="0" name="Variable">hasShield</param>
+                                        <condition id="-14" name="Compare variable" sid="630317503763963" type="System">
+                                            <param id="0" name="Variable">hasGrenade</param>
                                             <param id="1" name="Comparison">0</param>
                                             <param id="2" name="Value">1</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-9" name="Set value" sid="474195881692409" type="System">
-                                            <param id="0" name="Variable">hasShield</param>
+                                        <action id="-9" name="Set value" sid="115957019094956" type="System">
+                                            <param id="0" name="Variable">hasGrenade</param>
                                             <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="0" name="Spawn another object" sid="183156412256054" type="Player">
+                                            <param id="0" name="Object">DropGrenade</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">0</param>
+                                        </action>
+                                        <action behavior="Flash" id="0" name="Flash" sid="494688212549272" type="DropGrenade">
+                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                            <param id="2" name="Duration">1.0</param>
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="342522466679972">
+                                <event-block sid="244427084035055">
                                     <conditions>
-                                        <condition id="-22" name="Else" sid="660578277784125" type="System" />
+                                        <condition id="-22" name="Else" sid="948096716978016" type="System" />
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="243169577900159">
+                                        <event-block sid="528436040304010">
                                             <conditions>
-                                                <condition id="-14" name="Compare variable" sid="683406207135108" type="System">
-                                                    <param id="0" name="Variable">hasBoomerang</param>
+                                                <condition id="-14" name="Compare variable" sid="967913847760001" type="System">
+                                                    <param id="0" name="Variable">hasShield</param>
                                                     <param id="1" name="Comparison">0</param>
                                                     <param id="2" name="Value">1</param>
                                                 </condition>
                                             </conditions>
                                             <actions>
-                                                <action id="-9" name="Set value" sid="601604157190569" type="System">
-                                                    <param id="0" name="Variable">hasBoomerang</param>
+                                                <action id="-9" name="Set value" sid="474195881692409" type="System">
+                                                    <param id="0" name="Variable">hasShield</param>
                                                     <param id="1" name="Value">0</param>
                                                 </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block sid="746005999169541">
-                                            <conditions>
-                                                <condition id="-22" name="Else" sid="292232066952442" type="System" />
-                                            </conditions>
-                                            <actions>
-                                                <action id="11" name="Set collisions enabled" sid="141168897798315" type="Player">
-                                                    <param id="0" name="Collisions">0</param>
+                                                <action id="0" name="Spawn another object" sid="412621213104109" type="Player">
+                                                    <param id="0" name="Object">DropShield</param>
+                                                    <param id="1" name="Layer">1</param>
+                                                    <param id="2" name="Image point">0</param>
                                                 </action>
-                                                <action behavior="Flash" id="0" name="Flash" sid="535487043783626" type="Player">
+                                                <action behavior="Flash" id="0" name="Flash" sid="203747409649137" type="DropShield">
                                                     <param id="0" name="&apos;On&apos; time">0.1</param>
                                                     <param id="1" name="&apos;Off&apos; time">0.1</param>
                                                     <param id="2" name="Duration">1.0</param>
                                                 </action>
-                                                <action id="-16" name="Wait" sid="777801088682167" type="System">
-                                                    <param id="0" name="Seconds">0.5</param>
-                                                </action>
-                                                <action id="-9" name="Destroy" sid="343564774639706" type="Player" />
-                                                <action id="-16" name="Wait" sid="303042827219805" type="System">
-                                                    <param id="0" name="Seconds">1.0</param>
-                                                </action>
-                                                <action id="-2" name="Go to layout" sid="354023097227937" type="System">
-                                                    <param id="0" name="Layout">End</param>
-                                                </action>
                                             </actions>
+                                        </event-block>
+                                        <event-block sid="342522466679972">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="660578277784125" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="243169577900159">
+                                                    <conditions>
+                                                        <condition id="-14" name="Compare variable" sid="683406207135108" type="System">
+                                                            <param id="0" name="Variable">hasBoomerang</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="601604157190569" type="System">
+                                                            <param id="0" name="Variable">hasBoomerang</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                        <action id="0" name="Spawn another object" sid="285339739608201" type="Player">
+                                                            <param id="0" name="Object">DropBoomerang</param>
+                                                            <param id="1" name="Layer">1</param>
+                                                            <param id="2" name="Image point">0</param>
+                                                        </action>
+                                                        <action behavior="Flash" id="0" name="Flash" sid="929933006580181" type="DropBoomerang">
+                                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                                            <param id="2" name="Duration">1.0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="746005999169541">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="292232066952442" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-13" name="Set boolean" sid="186445584592522" type="Player">
+                                                            <param id="0" name="Instance variable">hit</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                        <action behavior="Flash" id="0" name="Flash" sid="535487043783626" type="Player">
+                                                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                                                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                                            <param id="2" name="Duration">1.0</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="777801088682167" type="System">
+                                                            <param id="0" name="Seconds">0.5</param>
+                                                        </action>
+                                                        <action id="-9" name="Destroy" sid="343564774639706" type="Player" />
+                                                        <action id="-16" name="Wait" sid="303042827219805" type="System">
+                                                            <param id="0" name="Seconds">1.0</param>
+                                                        </action>
+                                                        <action id="-2" name="Go to layout" sid="354023097227937" type="System">
+                                                            <param id="0" name="Layout">End</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -1066,44 +1244,6 @@
         </event-block>
         <event-group description="" sid="963180585962204" title="Perspective">
             <sub-events>
-                <event-block sid="951782949298531">
-                    <conditions>
-                        <condition id="-11" name="For Each" sid="912830336564194" type="System">
-                            <param id="0" name="Object">Column</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block sid="319940563537952">
-                            <conditions>
-                                <condition id="-2" name="Compare Y" sid="869638143357336" type="Column">
-                                    <param id="0" name="Comparison">4</param>
-                                    <param id="1" name="Y co-ordinate">Mummy.Y</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-29" name="Move to object" sid="654824473556462" type="Column">
-                                    <param id="0" name="Where">0</param>
-                                    <param id="1" name="Object">Mummy</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block sid="948029034305521">
-                            <conditions>
-                                <condition id="-2" name="Compare Y" sid="360291754298384" type="Column">
-                                    <param id="0" name="Comparison">2</param>
-                                    <param id="1" name="Y co-ordinate">Mummy.Y</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action id="-29" name="Move to object" sid="166247732621954" type="Column">
-                                    <param id="0" name="Where">1</param>
-                                    <param id="1" name="Object">Mummy</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                    </sub-events>
-                </event-block>
                 <event-block sid="157241793893216">
                     <conditions>
                         <condition id="-11" name="For Each" sid="562133267644434" type="System">
@@ -1165,34 +1305,24 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="445631891708967">
+                        <event-block sid="119322648458107">
                             <conditions>
-                                <condition id="-4" name="Trigger once while true" sid="668137167415058" type="System" />
+                                <condition id="-6" name="Every X seconds" sid="416691552507623" type="System">
+                                    <param id="0" name="Interval (seconds)">15</param>
+                                </condition>
                             </conditions>
                             <actions>
-                                <action id="-3" name="Create object" sid="962861870276630" type="System">
+                                <action id="-3" name="Create object" sid="174121060560697" type="System">
                                     <param id="0" name="Object to create">Mummy</param>
                                     <param id="1" name="Layer">1</param>
                                     <param id="2" name="X">65</param>
                                     <param id="3" name="Y">211</param>
                                 </action>
-                                <action id="-3" name="Create object" sid="382020745057824" type="System">
+                                <action id="-3" name="Create object" sid="238299651237711" type="System">
                                     <param id="0" name="Object to create">Mummy</param>
                                     <param id="1" name="Layer">1</param>
                                     <param id="2" name="X">965</param>
                                     <param id="3" name="Y">211</param>
-                                </action>
-                                <action id="-3" name="Create object" sid="461298195601188" type="System">
-                                    <param id="0" name="Object to create">Mummy</param>
-                                    <param id="1" name="Layer">1</param>
-                                    <param id="2" name="X">65</param>
-                                    <param id="3" name="Y">388</param>
-                                </action>
-                                <action id="-3" name="Create object" sid="323509760476096" type="System">
-                                    <param id="0" name="Object to create">Mummy</param>
-                                    <param id="1" name="Layer">1</param>
-                                    <param id="2" name="X">965</param>
-                                    <param id="3" name="Y">388</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -1209,6 +1339,12 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Play" sid="662035518520804" type="Audio">
+                            <param id="0" name="Audio file">chiave ottenuta</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;ChiaveTake&quot;</param>
+                        </action>
                         <action id="-9" name="Destroy" sid="402985100821873" type="Key" />
                         <action id="-9" name="Set value" sid="296570075363707" type="System">
                             <param id="0" name="Variable">hasDesertKey</param>
@@ -1231,6 +1367,19 @@
                     </conditions>
                     <actions />
                     <sub-events>
+                        <event-block sid="136070451713285">
+                            <conditions>
+                                <condition id="-4" name="Trigger once while true" sid="119476385900226" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Play" sid="522894539896654" type="Audio">
+                                    <param id="0" name="Audio file">porta tardis</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;PortaTardis&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
                         <event-block sid="791954835870552">
                             <conditions>
                                 <condition id="-14" name="Compare variable" sid="350381977447661" type="System">
@@ -1279,6 +1428,12 @@
                                 <condition id="-4" name="Trigger once while true" sid="443552882656692" type="System" />
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="922910858378529" type="Audio">
+                                    <param id="0" name="Audio file">Mummie colpite</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;MummieHit&quot;</param>
+                                </action>
                                 <action behavior="Flash" id="0" name="Flash" sid="334505260874387" type="Mummy">
                                     <param id="0" name="&apos;On&apos; time">0.1</param>
                                     <param id="1" name="&apos;Off&apos; time">0.1</param>
@@ -1305,6 +1460,12 @@
                                 <condition id="-4" name="Trigger once while true" sid="858048640242389" type="System" />
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="897034489935959" type="Audio">
+                                    <param id="0" name="Audio file">Mummie colpite</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;MummieHit&quot;</param>
+                                </action>
                                 <action behavior="Flash" id="0" name="Flash" sid="953440527531940" type="Mummy">
                                     <param id="0" name="&apos;On&apos; time">0.1</param>
                                     <param id="1" name="&apos;Off&apos; time">0.1</param>
@@ -1331,6 +1492,12 @@
                                 <condition id="-4" name="Trigger once while true" sid="809867957840973" type="System" />
                             </conditions>
                             <actions>
+                                <action id="0" name="Play" sid="548253641835179" type="Audio">
+                                    <param id="0" name="Audio file">Mummie colpite</param>
+                                    <param id="2" name="Loop">0</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;MummieHit&quot;</param>
+                                </action>
                                 <action behavior="Flash" id="0" name="Flash" sid="698522492489285" type="Mummy">
                                     <param id="0" name="&apos;On&apos; time">0.1</param>
                                     <param id="1" name="&apos;Off&apos; time">0.1</param>
@@ -1416,6 +1583,12 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="0" name="Play" sid="885724733821504" type="Audio">
+                                            <param id="0" name="Audio file">faraone colpito</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;FaraoneHit&quot;</param>
+                                        </action>
                                         <action behavior="Flash" id="0" name="Flash" sid="953275430596094" type="MummyBoss">
                                             <param id="0" name="&apos;On&apos; time">0.1</param>
                                             <param id="1" name="&apos;Off&apos; time">0.1</param>
@@ -1518,6 +1691,12 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="0" name="Play" sid="161538930359692" type="Audio">
+                                            <param id="0" name="Audio file">faraone colpito</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;FaraoneHit&quot;</param>
+                                        </action>
                                         <action behavior="Flash" id="0" name="Flash" sid="763867630053516" type="MummyBoss">
                                             <param id="0" name="&apos;On&apos; time">0.1</param>
                                             <param id="1" name="&apos;Off&apos; time">0.1</param>
@@ -1618,6 +1797,12 @@
                                         </condition>
                                     </conditions>
                                     <actions>
+                                        <action id="0" name="Play" sid="934496764312471" type="Audio">
+                                            <param id="0" name="Audio file">faraone colpito</param>
+                                            <param id="2" name="Loop">0</param>
+                                            <param id="3" name="Volume">0</param>
+                                            <param id="1" name="Tag (optional)">&quot;FaraoneHit&quot;</param>
+                                        </action>
                                         <action behavior="Flash" id="0" name="Flash" sid="915630612073869" type="MummyBoss">
                                             <param id="0" name="&apos;On&apos; time">0.1</param>
                                             <param id="1" name="&apos;Off&apos; time">0.1</param>
@@ -1740,6 +1925,12 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
+                                                <action id="0" name="Play" sid="287265196831733" type="Audio">
+                                                    <param id="0" name="Audio file">faraone colpito</param>
+                                                    <param id="2" name="Loop">0</param>
+                                                    <param id="3" name="Volume">0</param>
+                                                    <param id="1" name="Tag (optional)">&quot;FaraoneHit&quot;</param>
+                                                </action>
                                                 <action behavior="Flash" id="0" name="Flash" sid="140973776024112" type="MummyBoss">
                                                     <param id="0" name="&apos;On&apos; time">0.1</param>
                                                     <param id="1" name="&apos;Off&apos; time">0.1</param>

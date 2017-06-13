@@ -67,7 +67,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>262</x>
-                        <y>277</y>
+                        <y>197</y>
                         <z>0</z>
                         <width>500</width>
                         <height>134</height>
@@ -94,10 +94,37 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>511.999938965</x>
-                        <y>460.5</y>
+                        <y>451.5</y>
                         <z>0</z>
                         <width>311</width>
                         <height>79</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Score" uid="304">
+                    <properties>
+                        <text></text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-24,400,0</font>
+                        <color>255,255,0</color>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>512</x>
+                        <y>357</y>
+                        <z>0</z>
+                        <width>200</width>
+                        <height>100</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>

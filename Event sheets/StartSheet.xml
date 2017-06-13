@@ -3,6 +3,80 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>StartSheet</name>
     <events>
+        <event-block sid="552123310247547">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="839411075299970" type="System" />
+            </conditions>
+            <actions>
+                <action id="33" name="Stop all" sid="644068104806885" type="Audio" />
+                <action id="0" name="Play" sid="797267688040832" type="Audio">
+                    <param id="0" name="Audio file">Ambiente Arcade</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">-5</param>
+                    <param id="1" name="Tag (optional)">&quot;Start&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="671765355314432">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="639636878302626" type="System">
+                            <param id="0" name="Variable">BestTimeGlobal</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="667481783862387" type="BestTime">
+                            <param id="0" name="Text">&quot;BEST TIME &quot; &amp; int(abs((BestTimeGlobal - 600) / 60)) &amp; &quot;:0&quot; &amp; int(abs((BestTimeGlobal - 600) % 60)) </param>
+                        </action>
+                        <action id="5" name="Set web font" sid="849329385853355" type="BestTime">
+                            <param id="0" name="Family name">&quot;monkey_island_1990_refinedRg&quot;</param>
+                            <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="233932528749584">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="985299189333219" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="600486644316142">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="935161747010275" type="System">
+                                    <param id="0" name="First value">BestTimeGlobal % 60</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">50</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="518255883163208" type="BestTime">
+                                    <param id="0" name="Text">&quot;BEST TIME &quot; &amp; int(abs((BestTimeGlobal - 600) / 60)) &amp; &quot;:0&quot; &amp; int(abs((BestTimeGlobal - 600) % 60)) </param>
+                                </action>
+                                <action id="5" name="Set web font" sid="158872104154219" type="BestTime">
+                                    <param id="0" name="Family name">&quot;monkey_island_1990_refinedRg&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="437454095344942">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="835274581126877" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="366362161565207" type="BestTime">
+                                    <param id="0" name="Text">&quot;BEST TIME &quot; &amp; int(abs((BestTimeGlobal - 600) / 60)) &amp; &quot;:&quot; &amp; int(abs((BestTimeGlobal - 600) % 60)) </param>
+                                </action>
+                                <action id="5" name="Set web font" sid="356602724059727" type="BestTime">
+                                    <param id="0" name="Family name">&quot;monkey_island_1990_refinedRg&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
         <event-block any="1" sid="236980247673753">
             <conditions>
                 <condition id="6" name="On button pressed" sid="519219826315304" type="Gamepad">
@@ -16,6 +90,29 @@
             <actions>
                 <action id="-25" name="Go to layout (by name)" sid="188542618144437" type="System">
                     <param id="0" name="Layout">&quot;ScriptBoss&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="240989723438903">
+            <conditions>
+                <condition id="3" name="Compare frame" sid="623447803955772" type="StartSprite">
+                    <param id="0" name="Comparison">0</param>
+                    <param id="1" name="Number">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="382666384605780" type="BestTime">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="457544016139639">
+            <conditions>
+                <condition id="-22" name="Else" sid="956742391331135" type="System" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="136315218363159" type="BestTime">
+                    <param id="0" name="Visibility">0</param>
                 </action>
             </actions>
         </event-block>

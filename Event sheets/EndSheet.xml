@@ -3,11 +3,13 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>EndSheet</name>
     <events>
+        <variable constant="0" name="BestTimeGlobal" sid="132335370775775" static="0" type="number">0</variable>
         <event-block sid="559462208998330">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="886808735527181" type="System" />
             </conditions>
             <actions>
+                <action id="33" name="Stop all" sid="178854617710690" type="Audio" />
                 <action id="5" name="Set web font" sid="350994864369091" type="GameOverText">
                     <param id="0" name="Family name">&quot;monkey_island_1990_refinedRg&quot;</param>
                     <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
@@ -18,6 +20,23 @@
                 </action>
             </actions>
             <sub-events>
+                <event-block sid="224741810999440">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="287540292241025" type="System">
+                            <param id="0" name="Variable">scriptCondition</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Play" sid="999005538914499" type="Audio">
+                            <param id="0" name="Audio file">You are dead not big surprise</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">-10</param>
+                            <param id="1" name="Tag (optional)">&quot;YouAreDead&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="353968214556415">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="614815937649523" type="System">
@@ -27,6 +46,12 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Play" sid="692954420600803" type="Audio">
+                            <param id="0" name="Audio file">Titoli di coda</param>
+                            <param id="2" name="Loop">1</param>
+                            <param id="3" name="Volume">-6</param>
+                            <param id="1" name="Tag (optional)">&quot;End&quot;</param>
+                        </action>
                         <action id="0" name="Set text" sid="677739005902988" type="GameOverText">
                             <param id="0" name="Text">&quot;YOU WON!&quot;</param>
                         </action>
@@ -39,25 +64,100 @@
                             <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="892080159084949">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="876880478320829" type="System">
+                                    <param id="0" name="First value">CountDown % 60</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">50</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="930844130039341" type="Score">
+                                    <param id="0" name="Text">&quot;Your Time &quot; &amp; int(abs((CountDown - 600) / 60)) &amp; &quot;:0&quot; &amp; int(abs((CountDown - 600) % 60)) </param>
+                                </action>
+                                <action id="5" name="Set web font" sid="741803224515963" type="Score">
+                                    <param id="0" name="Family name">&quot;monkey_island_1990_refinedRg&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="548440345009777">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="511475157766246" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="115741906064457" type="Score">
+                                    <param id="0" name="Text">&quot;Your Time &quot; &amp; int(abs((CountDown - 600) / 60)) &amp; &quot;:&quot; &amp; int(abs((CountDown - 600) % 60)) </param>
+                                </action>
+                                <action id="5" name="Set web font" sid="346973872372261" type="Score">
+                                    <param id="0" name="Family name">&quot;monkey_island_1990_refinedRg&quot;</param>
+                                    <param id="1" name="CSS URL">&quot;stylesheet.css&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="171138163716082">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="157581592769780" type="System">
+                                    <param id="0" name="Variable">CountDown</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">BestTimeGlobal</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="158557001640029" type="System">
+                                    <param id="0" name="Variable">BestTimeGlobal</param>
+                                    <param id="1" name="Value">CountDown</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-block>
-        <event-block any="1" sid="483145229899178">
-            <conditions>
-                <condition id="6" name="On button pressed" sid="862190490087636" type="Gamepad">
-                    <param id="0" name="Gamepad">0</param>
-                    <param id="1" name="Button">9</param>
-                </condition>
-                <condition id="0" name="On key pressed" sid="296880643999740" type="Keyboard">
-                    <param id="0" name="Key">13 (Return)</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-21" name="Reset global variables" sid="523929419272379" type="System" />
-                <action id="-2" name="Go to layout" sid="438073091985951" type="System">
-                    <param id="0" name="Layout">Start</param>
-                </action>
-            </actions>
-        </event-block>
+        <event-group description="" sid="875739673359242" title="Go To Start">
+            <sub-events>
+                <variable constant="0" name="BestTime" sid="240919623105126" static="0" type="number">0</variable>
+                <event-block sid="973892541276740">
+                    <conditions>
+                        <condition id="0" name="On ended" sid="425869940090933" type="Audio">
+                            <param id="0" name="Tag">&quot;YouAreDead&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-21" name="Reset global variables" sid="998399177341455" type="System" />
+                        <action id="-2" name="Go to layout" sid="365068963085630" type="System">
+                            <param id="0" name="Layout">Start</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="483145229899178">
+                    <conditions>
+                        <condition id="6" name="On button pressed" sid="862190490087636" type="Gamepad">
+                            <param id="0" name="Gamepad">0</param>
+                            <param id="1" name="Button">9</param>
+                        </condition>
+                        <condition id="0" name="On key pressed" sid="296880643999740" type="Keyboard">
+                            <param id="0" name="Key">13 (Return)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="857073563996024" type="System">
+                            <param id="0" name="Variable">BestTime</param>
+                            <param id="1" name="Value">BestTimeGlobal</param>
+                        </action>
+                        <action id="-21" name="Reset global variables" sid="523929419272379" type="System" />
+                        <action id="-9" name="Set value" sid="815040626124716" type="System">
+                            <param id="0" name="Variable">BestTimeGlobal</param>
+                            <param id="1" name="Value">BestTime</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="438073091985951" type="System">
+                            <param id="0" name="Layout">Start</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

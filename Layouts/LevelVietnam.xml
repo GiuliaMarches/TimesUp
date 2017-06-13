@@ -358,10 +358,10 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>510.5</x>
-                        <y>78</y>
+                        <y>90</y>
                         <z>0</z>
                         <width>1025</width>
-                        <height>158</height>
+                        <height>105</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -798,14 +798,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>514</x>
-                        <y>580</y>
+                        <x>512</x>
+                        <y>585</y>
                         <z>0</z>
-                        <width>96</width>
-                        <height>96</height>
+                        <width>100</width>
+                        <height>100</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotY>0.50515461</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -817,6 +817,9 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -1014,6 +1017,7 @@
                         <shootDir>-1</shootDir>
                         <OnHub>false</OnHub>
                         <lastWeapon>0</lastWeapon>
+                        <hit>false</hit>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">
@@ -1065,11 +1069,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>513</x>
-                        <y>390</y>
+                        <x>512</x>
+                        <y>384</y>
                         <z>0</z>
-                        <width>1108</width>
-                        <height>831</height>
+                        <width>1024</width>
+                        <height>768</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
@@ -1183,6 +1187,9 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -1205,6 +1212,9 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -1227,6 +1237,9 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -1249,6 +1262,9 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
@@ -1301,7 +1317,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>65</x>
+                        <x>69</x>
                         <y>698</y>
                         <z>0</z>
                         <width>70</width>
